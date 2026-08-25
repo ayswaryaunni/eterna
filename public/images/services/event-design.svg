@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#262328" />
+      <stop offset="100%" stop-color="#131114" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#E0C097" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#E0C097" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#grad)" />
+  <rect width="1200" height="800" fill="url(#glow)" />
+  <rect x="40" y="40" width="1120" height="720" fill="none" stroke="#E0C097" stroke-width="1" stroke-opacity="0.4" />
+  <rect x="55" y="55" width="1090" height="690" fill="none" stroke="#E0C097" stroke-width="0.5" stroke-opacity="0.2" />
+  <circle cx="600" cy="350" r="140" fill="none" stroke="#E0C097" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="4 6" />
+  <circle cx="600" cy="350" r="90" fill="none" stroke="#E0C097" stroke-width="1.5" stroke-opacity="0.6" />
+  <text x="600" y="360" font-family="Georgia, serif" font-size="42" fill="#FFFFFF" text-anchor="middle" letter-spacing="6">ETERNA</text>
+  <text x="600" y="540" font-family="Georgia, serif" font-size="36" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">Event Design & Floral Styling</text>
+  <text x="600" y="590" font-family="sans-serif" font-size="16" fill="#E0C097" text-anchor="middle" letter-spacing="6" font-weight="300">HAUTE AESTHETICS</text>
+</svg>

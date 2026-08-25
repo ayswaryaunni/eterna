@@ -1,0 +1,70 @@
+import { PortfolioItem } from "@/types";
+
+export const portfolioItems: PortfolioItem[] = [
+  {
+    id: "amalfi-coast-nuptials",
+    title: "The Amalfi Coast Nuptials",
+    category: "Destination Weddings",
+    location: "Villa Cimbrone, Ravello, Italy",
+    date: "June 2025",
+    description:
+      "A cliffside celebration perched above the Mediterranean, featuring cascading white florals, classical strings, and an intimate candlelit cliff terrace banquet.",
+    coverImage: "/images/portfolio/amalfi-wedding.svg",
+    featured: true,
+  },
+  {
+    id: "chateau-chantilly-gala",
+    title: "Château de Chantilly Grandeur",
+    category: "Luxury Weddings",
+    location: "Chantilly, France",
+    date: "September 2025",
+    description:
+      "An opulent 18th-century French chateau wedding with gilded accents, crystal chandeliers, a bespoke champagne tower, and a midnight fireworks display.",
+    coverImage: "/images/portfolio/chateau-wedding.svg",
+    featured: true,
+  },
+  {
+    id: "cotswolds-celebration",
+    title: "Cotswolds Countryside Romance",
+    category: "Bespoke Celebrations",
+    location: "The Cotswolds, United Kingdom",
+    date: "May 2025",
+    description:
+      "An organic, meadow-inspired garden marquee wedding celebrating British countryside charm with wild English roses and bespoke artisan dining.",
+    coverImage: "/images/portfolio/cotswolds-wedding.svg",
+    featured: true,
+  },
+  {
+    id: "lake-como-waterfront-soiree",
+    title: "Lake Como Waterfront Soirée",
+    category: "Destination Weddings",
+    location: "Villa Balbiano, Lake Como, Italy",
+    date: "July 2025",
+    description:
+      "Arrival by vintage wooden speedboats, velvet lounges on manicured lawns, and an ethereal glasshouse dinner beneath cascading wisteria.",
+    coverImage: "/images/portfolio/lake-como-wedding.svg",
+    featured: true,
+  },
+  {
+    id: "kyoto-garden-ceremony",
+    title: "Kyoto Heritage Sanctuary",
+    category: "Destination Weddings",
+    location: "Kyoto, Japan",
+    date: "October 2025",
+    description:
+      "A harmonious blend of Japanese architectural serenity and contemporary elegance, framed by autumn maple foliage and minimalist floral sculptures.",
+    coverImage: "/images/portfolio/kyoto-wedding.svg",
+    featured: false,
+  },
+  {
+    id: "manhattan-rooftop-gala",
+    title: "Manhattan Skyline Gala",
+    category: "Editorial & Galas",
+    location: "Tribeca, New York City",
+    date: "December 2025",
+    description:
+      "A sleek, black-tie milestone gala overlooking the glittering New York skyline with dramatic monochromatic styling and bespoke jazz performances.",
+    coverImage: "/images/portfolio/manhattan-gala.svg",
+    featured: false,
+  },
+];

@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAF8F5;
+  --foreground: #1A1A1A;
+  --ivory: #FAF8F5;
+  --charcoal: #141414;
+  --champagne: #C5A880;
+  --border-muted: #EAE5DE;
+}
+
+@theme {
+  --font-serif: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-ivory: #FAF8F5;
+  --color-charcoal: #141414;
+  --color-champagne: #C5A880;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+}
