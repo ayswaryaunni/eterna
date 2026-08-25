@@ -1,11 +1,9 @@
 import { NavItem, SocialLink } from "@/types";
 
 export const navigationItems: NavItem[] = [
-  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Our Work", href: "/portfolio" },
   { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export const footerLinks = {
@@ -23,9 +21,8 @@ export const footerLinks = {
     { label: "Private Celebrations & Galas", href: "/services#private-galas" },
   ],
   legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-    { label: "Cookie Preferences", href: "#" },
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
   ],
 };
 

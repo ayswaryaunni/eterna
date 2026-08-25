@@ -14,6 +14,10 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  // Transparent hero-style navbar only on home page
+  const isHomePage = pathname === "/";
+  const isTransparent = isHomePage && !isScrolled;
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -30,10 +34,10 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-[#FAF8F5]/95 backdrop-blur-md shadow-sm py-4 border-b border-[#EBE6DF]"
-          : "bg-transparent py-6"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        isTransparent
+          ? "bg-transparent py-6"
+          : "bg-[#FAF8F5]/95 backdrop-blur-md shadow-sm py-3 border-b border-[#EBE6DF]"
       )}
     >
       <Container size="wide">
@@ -44,10 +48,16 @@ export function Navbar() {
             className="group flex flex-col items-start focus:outline-none"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <span className="font-serif text-2xl sm:text-3xl tracking-[0.2em] font-normal text-[#1A1A1A] group-hover:text-[#B8976C] transition-colors">
+            <span className={cn(
+              "font-serif text-2xl sm:text-3xl tracking-[0.2em] font-normal transition-colors duration-500",
+              isTransparent ? "text-white hover:text-[#C5A880]" : "text-[#1A1A1A] hover:text-[#B8976C]"
+            )}>
               ETERNA
             </span>
-            <span className="text-[9px] tracking-[0.35em] uppercase text-neutral-500 font-light -mt-1">
+            <span className={cn(
+              "text-[9px] tracking-[0.35em] uppercase font-light -mt-1 transition-colors duration-500",
+              isTransparent ? "text-white/50" : "text-neutral-500"
+            )}>
               Events & Weddings
             </span>
           </Link>
@@ -61,15 +71,18 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "text-xs tracking-[0.18em] uppercase transition-colors duration-200 relative py-1 font-medium",
-                    isActive
-                      ? "text-[#1A1A1A]"
-                      : "text-neutral-600 hover:text-[#1A1A1A]"
+                    "text-xs tracking-[0.18em] uppercase transition-colors duration-300 relative py-1 font-medium",
+                    isTransparent
+                      ? isActive ? "text-white" : "text-white/60 hover:text-white"
+                      : isActive ? "text-[#1A1A1A]" : "text-neutral-500 hover:text-[#1A1A1A]"
                   )}
                 >
                   {item.label}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#B8976C]" />
+                    <span className={cn(
+                      "absolute bottom-0 left-0 right-0 h-[1.5px] transition-colors duration-300",
+                      isTransparent ? "bg-[#C5A880]" : "bg-[#B8976C]"
+                    )} />
                   )}
                 </Link>
               );
@@ -87,7 +100,10 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-[#1A1A1A] focus:outline-none"
+            className={cn(
+              "md:hidden p-2 focus:outline-none transition-colors duration-300",
+              isTransparent ? "text-white" : "text-[#1A1A1A]"
+            )}
             aria-expanded={mobileMenuOpen}
             aria-label="Toggle navigation menu"
           >

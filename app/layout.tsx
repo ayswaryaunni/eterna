@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { Cormorant_Garamond, Jost } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/data/site";
@@ -9,10 +9,11 @@ const serifFont = Cormorant_Garamond({
   variable: "--font-serif",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const sansFont = Plus_Jakarta_Sans({
+const sansFont = Jost({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],

@@ -9,7 +9,7 @@ export const portfolioItems: PortfolioItem[] = [
     date: "June 2025",
     description:
       "A cliffside celebration perched above the Mediterranean, featuring cascading white florals, classical strings, and an intimate candlelit cliff terrace banquet.",
-    coverImage: "/images/portfolio/amalfi-wedding.svg",
+    coverImage: "/images/portfolio/amalfi-wedding.jpg",
     featured: true,
   },
   {
@@ -20,7 +20,7 @@ export const portfolioItems: PortfolioItem[] = [
     date: "September 2025",
     description:
       "An opulent 18th-century French chateau wedding with gilded accents, crystal chandeliers, a bespoke champagne tower, and a midnight fireworks display.",
-    coverImage: "/images/portfolio/chateau-wedding.svg",
+    coverImage: "/images/portfolio/chateau-wedding.jpg",
     featured: true,
   },
   {
@@ -31,7 +31,7 @@ export const portfolioItems: PortfolioItem[] = [
     date: "May 2025",
     description:
       "An organic, meadow-inspired garden marquee wedding celebrating British countryside charm with wild English roses and bespoke artisan dining.",
-    coverImage: "/images/portfolio/cotswolds-wedding.svg",
+    coverImage: "/images/portfolio/cotswolds-wedding.jpg",
     featured: true,
   },
   {
@@ -42,7 +42,7 @@ export const portfolioItems: PortfolioItem[] = [
     date: "July 2025",
     description:
       "Arrival by vintage wooden speedboats, velvet lounges on manicured lawns, and an ethereal glasshouse dinner beneath cascading wisteria.",
-    coverImage: "/images/portfolio/lake-como-wedding.svg",
+    coverImage: "/images/portfolio/lake-como-wedding.jpg",
     featured: true,
   },
   {
@@ -53,7 +53,7 @@ export const portfolioItems: PortfolioItem[] = [
     date: "October 2025",
     description:
       "A harmonious blend of Japanese architectural serenity and contemporary elegance, framed by autumn maple foliage and minimalist floral sculptures.",
-    coverImage: "/images/portfolio/kyoto-wedding.svg",
+    coverImage: "/images/portfolio/kyoto-wedding.jpg",
     featured: false,
   },
   {
@@ -64,7 +64,7 @@ export const portfolioItems: PortfolioItem[] = [
     date: "December 2025",
     description:
       "A sleek, black-tie milestone gala overlooking the glittering New York skyline with dramatic monochromatic styling and bespoke jazz performances.",
-    coverImage: "/images/portfolio/manhattan-gala.svg",
+    coverImage: "/images/portfolio/manhattan-gala.jpg",
     featured: false,
   },
 ];

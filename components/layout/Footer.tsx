@@ -9,16 +9,25 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#141414] text-neutral-300 pt-20 pb-12 border-t border-neutral-800">
-      <Container size="wide">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-16 border-b border-neutral-800">
+    <footer className="relative bg-[#0F0F0F] text-neutral-300 pt-20 pb-12 border-t border-neutral-800/80 overflow-hidden">
+      {/* Subtle Luxury Grid Lines Pattern */}
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(to right, #C5A880 1px, transparent 1px), linear-gradient(to bottom, #C5A880 1px, transparent 1px)`,
+          backgroundSize: `60px 60px`
+        }}
+      />
+
+      <Container size="wide" className="relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-16 border-b border-neutral-800/80">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-6">
             <div>
               <span className="font-serif text-3xl tracking-[0.2em] text-white block">
                 ETERNA
               </span>
-              <span className="text-[10px] tracking-[0.35em] uppercase text-neutral-400 font-light">
+              <span className="text-[10px] tracking-[0.35em] uppercase text-[#C5A880] font-light">
                 Luxury Weddings & Events
               </span>
             </div>
@@ -75,8 +84,8 @@ export function Footer() {
               Concierge
             </h4>
             <div className="space-y-2 text-sm text-neutral-400">
-              <p>{siteConfig.email}</p>
-              <p>{siteConfig.phone}</p>
+              <p className="hover:text-white transition-colors cursor-pointer">{siteConfig.email}</p>
+              <p className="hover:text-white transition-colors cursor-pointer">{siteConfig.phone}</p>
               <p className="text-xs text-neutral-500 pt-2 leading-relaxed">
                 {siteConfig.address}
               </p>
@@ -89,13 +98,13 @@ export function Footer() {
           <p>© {currentYear} {siteConfig.name} Atelier. All rights reserved.</p>
           <div className="flex items-center gap-6">
             {footerLinks.legal.map((item) => (
-              <a
+              <Link
                 key={item.label}
                 href={item.href}
                 className="hover:text-neutral-400 transition-colors"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

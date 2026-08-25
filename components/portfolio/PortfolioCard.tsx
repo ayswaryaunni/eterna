@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { PortfolioItem } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -13,42 +16,58 @@ export function PortfolioCard({ item, className }: PortfolioCardProps) {
   return (
     <article
       className={cn(
-        "group block bg-[#FAF8F5] overflow-hidden border border-[#EAE5DE] transition-all duration-300 hover:shadow-md",
+        "group relative bg-[#141414] overflow-hidden border border-[#EAE5DE] aspect-[4/5] cursor-pointer",
         className
       )}
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-200">
-        <Image
-          src={item.coverImage}
-          alt={item.title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
+      {/* Background Image with Zoom Effect */}
+      <Image
+        src={item.coverImage}
+        alt={item.title}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 opacity-90 group-hover:opacity-100"
+      />
+
+      {/* Dark Overlay gradient - default subtle, deeper on hover */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10 transition-opacity duration-500 group-hover:from-black/90 group-hover:via-black/50" />
+
+      {/* Always Visible Category & Location Badge at Top */}
+      <div className="absolute top-6 left-6 right-6 flex items-center justify-between text-[10px] tracking-[0.25em] uppercase text-[#C5A880] font-light z-10">
+        <span className="bg-black/40 backdrop-blur-md px-3 py-1 border border-white/10">
+          {item.category}
+        </span>
+        {item.location && (
+          <span className="text-white/70 bg-black/40 backdrop-blur-md px-3 py-1 border border-white/10">
+            {item.location}
+          </span>
+        )}
       </div>
 
-      <div className="p-6 sm:p-8 space-y-3">
-        <div className="flex items-center justify-between text-xs tracking-widest uppercase text-[#B8976C] font-medium">
-          <span>{item.category}</span>
-          {item.location && <span className="text-neutral-500">{item.location}</span>}
-        </div>
-
-        <h3 className="font-serif text-xl sm:text-2xl text-[#1A1A1A] group-hover:text-[#B8976C] transition-colors leading-snug">
+      {/* Content Container - Animated Reveal on Hover */}
+      <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 z-10 flex flex-col justify-end">
+        {/* Title always visible, moves up slightly on hover */}
+        <h3 className="font-serif text-2xl sm:text-3xl text-white leading-tight transition-transform duration-500 ease-out group-hover:-translate-y-2">
           {item.title}
         </h3>
 
-        <p className="text-sm text-neutral-600 font-light line-clamp-2 leading-relaxed">
-          {item.description}
-        </p>
+        {/* Hidden Details Container - Expands and Fades In on Hover */}
+        <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
+          <div className="overflow-hidden space-y-4 pt-2">
+            <p className="text-xs text-white/80 font-light leading-relaxed">
+              {item.description}
+            </p>
 
-        <div className="pt-2">
-          <Link
-            href="/contact"
-            className="inline-flex text-xs tracking-[0.18em] uppercase text-[#1A1A1A] font-medium group-hover:text-[#B8976C] transition-colors items-center gap-1"
-          >
-            Inquire About This Style →
-          </Link>
+            <div className="pt-2 border-t border-white/20">
+              <Link
+                href="/portfolio"
+                className="inline-flex text-[11px] tracking-[0.22em] uppercase text-[#C5A880] font-medium hover:text-white transition-colors items-center gap-2"
+              >
+                <span>View Full Gallery</span>
+                <span className="text-xs transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </article>

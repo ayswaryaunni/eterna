@@ -15,7 +15,7 @@ export function Container({
   const sizeClasses = {
     narrow: "max-w-4xl",
     default: "max-w-7xl",
-    wide: "max-w-[1400px]",
+    wide: "max-w-[1450px]",
     full: "max-w-full",
   };
 

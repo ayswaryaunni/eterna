@@ -1,12 +1,13 @@
 import React from "react";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
+import { FadeIn } from "@/components/common/FadeIn";
 
 export function ContactCTA() {
   return (
-    <section className="py-24 bg-[#141414] text-white text-center">
+    <section className="py-[60px] bg-[#141414] text-white text-center">
       <Container size="default">
-        <div className="max-w-3xl mx-auto space-y-6">
+        <FadeIn className="max-w-3xl mx-auto space-y-6">
           <span className="text-xs uppercase tracking-[0.3em] text-[#C5A880] font-medium block">
             Begin Your Journey
           </span>
@@ -26,7 +27,7 @@ export function ContactCTA() {
               Request a Consultation
             </Button>
           </div>
-        </div>
+        </FadeIn>
       </Container>
     </section>
   );

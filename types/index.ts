@@ -50,3 +50,13 @@ export interface SiteConfig {
   phone: string;
   address: string;
 }
+
+export interface TestimonialItem {
+  id: string;
+  quote: string;
+  author: string;
+  role: string;
+  location: string;
+  event: string;
+  image?: string;
+}

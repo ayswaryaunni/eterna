@@ -11,14 +11,14 @@
 
 @theme {
   --font-serif: var(--font-serif), "Cormorant Garamond", Georgia, serif;
-  --font-sans: var(--font-sans), "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: var(--font-sans), "Jost", -apple-system, BlinkMacSystemFont, sans-serif;
   --color-ivory: #FAF8F5;
   --color-charcoal: #141414;
   --color-champagne: #C5A880;
 }
 
 body {
-  background-color: var(--background);
+  background-color: #FAF8F5;
   color: var(--foreground);
   font-family: var(--font-sans);
 }
