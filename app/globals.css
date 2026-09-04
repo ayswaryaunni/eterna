@@ -6,21 +6,37 @@
   --ivory: #FAF8F5;
   --charcoal: #141414;
   --champagne: #C5A880;
+  --purple: #4D004D;
+  --purple-dark: #370037;
+  --purple-light: #660066;
   --border-muted: #EAE5DE;
 }
 
 @theme {
   --font-serif: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+  --font-display: var(--font-display), "Playfair Display", Georgia, serif;
+  --font-opensans: var(--font-opensans), "Open Sans", sans-serif;
   --font-sans: var(--font-sans), "Jost", -apple-system, BlinkMacSystemFont, sans-serif;
   --color-ivory: #FAF8F5;
   --color-charcoal: #141414;
   --color-champagne: #C5A880;
+  --color-purple: #4D004D;
+  --color-purple-dark: #370037;
+  --color-purple-light: #660066;
 }
 
 body {
   background-color: #FAF8F5;
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-opensans {
+  font-family: var(--font-opensans);
 }
 
 h1, h2, h3, h4, .font-serif {

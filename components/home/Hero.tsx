@@ -1,111 +1,152 @@
 "use client";
 
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Play, Pause } from "lucide-react";
 
 export function Hero() {
+  const [isPlaying, setIsPlaying] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((err) => {
+        console.log("Autoplay prevented:", err);
+        setIsPlaying(false);
+      });
+    }
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-end overflow-hidden bg-black">
-
-      {/* ── Background Image (dark editorial) ────────────────────────────────── */}
-      <Image
-        src="/images/portfolio/manhattan-gala.jpg"
-        alt="Eterna — Luxury Wedding & Event Atelier"
-        fill
-        priority
-        className="object-cover object-center opacity-45"
-        sizes="100vw"
-      />
-
-      {/* ── Video overlay (when file is added, plays on top of image) ───────────
-          Place at: /public/videos/hero-wedding.mp4
-      ─────────────────────────────────────────────────────────────────────── */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-50"
-        src="/videos/wedding-ceremony.mp4"
-      />
-
-      {/* ── Dark gradient overlay: heavy at bottom, subtle at top ─────────────── */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/40 to-black/20" />
-      {/* ── Left vignette for editorial depth ──────────────────────────────────── */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
-
-      {/* ── Hero Content ─────────────────────────────────────────────────────── */}
-      <div className="relative z-10 w-full max-w-[1450px] mx-auto px-6 sm:px-10 lg:px-16 pt-28 sm:pt-32 pb-16 sm:pb-24">
-
-        {/* Tag line */}
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-[10px] sm:text-[11px] uppercase tracking-[0.4em] text-[#C5A880] mb-5 font-light"
-        >
-          Luxury Wedding &amp; Event Atelier
-        </motion.p>
-
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 36 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="font-serif font-light text-white leading-[1.07] tracking-tight mb-9"
-          style={{ fontSize: "clamp(2.4rem, 6vw, 5.5rem)" }}
-        >
-          Crafting Timeless<br />
-          Celebrations of<br />
-          Love &amp; Grandeur
-        </motion.h1>
-
-        {/* Thin divider */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-          style={{ transformOrigin: "left" }}
-          className="w-12 h-px bg-[#C5A880] mb-8"
+    <section className="relative min-h-[92vh] lg:min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-[#121212]">
+      {/* ── Main Romantic Couple Background ──────────────────────────────── */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero-couple.jpg"
+          alt="Where forever begins beautifully together — Eterna"
+          fill
+          priority
+          className="object-cover object-[65%_center] sm:object-center opacity-85"
+          sizes="100vw"
         />
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.0 }}
-          className="flex flex-wrap items-center gap-4 sm:gap-7"
-        >
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center px-8 py-3 bg-white text-[#1A1A1A] text-[11px] uppercase tracking-[0.22em] font-medium hover:bg-[#C5A880] hover:text-white transition-colors duration-300"
-          >
-            View Portfolio
-          </Link>
-          <Link
-            href="/contact"
-            className="text-[11px] uppercase tracking-[0.22em] text-white/50 hover:text-white border-b border-white/20 hover:border-white/60 pb-0.5 transition-colors duration-300"
-          >
-            Begin Planning
-          </Link>
-        </motion.div>
+        {/* Soft Vignette Overlay: Darker on left for text readability, subtle purple tint on bottom */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[#4D004D]/30 via-transparent to-transparent" />
       </div>
 
-      {/* ── Scroll indicator ─────────────────────────────────────────────────── */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.6, duration: 0.8 }}
-        className="absolute bottom-8 right-10 hidden sm:flex flex-col items-center gap-2.5"
-      >
-        <span className="text-[9px] uppercase tracking-[0.3em] text-white/25 [writing-mode:vertical-rl]">
-          Scroll
-        </span>
-        <div className="w-px h-10 bg-white/15" />
-      </motion.div>
+      {/* ── Content Container ──────────────────────────────────────────────── */}
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+        
+        {/* Left Side: Headline & Narrative */}
+        <div className="w-full lg:max-w-2xl xl:max-w-3xl text-left space-y-6 pt-6">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-3"
+          >
+            <span className="w-8 h-px bg-[#C5A880]" />
+            <span className="text-[11px] uppercase tracking-[0.35em] text-[#C5A880] font-light">
+              Eterna Atelier
+            </span>
+          </motion.div>
 
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="font-serif font-light text-white leading-[1.08] tracking-tight"
+            style={{ fontSize: "clamp(2.8rem, 5.8vw, 5.5rem)" }}
+          >
+            Where forever<br />
+            begins <span className="italic font-light text-[#C5A880]">beautifully</span><br />
+            together
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed max-w-lg"
+          >
+            A walkthrough of how we translate your personal love story into a visual language at Eterna Atelier.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+            className="pt-2 flex items-center gap-5"
+          >
+            <Link
+              href="/contact"
+              className="inline-flex items-center px-8 py-3.5 bg-white text-[#141414] text-xs uppercase tracking-[0.2em] font-medium rounded-full hover:bg-[#C5A880] hover:text-white transition-all duration-300 shadow-lg"
+            >
+              Start Planning
+            </Link>
+            <Link
+              href="/portfolio"
+              className="text-xs uppercase tracking-[0.2em] text-white/80 hover:text-white border-b border-white/30 hover:border-white pb-1 transition-all"
+            >
+              Explore Stories
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Right Side: Compact Floating Interactive Video Card */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92, y: 40 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="w-full lg:w-[280px] xl:w-[320px] bg-white rounded-2xl p-3.5 shadow-2xl relative self-center lg:self-end border border-white/20"
+        >
+          {/* Card Media Preview Container */}
+          <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-neutral-900 group">
+            {/* Embedded Ambient Video */}
+            <video
+              ref={videoRef}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover z-10"
+              src="/images/hero/6a6305bf5040b777232a1810_GG_mp4.mp4"
+            />
+
+            {/* Play/Pause Overlay Button */}
+            <button
+              type="button"
+              onClick={togglePlay}
+              aria-label={isPlaying ? "Pause video preview" : "Play video preview"}
+              className="absolute bottom-2.5 left-2.5 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-black/80 transition-all cursor-pointer z-20"
+            >
+              {isPlaying ? <Pause size={14} /> : <Play size={14} className="ml-0.5" />}
+            </button>
+          </div>
+
+          {/* Card Details Text */}
+          <div className="pt-3 px-0.5 pb-0.5">
+            <p className="text-[11px] sm:text-xs text-neutral-600 font-light leading-relaxed">
+              A walkthrough of how we shape your vision and turn dreams into real.
+            </p>
+          </div>
+        </motion.div>
+
+      </div>
     </section>
   );
 }

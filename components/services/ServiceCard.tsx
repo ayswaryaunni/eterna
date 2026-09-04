@@ -44,7 +44,7 @@ export function ServiceCard({ service, index, className }: ServiceCardProps) {
               {service.subtitle}
             </span>
           )}
-          <h3 className="font-serif text-2xl text-[#1A1A1A]">{service.title}</h3>
+          <h3 className="font-serif text-2xl text-[#1A1A1A] group-hover:text-[#B8976C] transition-colors">{service.title}</h3>
           <p className="text-sm text-neutral-600 leading-relaxed font-light">
             {service.description}
           </p>
@@ -64,7 +64,7 @@ export function ServiceCard({ service, index, className }: ServiceCardProps) {
         <div className="pt-4 border-t border-[#EAE5DE]">
           <Link
             href="/contact"
-            className="text-xs uppercase tracking-[0.18em] font-medium text-[#1A1A1A] hover:text-[#B8976C] transition-colors inline-flex items-center gap-1"
+            className="text-xs uppercase tracking-[0.18em] font-medium text-[#4D004D] hover:text-[#370037] transition-colors inline-flex items-center gap-1"
           >
             Request Consultation →
           </Link>

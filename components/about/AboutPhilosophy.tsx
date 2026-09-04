@@ -27,9 +27,9 @@ export function AboutPhilosophy() {
   ];
 
   return (
-    <section className="py-[100px] bg-[#0D0D0D] text-white overflow-hidden relative border-y border-neutral-800">
+    <section className="py-[100px] bg-[#370037] text-white overflow-hidden relative border-y border-[#4D004D]">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#C5A880]/5 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#4D004D] blur-[150px] rounded-full pointer-events-none" />
 
       <Container size="wide">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 mb-16">

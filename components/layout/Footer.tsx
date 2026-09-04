@@ -9,10 +9,10 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#0F0F0F] text-neutral-300 pt-20 pb-12 border-t border-neutral-800/80 overflow-hidden">
+    <footer className="relative bg-[#2A002A] text-purple-100/90 pt-20 pb-12 border-t border-[#4D004D] overflow-hidden">
       {/* Subtle Luxury Grid Lines Pattern */}
       <div 
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 opacity-[0.05] pointer-events-none"
         style={{
           backgroundImage: `linear-gradient(to right, #C5A880 1px, transparent 1px), linear-gradient(to bottom, #C5A880 1px, transparent 1px)`,
           backgroundSize: `60px 60px`
@@ -20,7 +20,7 @@ export function Footer() {
       />
 
       <Container size="wide" className="relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-16 border-b border-neutral-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-16 border-b border-[#4D004D]/60">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-6">
             <div>

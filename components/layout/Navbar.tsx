@@ -14,9 +14,9 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Transparent hero-style navbar only on home page
-  const isHomePage = pathname === "/";
-  const isTransparent = isHomePage && !isScrolled;
+  // Transparent hero-style navbar on pages with dark hero images (Home and About pages)
+  const isHeroPage = pathname === "/" || pathname === "/about";
+  const isTransparent = isHeroPage && !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +50,7 @@ export function Navbar() {
           >
             <span className={cn(
               "font-serif text-2xl sm:text-3xl tracking-[0.2em] font-normal transition-colors duration-500",
-              isTransparent ? "text-white hover:text-[#C5A880]" : "text-[#1A1A1A] hover:text-[#B8976C]"
+              isTransparent ? "text-white hover:text-[#C5A880]" : "text-[#4D004D] hover:text-[#370037]"
             )}>
               ETERNA
             </span>
@@ -91,7 +91,16 @@ export function Navbar() {
 
           {/* Desktop CTA Button */}
           <div className="hidden md:flex items-center">
-            <Button href="/contact" size="sm" variant="primary">
+            <Button
+              href="/contact"
+              size="sm"
+              variant="primary"
+              className={cn(
+                isTransparent
+                  ? "bg-[#4D004D] text-white hover:bg-[#C5A880] hover:text-[#1A1A1A]"
+                  : "bg-[#4D004D] text-white hover:bg-[#370037]"
+              )}
+            >
               Inquire
             </Button>
           </div>

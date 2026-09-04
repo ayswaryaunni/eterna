@@ -1,134 +1,125 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
 
-export function AboutPreview() {
+interface WordProps {
+  children: string;
+  range: [number, number];
+  progress: any;
+}
+
+function Word({ children, range, progress }: WordProps) {
+  const opacity = useTransform(progress, range, [0.2, 1]);
+  const color = useTransform(progress, range, ["#9E9E9E", "#1A1A1A"]);
   return (
-    <section className="py-[100px] bg-[#FAF8F5] border-y border-[#EAE5DE] relative overflow-hidden">
-      <Container size="wide">
-        {/* Top Header Badge & Large Typography */}
-        <div className="max-w-4xl mb-16 space-y-4">
-          <motion.span
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-xs uppercase tracking-[0.4em] text-[#C5A880] font-medium block"
-          >
-            The Atelier
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-[#1A1A1A] leading-[1.1] tracking-tight"
-          >
-            Where Architectural Precision<br className="hidden sm:block" />
-            Meets <span className="italic font-serif text-[#C5A880]">Poetic Romance</span>
-          </motion.h2>
+    <motion.span style={{ opacity, color }} className="inline-block mr-[0.25em] transition-colors">
+      {children}
+    </motion.span>
+  );
+}
+
+export function AboutPreview() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 0.85", "start 0.2"],
+  });
+
+  const statementText = "At Eterna, We turn weddings into unforgettable stories. Our team designs, plans, and manages every detail with care.";
+  const words = statementText.split(" ");
+
+  return (
+    <section className="py-20 lg:py-28 bg-[#FAF8F5] border-y border-[#EAE5DE] relative overflow-hidden">
+      <Container size="wide" className="relative z-10 space-y-12 lg:space-y-16">
+        
+        {/* Top Header Large Statement Typography (Word-by-word scroll lighting/brightening) */}
+        <div ref={containerRef} className="max-w-5xl">
+          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal leading-[1.25] tracking-tight">
+            {words.map((word, i) => {
+              const start = i / words.length;
+              const end = start + (1 / words.length);
+              return (
+                <Word key={i} range={[start, end]} progress={scrollYProgress}>
+                  {word}
+                </Word>
+              );
+            })}
+          </h2>
         </div>
 
-        {/* Asymmetric Overlapping Editorial Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* 3-Column Layout: Left Image | Center Details | Right Tall Image */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 items-center">
+          
+          {/* Left Column: Landscape Image with Rounded Corners */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="md:col-span-4 relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-md"
+          >
+            <Image
+              src="/images/portfolio/amalfi-wedding.jpg"
+              alt="Beach Floral Arch Ceremony"
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </motion.div>
 
-          {/* Left Column: Overlapping Dual Image Composition */}
-          <div className="lg:col-span-7 relative">
-            {/* Primary Large Image */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative aspect-[16/10] w-full overflow-hidden shadow-xl"
-            >
-              <Image
-                src="/images/portfolio/lake-como-wedding.jpg"
-                alt="Lake Como Grandeur"
-                fill
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-cover transition-transform duration-1000 hover:scale-105"
-              />
-            </motion.div>
+          {/* Middle Column: Two Stacked Feature Blocks */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="md:col-span-4 space-y-8 lg:px-2"
+          >
+            <div className="space-y-2.5">
+              <h3 className="font-serif text-2xl sm:text-3xl text-[#1A1A1A] font-normal">
+                Personalized Planning
+              </h3>
+              <p className="text-sm text-neutral-600 font-light leading-relaxed">
+                Every wedding is tailored to reflect your unique love story. Whether it's designing breathtaking décor or coordinating elite global vendors.
+              </p>
+            </div>
 
-            {/* Overlapping Secondary Accent Image Box (Floating Bottom Right) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 40 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="hidden sm:block absolute -bottom-10 -right-6 w-1/2 aspect-[4/5] border-4 border-[#FAF8F5] shadow-2xl overflow-hidden"
-            >
-              <Image
-                src="/images/portfolio/amalfi-wedding.jpg"
-                alt="Amalfi Detail"
-                fill
-                sizes="30vw"
-                className="object-cover transition-transform duration-1000 hover:scale-105"
-              />
-            </motion.div>
-          </div>
+            <div className="space-y-2.5">
+              <h3 className="font-serif text-2xl sm:text-3xl text-[#1A1A1A] font-normal">
+                Trusted Expertise
+              </h3>
+              <p className="text-sm text-neutral-600 font-light leading-relaxed">
+                With years of master craftsmanship, we ensure perfection in every moment. From architectural layouts to seamless day-of execution.
+              </p>
+            </div>
 
-          {/* Right Column: Narrative & Counter Stats Badge */}
-          <div className="lg:col-span-5 space-y-8 lg:pl-6">
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-base sm:text-lg text-neutral-700 font-light leading-relaxed"
-            >
-              Founded on the belief that unforgettable milestones are masterworks of art, Eterna curates immersive experiences tailored to the world's most breathtaking settings.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              className="text-sm text-neutral-500 font-light leading-relaxed"
-            >
-              From historic European palaces to secluded island estates, our team coordinates every sensory dimension—lighting, floral architecture, gastronomy, and live music.
-            </motion.p>
-
-            {/* Minimalist Floating Stats Bar */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="grid grid-cols-3 gap-4 pt-6 border-t border-[#EAE5DE]"
-            >
-              <div>
-                <span className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] block font-light">10+</span>
-                <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-light">Years</span>
-              </div>
-              <div>
-                <span className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] block font-light">150+</span>
-                <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-light">Events</span>
-              </div>
-              <div>
-                <span className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] block font-light">18+</span>
-                <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-light">Havens</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="pt-2"
-            >
-              <Button href="/about" variant="outline" size="default">
+            <div className="pt-2">
+              <Button href="/about" variant="outline" size="default" className="border-[#4D004D] text-[#4D004D] hover:bg-[#4D004D] hover:text-white rounded-full">
                 Discover Our Story
               </Button>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Tall Portrait Image with Rounded Corners */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="md:col-span-4 relative aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-md"
+          >
+            <Image
+              src="/images/portfolio/chateau-wedding.jpg"
+              alt="Outdoor Floral Archway"
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </motion.div>
 
         </div>
       </Container>

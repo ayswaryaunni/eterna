@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { AboutPreview } from "@/components/home/AboutPreview";
@@ -17,15 +18,41 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="pt-24">
-      {/* Editorial Hero Header */}
-      <section className="py-20 bg-[#FAF8F5] border-b border-[#EAE5DE]">
-        <Container size="default" className="text-center">
-          <SectionHeading
-            tag="Our Story & Vision"
-            title="The Art of Timeless Celebration"
-            description="Dedicated to orchestrating extraordinary milestone celebrations with architectural elegance, poetic romance, and bespoke grace."
+    <main>
+      {/* Editorial Luxury Hero Header */}
+      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-40 pb-32 text-white text-center">
+        {/* Background Image - Bright Luxury View with Targeted Text-Area Contrast */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/about-hero.jpg"
+            alt="Eterna Atelier — The Art of Timeless Celebration"
+            fill
+            priority
+            className="object-cover object-center opacity-100"
+            sizes="100vw"
           />
+          {/* Subtle Top Navbar Gradient & Soft Center Spotlight Vignette for 100% Text Readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0A0A0A]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(0,0,0,0.65)_0%,_rgba(0,0,0,0.3)_60%,_transparent_100%)]" />
+        </div>
+
+        <Container size="default" className="relative z-10 space-y-6 max-w-3xl">
+          <div className="inline-flex items-center gap-3">
+            <span className="w-8 h-px bg-[#C5A880]" />
+            <span className="text-[11px] uppercase tracking-[0.35em] text-[#C5A880] font-semibold drop-shadow">
+              Our Story & Vision
+            </span>
+            <span className="w-8 h-px bg-[#C5A880]" />
+          </div>
+
+          <h1 className="font-serif text-4xl sm:text-6xl font-light text-white leading-[1.15] tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+            The Art of Timeless<br />
+            <span className="italic font-light text-[#D4AF37]">Celebration & Grandeur</span>
+          </h1>
+
+          <p className="text-sm sm:text-base text-white/90 font-light max-w-xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            Dedicated to orchestrating extraordinary milestone celebrations with architectural elegance, poetic romance, and bespoke grace.
+          </p>
         </Container>
       </section>
 
