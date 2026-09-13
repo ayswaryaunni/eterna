@@ -1,0 +1,80 @@
+:root {
+
+  /* ========================================
+     ETERNA BASE PALETTE
+     ======================================== */
+
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Brand Palette */
+  --plum: #40003F;
+  --deep-plum: #24151D;
+  --espresso-plum: #3a2b30;
+  --mauve: #9A7789;
+  --champagne: #C7A77A;
+
+  /* Neutrals */
+  --ivory: #F7F4EF;
+  --cream: #EEE9E1;
+  --warm-gray: #D8D0C8;
+  --muted-text: #6F6265;
+  --light-border: #DED7D1;
+}
+
+
+/* ========================================
+   ETERNA SEMANTIC COLOR TOKENS
+   ======================================== */
+
+:root {
+
+  /* Brand */
+  --color-primary: var(--plum);
+  --color-secondary: var(--mauve);
+  --color-accent: var(--champagne);
+
+  /* Backgrounds */
+  --color-background: var(--ivory);
+  --color-surface: var(--cream);
+  --color-dark: var(--deep-plum);
+  --color-theme-background: var(--plum);
+  --color-theme-subtle: var(--mauve);
+
+  /* Text */
+  --color-heading: var(--deep-plum);
+  --color-text: var(--espresso-plum);
+  --color-text-muted: var(--muted-text);
+  --color-text-subtle: var(--mauve);
+  --color-text-light: var(--ivory);
+  --color-text-white: var(--white);
+}
+
+
+@theme {
+
+  /* Brand */
+  --color-eterna-primary: var(--color-primary);
+  --color-eterna-secondary: var(--color-secondary);
+  --color-eterna-accent: var(--color-accent);
+
+  /* Backgrounds */
+  --color-primary-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-dark: var(--color-dark);
+  --color-theme-background: var(--color-theme-background);
+  --color-theme-subtle: var(--color-theme-subtle);
+
+  /* Text */
+  --color-primary-text: var(--color-heading);
+  --color-highlight-text: var(--color-heading);
+  --color-main-text: var(--color-text);
+  --color-text-subtle: var(--color-text-subtle);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-light: var(--color-text-light);
+  --color-text-white: var(--color-text-white);
+
+  /* Borders */
+  --color-border-light: var(--light-border);
+  --color-border-dark: var(--color-dark);
+}

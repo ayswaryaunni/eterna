@@ -27,7 +27,7 @@ export function Button({
 
   const variants = {
     primary:
-      "bg-[#1A1A1A] text-white hover:bg-[#C5A880] hover:text-[#1A1A1A] shadow-sm",
+      "bg-theme-background text-white hover:bg-theme-subtle hover:text-[#1A1A1A] shadow-sm",
     secondary:
       "bg-[#FAF8F5] text-[#1A1A1A] border border-[#E5E0D8] hover:bg-[#F3EFEA]",
     outline:

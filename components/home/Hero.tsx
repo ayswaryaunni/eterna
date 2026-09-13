@@ -22,14 +22,14 @@ export function Hero() {
       {/* ── Video overlay (when file is added, plays on top of image) ───────────
           Place at: /public/videos/hero-wedding.mp4
       ─────────────────────────────────────────────────────────────────────── */}
-      <video
+      {/* <video
         autoPlay
         muted
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover opacity-50"
         src="/videos/wedding-ceremony.mp4"
-      />
+      /> */}
 
       {/* ── Dark gradient overlay: heavy at bottom, subtle at top ─────────────── */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/40 to-black/20" />

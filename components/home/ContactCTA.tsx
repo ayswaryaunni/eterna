@@ -5,16 +5,19 @@ import { FadeIn } from "@/components/common/FadeIn";
 
 export function ContactCTA() {
   return (
-    <section className="py-[60px] bg-[#141414] text-white text-center">
+    <section
+      className="py-[60px] bg-[#141414] text-center bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/backrounds/footer-bg-image.png')" }}
+    >
       <Container size="default">
         <FadeIn className="max-w-3xl mx-auto space-y-6">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#C5A880] font-medium block">
+          <span className="text-xs uppercase tracking-[0.3em] text-text-muted font-medium block">
             Begin Your Journey
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-normal leading-tight">
+          <h2 className="font-serif text-3xl text-primary-text sm:text-5xl font-normal leading-tight">
             Let Us Craft Your Next Masterpiece
           </h2>
-          <p className="text-sm sm:text-base text-neutral-300 font-light max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-main-text font-light max-w-xl mx-auto leading-relaxed">
             We accept a limited number of commissions each year to ensure uncompromising
             devotion to every client. Inquire today for upcoming dates.
           </p>
@@ -22,7 +25,7 @@ export function ContactCTA() {
             <Button
               href="/contact"
               size="lg"
-              className="bg-[#C5A880] text-[#1A1A1A] hover:bg-white hover:text-[#1A1A1A]"
+              variant="primary"
             >
               Request a Consultation
             </Button>

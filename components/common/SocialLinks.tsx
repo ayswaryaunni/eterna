@@ -58,7 +58,7 @@ export function SocialLinks({
           rel="noopener noreferrer"
           aria-label={item.name}
           className={cn(
-            "transition-colors duration-200 p-2.5 rounded-full border border-neutral-800 text-neutral-400 hover:text-[#C5A880] hover:border-[#C5A880]/50 hover:bg-[#C5A880]/10",
+            "transition-colors duration-200 p-2.5 rounded-full border border-border-dark text-main-text hover:text-eterna-primary hover:border-eterna-primary hover:bg-eterna-primary/10",
             iconClassName
           )}
         >

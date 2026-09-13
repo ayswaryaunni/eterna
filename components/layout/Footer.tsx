@@ -9,29 +9,29 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#0F0F0F] text-neutral-300 pt-20 pb-12 border-t border-neutral-800/80 overflow-hidden">
+    <footer className="relative bg-primary-background text-neutral-300 pt-20 pb-12 overflow-hidden">
       {/* Subtle Luxury Grid Lines Pattern */}
-      <div 
+      {/* <div 
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: `linear-gradient(to right, #C5A880 1px, transparent 1px), linear-gradient(to bottom, #C5A880 1px, transparent 1px)`,
           backgroundSize: `60px 60px`
         }}
-      />
+      /> */}
 
       <Container size="wide" className="relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-16 border-b border-neutral-800/80">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-6">
             <div>
-              <span className="font-serif text-3xl tracking-[0.2em] text-white block">
+              <span className="font-serif text-3xl tracking-[0.2em] text-highlight-text block">
                 ETERNA
               </span>
-              <span className="text-[10px] tracking-[0.35em] uppercase text-[#C5A880] font-light">
+              <span className="text-[10px] tracking-[0.35em] uppercase text-main-text font-light">
                 Luxury Weddings & Events
               </span>
             </div>
-            <p className="text-sm text-neutral-400 max-w-sm leading-relaxed font-light">
+            <p className="text-sm text-main-text max-w-sm leading-relaxed font-light">
               Crafting bespoke celebrations and architectural spatial experiences
               for discerning couples and esteemed hosts worldwide.
             </p>
@@ -42,7 +42,7 @@ export function Footer() {
 
           {/* Navigation Links */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-[#C5A880] font-medium">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-primary-text font-medium">
               Explore
             </h4>
             <ul className="space-y-3">
@@ -50,7 +50,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-neutral-400 hover:text-white transition-colors duration-200"
+                    className="text-sm text-main-text hover:text-theme-subtle transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -61,7 +61,7 @@ export function Footer() {
 
           {/* Services Links */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-[#C5A880] font-medium">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-primary-text font-medium">
               Services
             </h4>
             <ul className="space-y-3">
@@ -69,7 +69,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-neutral-400 hover:text-white transition-colors duration-200"
+                    className="text-sm text-main-text hover:text-theme-subtle transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -80,13 +80,13 @@ export function Footer() {
 
           {/* Direct Concierge Contact */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-[#C5A880] font-medium">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-primary-text font-medium">
               Concierge
             </h4>
-            <div className="space-y-2 text-sm text-neutral-400">
-              <p className="hover:text-white transition-colors cursor-pointer">{siteConfig.email}</p>
-              <p className="hover:text-white transition-colors cursor-pointer">{siteConfig.phone}</p>
-              <p className="text-xs text-neutral-500 pt-2 leading-relaxed">
+            <div className="space-y-2 text-sm text-main-text">
+              <p className="hover:text-theme-subtle transition-colors cursor-pointer">{siteConfig.email}</p>
+              <p className="hover:text-theme-subtle transition-colors cursor-pointer">{siteConfig.phone}</p>
+              <p className="text-xs pt-2 leading-relaxed">
                 {siteConfig.address}
               </p>
             </div>

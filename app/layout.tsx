@@ -3,7 +3,7 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/data/site";
-import "./globals.css";
+import "./styles/globals.css";
 
 const serifFont = Cormorant_Garamond({
   variable: "--font-serif",
