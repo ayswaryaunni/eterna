@@ -1,7 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Container } from "@/components/common/Container";
-import { SectionHeading } from "@/components/common/SectionHeading";
+import { HeroSection } from "@/components/common/HeroSection";
 import { AboutPreview } from "@/components/home/AboutPreview";
 import { AboutPhilosophy } from "@/components/about/AboutPhilosophy";
 import { AboutProcess } from "@/components/about/AboutProcess";
@@ -17,17 +16,14 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="pt-24">
-      {/* Editorial Hero Header */}
-      <section className="py-20 bg-[#FAF8F5] border-b border-[#EAE5DE]">
-        <Container size="default" className="text-center">
-          <SectionHeading
-            tag="Our Story & Vision"
-            title="The Art of Timeless Celebration"
-            description="Dedicated to orchestrating extraordinary milestone celebrations with architectural elegance, poetic romance, and bespoke grace."
-          />
-        </Container>
-      </section>
+    <main className="">
+{/* Editorial Hero Header */}
+      <HeroSection
+        image="/images/backgrounds/section-bg.jpg"
+        tag="Our Story & Vision"
+        title="The Art of Timeless Celebration"
+        description="Dedicated to orchestrating extraordinary milestone celebrations with architectural elegance, poetic romance, and bespoke grace."
+      />
 
       {/* 1. Main Atelier Story (Editorial Grid) */}
       <AboutPreview />

@@ -17,6 +17,7 @@ export interface PortfolioItem {
   date?: string;
   description: string;
   coverImage: string;
+  coupleName?: string;
   images?: string[];
   videoUrl?: string;
   featured?: boolean;

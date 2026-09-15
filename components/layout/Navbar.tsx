@@ -15,7 +15,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   // Transparent hero-style navbar only on home page
-  const isHomePage = pathname === "/";
+  const isHomePage = pathname === "/" || "/about" || "/services" || "/portfolio" || "/contact";
   const isTransparent = isHomePage && !isScrolled;
 
   useEffect(() => {

@@ -10,6 +10,15 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "A cliffside celebration perched above the Mediterranean, featuring cascading white florals, classical strings, and an intimate candlelit cliff terrace banquet.",
     coverImage: "/images/portfolio/amalfi-wedding.jpg",
+    coupleName: "Ruba and Manoop",
+    images: [
+      "/images/portfolio/amalfi-wedding.jpg",
+      "/images/portfolio/lake-como-wedding.jpg",
+      "/images/portfolio/chateau-wedding.jpg",
+      "/images/portfolio/cotswolds-wedding.jpg",
+      "/images/portfolio/manhattan-gala.jpg",
+      "/images/portfolio/kyoto-wedding.jpg",
+    ],
     featured: true,
   },
   {
@@ -21,6 +30,15 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "An opulent 18th-century French chateau wedding with gilded accents, crystal chandeliers, a bespoke champagne tower, and a midnight fireworks display.",
     coverImage: "/images/portfolio/chateau-wedding.jpg",
+    coupleName: "Ayswarya and Unni",
+    images: [
+      "/images/portfolio/chateau-wedding.jpg",
+      "/images/portfolio/amalfi-wedding.jpg",
+      "/images/portfolio/manhattan-gala.jpg",
+      "/images/portfolio/kyoto-wedding.jpg",
+      "/images/portfolio/lake-como-wedding.jpg",
+      "/images/portfolio/cotswolds-wedding.jpg",
+    ],
     featured: true,
   },
   {
@@ -32,6 +50,15 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "An organic, meadow-inspired garden marquee wedding celebrating British countryside charm with wild English roses and bespoke artisan dining.",
     coverImage: "/images/portfolio/cotswolds-wedding.jpg",
+    coupleName: "Sophia and James",
+    images: [
+      "/images/portfolio/cotswolds-wedding.jpg",
+      "/images/portfolio/chateau-wedding.jpg",
+      "/images/portfolio/amalfi-wedding.jpg",
+      "/images/portfolio/lake-como-wedding.jpg",
+      "/images/portfolio/kyoto-wedding.jpg",
+      "/images/portfolio/manhattan-gala.jpg",
+    ],
     featured: true,
   },
   {
@@ -43,6 +70,15 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "Arrival by vintage wooden speedboats, velvet lounges on manicured lawns, and an ethereal glasshouse dinner beneath cascading wisteria.",
     coverImage: "/images/portfolio/lake-como-wedding.jpg",
+    coupleName: "Isabella and Matteo",
+    images: [
+      "/images/portfolio/lake-como-wedding.jpg",
+      "/images/portfolio/amalfi-wedding.jpg",
+      "/images/portfolio/cotswolds-wedding.jpg",
+      "/images/portfolio/manhattan-gala.jpg",
+      "/images/portfolio/chateau-wedding.jpg",
+      "/images/portfolio/kyoto-wedding.jpg",
+    ],
     featured: true,
   },
   {
@@ -54,6 +90,15 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "A harmonious blend of Japanese architectural serenity and contemporary elegance, framed by autumn maple foliage and minimalist floral sculptures.",
     coverImage: "/images/portfolio/kyoto-wedding.jpg",
+    coupleName: "Hana and Kenji",
+    images: [
+      "/images/portfolio/kyoto-wedding.jpg",
+      "/images/portfolio/chateau-wedding.jpg",
+      "/images/portfolio/lake-como-wedding.jpg",
+      "/images/portfolio/cotswolds-wedding.jpg",
+      "/images/portfolio/amalfi-wedding.jpg",
+      "/images/portfolio/manhattan-gala.jpg",
+    ],
     featured: false,
   },
   {
@@ -65,6 +110,15 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "A sleek, black-tie milestone gala overlooking the glittering New York skyline with dramatic monochromatic styling and bespoke jazz performances.",
     coverImage: "/images/portfolio/manhattan-gala.jpg",
+    coupleName: "Priya and Adam",
+    images: [
+      "/images/portfolio/manhattan-gala.jpg",
+      "/images/portfolio/amalfi-wedding.jpg",
+      "/images/portfolio/kyoto-wedding.jpg",
+      "/images/portfolio/lake-como-wedding.jpg",
+      "/images/portfolio/cotswolds-wedding.jpg",
+      "/images/portfolio/chateau-wedding.jpg",
+    ],
     featured: false,
   },
 ];

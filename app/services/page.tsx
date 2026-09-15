@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Container } from "@/components/common/Container";
-import { SectionHeading } from "@/components/common/SectionHeading";
+import { HeroSection } from "@/components/common/HeroSection";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { ContactCTA } from "@/components/home/ContactCTA";
 import { services } from "@/data/services";
@@ -14,16 +14,13 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="pt-28 pb-12">
-      <div className="py-16 bg-[#FAF8F5] border-b border-[#EAE5DE]">
-        <Container size="default" className="text-center">
-          <SectionHeading
-            tag="Curated Offerings"
-            title="Our Bespoke Services"
-            description="From intimate destination celebrations to grand multi-day estate weddings, we craft unforgettable experiences."
-          />
-        </Container>
-      </div>
+    <main className="">
+      <HeroSection
+        image="/images/backgrounds/section-bg.jpg"
+        tag="Curated Offerings"
+        title="Our Bespoke Services"
+        description="From intimate destination celebrations to grand multi-day estate weddings, we craft unforgettable experiences."
+      />
 
       <section className="py-20 bg-white">
         <Container size="wide">
