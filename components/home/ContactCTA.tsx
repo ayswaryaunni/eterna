@@ -6,8 +6,8 @@ import { FadeIn } from "@/components/common/FadeIn";
 export function ContactCTA() {
   return (
     <section
-      className="py-[60px] bg-[#141414] text-center bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/backrounds/footer-bg-image.png')" }}
+      className="py-[60px] text-center bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/backgrounds/footer-bg-image.png')" }}
     >
       <Container size="default">
         <FadeIn className="max-w-3xl mx-auto space-y-6">

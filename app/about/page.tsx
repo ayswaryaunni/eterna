@@ -36,13 +36,13 @@ export default function AboutPage() {
       <InfiniteMarquee />
 
       {/* 3. Guiding Philosophy (Offset Dark Floating Cards) */}
-      <AboutPhilosophy />
+      {/* <AboutPhilosophy /> */}
 
       {/* 4. Bespoke Process (Connecting Horizontal Timeline) */}
       <AboutProcess />
 
       {/* 5. Leadership Atelier (Alternating Split Cards) */}
-      <AboutTeam />
+      {/* <AboutTeam /> */}
 
       {/* 6. Contact Consultation CTA */}
       <ContactCTA />

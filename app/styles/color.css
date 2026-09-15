@@ -40,9 +40,11 @@
   --color-dark: var(--deep-plum);
   --color-theme-background: var(--plum);
   --color-theme-subtle: var(--mauve);
+  --color-theme-background-dark: var(--deep-plum);
 
   /* Text */
   --color-heading: var(--deep-plum);
+  --color-primary-text: var(--plum);
   --color-text: var(--espresso-plum);
   --color-text-muted: var(--muted-text);
   --color-text-subtle: var(--mauve);
@@ -63,10 +65,11 @@
   --color-surface: var(--color-surface);
   --color-dark: var(--color-dark);
   --color-theme-background: var(--color-theme-background);
+  --color-theme-background-dark: var(--color-theme-background-dark);
   --color-theme-subtle: var(--color-theme-subtle);
 
   /* Text */
-  --color-primary-text: var(--color-heading);
+  --color-primary-text: var(--color-primary-text);
   --color-highlight-text: var(--color-heading);
   --color-main-text: var(--color-text);
   --color-text-subtle: var(--color-text-subtle);

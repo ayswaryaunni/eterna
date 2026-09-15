@@ -10,7 +10,7 @@ export function ServicesPreview() {
   const featuredServices = services.slice(0, 3);
 
   return (
-    <section className="py-[60px] bg-[#FAF8F5]">
+    <section className="py-[60px] bg-primary-background">
       <Container size="wide">
 
         {/* ── Section Heading ─────────────────────────────────────────────── */}
@@ -60,12 +60,12 @@ export function ServicesPreview() {
 
         {/* ── CTA ────────────────────────────────────────────────────────── */}
         <FadeIn delay={0.3} className="mt-14 text-center">
-          <Button href="/services" variant="outline" size="default">
+          <Button href="/services" variant="primary" size="default">
             View All Services
           </Button>
         </FadeIn>
 
       </Container>
     </section>
-  );
+  )
 }

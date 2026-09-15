@@ -8,7 +8,7 @@ import { Button } from "@/components/common/Button";
 
 export function AboutPreview() {
   return (
-    <section className="py-[100px] bg-[#FAF8F5] border-y border-[#EAE5DE] relative overflow-hidden">
+    <section className="py-[100px] bg-primary-background relative overflow-hidden">
       <Container size="wide">
         {/* Top Header Badge & Large Typography */}
         <div className="max-w-4xl mb-16 space-y-4">
@@ -17,7 +17,7 @@ export function AboutPreview() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-xs uppercase tracking-[0.4em] text-[#C5A880] font-medium block"
+            className="text-xs uppercase tracking-[0.4em] text-text-muted font-medium block"
           >
             The Atelier
           </motion.span>
@@ -26,10 +26,10 @@ export function AboutPreview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-[#1A1A1A] leading-[1.1] tracking-tight"
+            className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-main-text leading-[1.1] tracking-tight"
           >
             Where Architectural Precision<br className="hidden sm:block" />
-            Meets <span className="italic font-serif text-[#C5A880]">Poetic Romance</span>
+            Meets <span className="italic font-serif text-primary-text">Poetic Romance</span>
           </motion.h2>
         </div>
 
@@ -80,7 +80,7 @@ export function AboutPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-base sm:text-lg text-neutral-700 font-light leading-relaxed"
+              className="text-base sm:text-lg text-main-text font-light leading-relaxed"
             >
               Founded on the belief that unforgettable milestones are masterworks of art, Eterna curates immersive experiences tailored to the world's most breathtaking settings.
             </motion.p>
@@ -90,7 +90,7 @@ export function AboutPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.4 }}
-              className="text-sm text-neutral-500 font-light leading-relaxed"
+              className="text-sm text-text-muted font-light leading-relaxed"
             >
               From historic European palaces to secluded island estates, our team coordinates every sensory dimension—lighting, floral architecture, gastronomy, and live music.
             </motion.p>
@@ -104,16 +104,16 @@ export function AboutPreview() {
               className="grid grid-cols-3 gap-4 pt-6 border-t border-[#EAE5DE]"
             >
               <div>
-                <span className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] block font-light">10+</span>
-                <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-light">Years</span>
+                <span className="font-serif text-3xl sm:text-4xl text-primary-text block font-light">10+</span>
+                <span className="text-[10px] uppercase tracking-widest text-primary-text font-light">Years</span>
               </div>
               <div>
-                <span className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] block font-light">150+</span>
-                <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-light">Events</span>
+                <span className="font-serif text-3xl sm:text-4xl text-primary-text block font-light">150+</span>
+                <span className="text-[10px] uppercase tracking-widest text-primary-text font-light">Events</span>
               </div>
               <div>
-                <span className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] block font-light">18+</span>
-                <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-light">Havens</span>
+                <span className="font-serif text-3xl sm:text-4xl text-primary-text block font-light">18+</span>
+                <span className="text-[10px] uppercase tracking-widest text-primary-text font-light">Havens</span>
               </div>
             </motion.div>
 
@@ -124,7 +124,7 @@ export function AboutPreview() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="pt-2"
             >
-              <Button href="/about" variant="outline" size="default">
+              <Button href="/about" variant="primary" size="default">
                 Discover Our Story
               </Button>
             </motion.div>
