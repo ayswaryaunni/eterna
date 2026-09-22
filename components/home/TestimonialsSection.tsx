@@ -14,7 +14,6 @@ import {
 } from "framer-motion";
 import { Quote, Star } from "lucide-react";
 import { Container } from "@/components/common/Container";
-import { testimonials } from "@/data/testimonials";
 import { TestimonialItem } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -173,7 +172,7 @@ function Avatar({ item, size = 44, className }: { item: TestimonialItem; size?: 
 }
 
 /** Overlapping avatar stack that pops in one by one. */
-function AvatarStack({ size, ring, spacing = "-space-x-3" }: { size: number; ring: string; spacing?: string }) {
+function AvatarStack({ items, size, ring, spacing = "-space-x-3" }: { items: TestimonialItem[]; size: number; ring: string; spacing?: string }) {
   return (
     <motion.div
       className={cn("flex", spacing)}
@@ -182,7 +181,7 @@ function AvatarStack({ size, ring, spacing = "-space-x-3" }: { size: number; rin
       viewport={{ once: true }}
       transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
     >
-      {testimonials.map((t) => (
+      {items.map((t) => (
         <motion.div
           key={t.id}
           variants={{ hidden: { scale: 0, x: -8, opacity: 0 }, show: { scale: 1, x: 0, opacity: 1 } }}
@@ -318,7 +317,7 @@ function QuoteTile({ item, large = false }: { item: TestimonialItem; large?: boo
   );
 }
 
-function StatTile() {
+function StatTile({ items }: { items: TestimonialItem[] }) {
   return (
     <TiltCard className="flex flex-col flex-1 group">
       <article className={cn(tile, "relative overflow-hidden bg-purple text-white p-7 sm:p-8 flex flex-col justify-between gap-8 shadow-lg group-hover:shadow-2xl")}>
@@ -339,7 +338,7 @@ function StatTile() {
           </p>
         </div>
         <div className="relative flex items-center justify-between gap-4 pt-6 border-t border-white/15">
-          <AvatarStack size={36} ring="ring-purple" />
+          <AvatarStack items={items} size={36} ring="ring-purple" />
           <div className="text-right">
             <Stars className="text-mauve-light justify-end" delay={0.4} />
             <p className="text-[11px] tracking-wide text-white/70 mt-1">5.0 average rating</p>
@@ -352,8 +351,9 @@ function StatTile() {
 
 /* ── Section ───────────────────────────────────────────────────────────── */
 
-export function TestimonialsSection() {
+export function TestimonialsSection({ testimonials }: { testimonials: TestimonialItem[] }) {
   const [photo, wide, small] = testimonials;
+  if (!photo || !wide || !small) return null;
 
   return (
     <section className="py-24 sm:py-28 bg-ivory-dark border-y border-linen relative overflow-hidden">
@@ -396,7 +396,7 @@ export function TestimonialsSection() {
             transition={{ duration: 0.6, delay: 0.3, ease: EASE }}
             className="inline-flex items-center gap-3 self-start md:self-auto rounded-full bg-white border border-linen pl-2 pr-5 py-2 shadow-sm"
           >
-            <AvatarStack size={30} ring="ring-white" spacing="-space-x-2.5" />
+            <AvatarStack items={testimonials} size={30} ring="ring-white" spacing="-space-x-2.5" />
             <div className="leading-tight">
               <Stars className="text-purple" delay={0.5} />
               <p className="text-[11px] text-neutral-600 mt-0.5">Rated 5.0 by our clients</p>
@@ -413,7 +413,7 @@ export function TestimonialsSection() {
             <QuoteTile item={wide} large />
           </Reveal>
           <Reveal className="flex" delay={0.24}>
-            <StatTile />
+            <StatTile items={testimonials} />
           </Reveal>
           <Reveal className="flex" delay={0.36}>
             <QuoteTile item={small} />

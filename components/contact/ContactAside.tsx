@@ -2,7 +2,7 @@ import React from "react";
 import { CalendarCheck, Clock, FileText, Mail, MapPin, MessageSquare, Phone } from "lucide-react";
 import { FadeIn } from "@/components/common/FadeIn";
 import { SocialLinks } from "@/components/common/SocialLinks";
-import { siteConfig } from "@/data/site";
+import type { SiteConfig } from "@/types";
 
 const nextSteps = [
   { icon: MessageSquare, title: "We read every word", text: "Your enquiry lands directly with our concierge team." },
@@ -10,7 +10,7 @@ const nextSteps = [
   { icon: FileText, title: "Bespoke proposal", text: "A tailored concept and scope, shaped around your story." },
 ];
 
-export function ContactAside() {
+export function ContactAside({ siteConfig }: { siteConfig: SiteConfig }) {
   const offices = siteConfig.address.split("•").map((s) => s.trim());
   const tel = siteConfig.phone.replace(/[^\d+]/g, "");
 

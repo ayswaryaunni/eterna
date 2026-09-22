@@ -8,19 +8,22 @@ import { Container } from "@/components/common/Container";
 import { FadeIn } from "@/components/common/FadeIn";
 import { ProjectGallery } from "@/components/portfolio/ProjectGallery";
 import { ContactCTA } from "@/components/home/ContactCTA";
-import { portfolioItems } from "@/data/portfolio";
+import { getProject, getProjects } from "@/lib/content";
+
+export const revalidate = 60;
 
 interface ProjectPageProps {
   params: Promise<{ id: string }>;
 }
 
-export function generateStaticParams() {
-  return portfolioItems.map((item) => ({ id: item.id }));
+export async function generateStaticParams() {
+  const items = await getProjects();
+  return items.map((item) => ({ id: item.id }));
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { id } = await params;
-  const item = portfolioItems.find((p) => p.id === id);
+  const item = await getProject(id);
   if (!item) return {};
   return {
     title: item.title,
@@ -31,6 +34,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { id } = await params;
+  const portfolioItems = await getProjects();
   const index = portfolioItems.findIndex((p) => p.id === id);
   if (index === -1) notFound();
 

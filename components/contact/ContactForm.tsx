@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useTransition } from "react";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
-import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
+import { AlertCircle, ArrowRight, CheckCircle2, Loader2, ShieldCheck } from "lucide-react";
 import { ContactFormData } from "@/types";
 import { Button } from "@/components/common/Button";
+import { submitEnquiry } from "@/app/actions/enquiry";
 import { cn } from "@/lib/utils";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
@@ -26,7 +27,7 @@ const EMPTY: ContactFormData = {
   name: "",
   phone: "",
   email: "",
-  eventType: EVENT_TYPES[0].value,
+  eventTypes: [EVENT_TYPES[0].value],
   eventDate: "",
   location: "",
   message: "",
@@ -43,11 +44,13 @@ interface FieldProps {
   type?: string;
   required?: boolean;
   value: string;
+  min?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void;
   className?: string;
 }
 
-function Field({ id, label, type = "text", required, value, onChange, className }: FieldProps) {
+function Field({ id, label, type = "text", required, value, onChange, className, min }: FieldProps) {
+  const isDate = type === "date";
   return (
     <motion.div variants={rise} className={cn("relative", className)}>
       <input
@@ -58,9 +61,10 @@ function Field({ id, label, type = "text", required, value, onChange, className 
         value={value}
         onChange={onChange}
         placeholder={label}
-        className={inputClass}
+        min={min}
+        className={cn(inputClass, isDate && "cursor-pointer [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-60")}
       />
-      <label htmlFor={id} className={labelClass}>
+      <label htmlFor={id} className={cn(labelClass, isDate && "!top-2 !text-[9px]")}>
         {label}
         {required && <span className="text-purple ml-0.5">*</span>}
       </label>
@@ -71,6 +75,9 @@ function Field({ id, label, type = "text", required, value, onChange, className 
 export function ContactForm() {
   const [formData, setFormData] = useState<ContactFormData>(EMPTY);
   const [submitted, setSubmitted] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
+  const [pending, startTransition] = useTransition();
+  const today = new Date().toISOString().slice(0, 10);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -79,15 +86,28 @@ export function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const toggleEventType = (value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      eventTypes: prev.eventTypes.includes(value)
+        ? prev.eventTypes.filter((v) => v !== value)
+        : [...prev.eventTypes, value],
+    }));
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // UI-only for now; prepared for future Frappe API integration
-    console.log("Submitting enquiry to Frappe endpoint:", formData);
-    setSubmitted(true);
+    setServerError(null);
+    startTransition(async () => {
+      const result = await submitEnquiry(formData);
+      if (result.ok) setSubmitted(true);
+      else setServerError(result.error);
+    });
   };
 
   const reset = () => {
     setFormData(EMPTY);
+    setServerError(null);
     setSubmitted(false);
   };
 
@@ -164,10 +184,11 @@ export function ContactForm() {
               <motion.fieldset variants={rise} className="space-y-3">
                 <legend className="text-[11px] uppercase tracking-[0.2em] text-neutral-500">
                   Event type <span className="text-purple">*</span>
+                  <span className="ml-2 normal-case tracking-normal text-neutral-400">— select all that apply</span>
                 </legend>
                 <div className="flex flex-wrap gap-2">
                   {EVENT_TYPES.map((t) => {
-                    const active = formData.eventType === t.value;
+                    const active = formData.eventTypes.includes(t.value);
                     return (
                       <label
                         key={t.value}
@@ -179,13 +200,14 @@ export function ContactForm() {
                         )}
                       >
                         <input
-                          type="radio"
-                          name="eventType"
+                          type="checkbox"
+                          name="eventTypes"
                           value={t.value}
                           checked={active}
-                          onChange={handleChange}
+                          onChange={() => toggleEventType(t.value)}
                           className="sr-only"
                         />
+                        <span className={cn("mr-2 inline-block w-1.5 h-1.5 rounded-full transition-colors", active ? "bg-mauve-light" : "bg-neutral-300")} />
                         {t.label}
                       </label>
                     );
@@ -194,7 +216,7 @@ export function ContactForm() {
               </motion.fieldset>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <Field id="eventDate" label="Estimated date / season" value={formData.eventDate} onChange={handleChange} />
+                <Field id="eventDate" label="Estimated event date" type="date" min={today} value={formData.eventDate} onChange={handleChange} />
                 <Field id="location" label="Desired location / venue" value={formData.location} onChange={handleChange} />
               </div>
 
@@ -216,14 +238,37 @@ export function ContactForm() {
             </div>
 
             {/* Submit */}
+            <AnimatePresence>
+              {serverError && (
+                <motion.p
+                  role="alert"
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="flex items-start gap-2 text-sm text-red-700 bg-red-50 border border-red-200 px-4 py-3"
+                >
+                  <AlertCircle size={16} className="shrink-0 mt-0.5" />
+                  {serverError}
+                </motion.p>
+              )}
+            </AnimatePresence>
             <motion.div variants={rise} className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 pt-2">
               <p className="inline-flex items-center gap-2 text-[11px] text-neutral-500 font-light">
                 <ShieldCheck size={14} className="text-purple" />
                 Your details remain strictly confidential.
               </p>
-              <Button type="submit" size="lg" className="gap-3 group/btn w-full sm:w-auto">
-                Send confidential inquiry
-                <ArrowRight size={15} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
+              <Button type="submit" size="lg" disabled={pending} className="gap-3 group/btn w-full sm:w-auto">
+                {pending ? (
+                  <>
+                    Sending
+                    <Loader2 size={15} className="animate-spin" />
+                  </>
+                ) : (
+                  <>
+                    Send confidential inquiry
+                    <ArrowRight size={15} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
+                  </>
+                )}
               </Button>
             </motion.div>
           </motion.form>

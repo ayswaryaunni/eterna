@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Container } from "@/components/common/Container";
-import { portfolioItems } from "@/data/portfolio";
+import type { PortfolioItem } from "@/types";
 import { cn } from "@/lib/utils";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
@@ -39,7 +39,7 @@ function Stat({ value, label, delay }: { value: string; label: string; delay: nu
   );
 }
 
-export function PortfolioHero() {
+export function PortfolioHero({ items: portfolioItems }: { items: PortfolioItem[] }) {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
 

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export function InfiniteMarquee() {
@@ -17,16 +16,16 @@ export function InfiniteMarquee() {
   ];
 
   return (
-    <div className="py-8 bg-charcoal text-white border-y border-neutral-800 overflow-hidden flex whitespace-nowrap select-none">
+    <div className="py-8 bg-purple-dark text-white border-y border-purple-light/30 overflow-hidden flex whitespace-nowrap select-none">
       <motion.div
         animate={{ x: ["0%", "-50%"] }}
         transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-        className="flex items-center gap-12 text-sm uppercase tracking-[0.4em] font-light text-neutral-400"
+        className="flex items-center gap-12 text-sm uppercase tracking-[0.4em] font-light text-white/60"
       >
         {words.concat(words).map((item, index) => (
           <React.Fragment key={index}>
-            <span className="hover:text-mauve transition-colors">{item}</span>
-            <span className="text-mauve font-serif text-lg">✦</span>
+            <span className="hover:text-white transition-colors">{item}</span>
+            <span className="text-mauve-light font-serif text-lg">✦</span>
           </React.Fragment>
         ))}
       </motion.div>

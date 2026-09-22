@@ -2,14 +2,14 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
 
 interface WordProps {
   children: string;
   range: [number, number];
-  progress: any;
+  progress: MotionValue<number>;
 }
 
 function Word({ children, range, progress }: WordProps) {
@@ -85,7 +85,7 @@ export function AboutPreview() {
                 Personalized Planning
               </h3>
               <p className="text-sm text-neutral-600 font-light leading-relaxed">
-                Every wedding is tailored to reflect your unique love story. Whether it's designing breathtaking décor or coordinating elite global vendors.
+                Every wedding is tailored to reflect your unique love story. Whether it&apos;s designing breathtaking décor or coordinating elite global vendors.
               </p>
             </div>
 

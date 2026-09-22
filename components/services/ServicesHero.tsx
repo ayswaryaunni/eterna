@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/common/Container";
-import { services } from "@/data/services";
+import type { ServiceItem } from "@/types";
 import { ServiceIcon } from "@/components/services/serviceIcons";
 import { cn } from "@/lib/utils";
 
@@ -26,7 +26,7 @@ function Line({ children, delay = 0, className }: { children: React.ReactNode; d
   );
 }
 
-export function ServicesHero() {
+export function ServicesHero({ services, videoUrl, posterUrl }: { services: ServiceItem[]; videoUrl?: string; posterUrl?: string }) {
   const reduce = useReducedMotion();
   const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -111,8 +111,8 @@ export function ServicesHero() {
                 muted
                 loop
                 playsInline
-                poster="/images/portfolio/chateau-wedding.jpg"
-                src="/videos/services-reel.mp4"
+                poster={posterUrl ?? services[0]?.image}
+                src={videoUrl ?? "/videos/services-reel.mp4"}
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-purple-dark/80 via-purple-dark/10 to-transparent" />

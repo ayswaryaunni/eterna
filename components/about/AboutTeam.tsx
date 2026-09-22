@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { Container } from "@/components/common/Container";
 import { cn } from "@/lib/utils";
+import type { TeamMember } from "@/types";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
@@ -39,27 +40,8 @@ const badge: Variants = {
   show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 300, damping: 18 } },
 };
 
-export function AboutTeam() {
-  const team = [
-    {
-      name: "Ayswarya Unni",
-      role: "Founder & Creative Director",
-      bio: "Master of spatial design with over a decade spent curating private galas and high-profile nuptials across Europe and Asia.",
-      image: "/images/portfolio/kyoto-wedding.jpg"
-    },
-    {
-      name: "Marcus Vance",
-      role: "Head of International Logistics",
-      bio: "Specializes in multi-day destination venue transformations, cross-border hospitality, and royal estate production.",
-      image: "/images/portfolio/manhattan-gala.jpg"
-    },
-    {
-      name: "Elena Rostova",
-      role: "Floral Architecture Lead",
-      bio: "Haute couture floral artist known for installing monumental, immersive botanical sculptures in historic venues.",
-      image: "/images/portfolio/chateau-wedding.jpg"
-    }
-  ];
+export function AboutTeam({ team }: { team: TeamMember[] }) {
+
 
   return (
     <section className="py-[100px] bg-white border-t border-linen overflow-hidden">

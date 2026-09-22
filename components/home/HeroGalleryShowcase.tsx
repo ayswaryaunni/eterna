@@ -5,29 +5,15 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Container } from "@/components/common/Container";
 
-const heroFolderImages = [
-  "/images/hero/68f4fee8bf77d1636d385647_Service_02.avif",
-  "/images/hero/68f7a9ec00af763bac20fb90_moment_02.avif",
-  "/images/hero/68f7a9ec0ff41c408c8ccca4_moment_06.avif",
-  "/images/hero/68f7a9ec2594c90df320fd2e_moment_01.avif",
-  "/images/hero/68f7a9ec75ddeef8288c6569_moment_03.avif",
-  "/images/hero/6a6305bf5040b777232a15c2_Gallery-image.avif",
-  "/images/hero/6a6305bf5040b777232a15ee_Vision-home-two-image.avif",
-  "/images/hero/6a6305bf5040b777232a15f1_Vision-home-two-image.avif",
-  "/images/hero/6a6305bf5040b777232a1817_post-one-multy-image-one.avif",
-  "/images/hero/6a6305bf5040b777232a182d_post-two-multy-image-one.avif",
-  "/images/hero/6a6305bf5040b777232a1832_post-one-multy-image-two.avif",
-  "/images/hero/6a6305bf5040b777232a1833_post-one-multy-image-three.avif",
-  "/images/hero/6a6305bf5040b777232a183b_post-one-multy-image-four.avif",
-  "/images/hero/6a6305bf5040b777232a183c_post-two-venue-details-image-three.avif",
-  "/images/hero/6a6305bf5040b777232a1846_post-four-multy-image-one.avif",
-];
+const FALLBACK: string[] = [];
 
-const row1 = heroFolderImages.slice(0, 5);
-const row2 = heroFolderImages.slice(5, 10);
-const row3 = heroFolderImages.slice(10, 15);
-
-export function HeroGalleryShowcase() {
+export function HeroGalleryShowcase({ images = FALLBACK }: { images?: string[] }) {
+  // Split into three rows; pad short lists by cycling so each row still scrolls
+  const pool = images.length ? images : FALLBACK;
+  const rowOf = (n: number) => Array.from({ length: 5 }, (_, i) => pool[(n * 5 + i) % pool.length]).filter(Boolean);
+  const row1 = rowOf(0);
+  const row2 = rowOf(1);
+  const row3 = rowOf(2);
   const containerRef = useRef<HTMLDivElement>(null);
   
   const { scrollYProgress } = useScroll({
@@ -43,6 +29,8 @@ export function HeroGalleryShowcase() {
   
   // Row 3 moves Left to Right on scroll
   const xRow3 = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
+
+  if (!pool.length) return null;
 
   return (
     <section 

@@ -4,7 +4,9 @@ import { Container } from "@/components/common/Container";
 import { PortfolioHero } from "@/components/portfolio/PortfolioHero";
 import { PortfolioCard } from "@/components/portfolio/PortfolioCard";
 import { ContactCTA } from "@/components/home/ContactCTA";
-import { portfolioItems } from "@/data/portfolio";
+import { getProjects } from "@/lib/content";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -12,10 +14,11 @@ export const metadata: Metadata = {
     "Explore our gallery of past destination weddings, French chateau galas, and bespoke luxury celebrations.",
 };
 
-export default function PortfolioPage() {
+export default async function PortfolioPage() {
+  const portfolioItems = await getProjects();
   return (
     <main className="pb-12">
-      <PortfolioHero />
+      <PortfolioHero items={portfolioItems} />
 
       <section id="works" className="py-20 bg-white scroll-mt-24">
         <Container size="wide">

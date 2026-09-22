@@ -3,9 +3,10 @@ import Link from "next/link";
 import { Container } from "@/components/common/Container";
 import { SocialLinks } from "@/components/common/SocialLinks";
 import { footerLinks } from "@/data/navigation";
-import { siteConfig } from "@/data/site";
+import { getSiteSettings } from "@/lib/content";
 
-export function Footer() {
+export async function Footer() {
+  const siteConfig = await getSiteSettings();
   const currentYear = new Date().getFullYear();
 
   return (

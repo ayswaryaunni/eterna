@@ -4,7 +4,9 @@ import { ServicesHero } from "@/components/services/ServicesHero";
 import { ServiceFeature } from "@/components/services/ServiceFeature";
 import { ServiceProcess } from "@/components/services/ServiceProcess";
 import { ContactCTA } from "@/components/home/ContactCTA";
-import { services } from "@/data/services";
+import { getServices, getSiteSettings } from "@/lib/content";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Services",
@@ -12,10 +14,11 @@ export const metadata: Metadata = {
     "Explore our full suite of bespoke services including full-service wedding planning, destination celebrations, event design, and private galas.",
 };
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const [services, site] = await Promise.all([getServices(), getSiteSettings()]);
   return (
     <main className="pb-12">
-      <ServicesHero />
+      <ServicesHero services={services} videoUrl={site.showcaseVideo} posterUrl={services[2]?.image} />
 
       {services.map((service, index) => (
         <ServiceFeature key={service.id} service={service} index={index} />

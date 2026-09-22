@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Play, Pause } from "lucide-react";
 
-export function Hero() {
+export function Hero({ imageUrl, videoUrl }: { imageUrl?: string; videoUrl?: string }) {
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -31,21 +31,20 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[92vh] lg:min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-charcoal">
+    <section className="relative min-h-[92vh] lg:min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-purple">
       {/* ── Main Romantic Couple Background ──────────────────────────────── */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-couple.jpg"
+          src={imageUrl ?? "/images/hero-couple.jpg"}
           alt="Where forever begins beautifully together — Eterna"
           fill
           priority
           className="object-cover object-[65%_center] sm:object-center opacity-85"
           sizes="100vw"
         />
-        {/* Soft Vignette Overlay: Darker on left for text readability, subtle purple tint on bottom */}
+        {/* Neutral vignette: darker on the left for text readability, no colour tint on the photo */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-black/40" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-purple/30 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
       </div>
 
       {/* ── Content Container ──────────────────────────────────────────────── */}
@@ -94,7 +93,7 @@ export function Hero() {
           >
             <Link
               href="/contact"
-              className="inline-flex items-center px-8 py-3.5 bg-white text-charcoal text-xs uppercase tracking-[0.2em] font-medium rounded-full hover:bg-mauve hover:text-white transition-all duration-300 shadow-lg"
+              className="inline-flex items-center px-8 py-3.5 bg-white text-purple text-xs uppercase tracking-[0.2em] font-medium rounded-full hover:bg-mauve hover:text-white transition-all duration-300 shadow-lg"
             >
               Start Planning
             </Link>
@@ -124,7 +123,7 @@ export function Hero() {
               loop
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-10"
-              src="/images/hero/6a6305bf5040b777232a1810_GG_mp4.mp4"
+              src={videoUrl ?? "/images/hero/6a6305bf5040b777232a1810_GG_mp4.mp4"}
             />
 
             {/* Play/Pause Overlay Button */}

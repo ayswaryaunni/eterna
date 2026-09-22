@@ -9,6 +9,9 @@ import { AboutProcess } from "@/components/about/AboutProcess";
 import { AboutTeam } from "@/components/about/AboutTeam";
 import { InfiniteMarquee } from "@/components/common/InfiniteMarquee";
 import { ContactCTA } from "@/components/home/ContactCTA";
+import { getSiteSettings, getTeam } from "@/lib/content";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -16,7 +19,8 @@ export const metadata: Metadata = {
     "Learn about the philosophy, vision, and craftsmanship behind Eterna, world-renowned luxury event and wedding planners.",
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const [site, team] = await Promise.all([getSiteSettings(), getTeam()]);
   return (
     <main>
       {/* Editorial Luxury Hero Header */}
@@ -24,7 +28,7 @@ export default function AboutPage() {
         {/* Background Image - Bright Luxury View with Targeted Text-Area Contrast */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/about-hero.jpg"
+            src={site.aboutHeroImage ?? "/images/about-hero.jpg"}
             alt="Eterna Atelier — The Art of Timeless Celebration"
             fill
             priority
@@ -69,7 +73,7 @@ export default function AboutPage() {
       <AboutProcess />
 
       {/* 5. Leadership Atelier (Alternating Split Cards) */}
-      <AboutTeam />
+      <AboutTeam team={team} />
 
       {/* 6. Contact Consultation CTA */}
       <ContactCTA />

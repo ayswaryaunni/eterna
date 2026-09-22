@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost, Playfair_Display, Open_Sans } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { siteConfig } from "@/data/site";
+import { getSiteSettings } from "@/lib/content";
 import "./globals.css";
 
 const serifFont = Cormorant_Garamond({
@@ -36,7 +36,11 @@ const sansFont = Jost({
   display: "swap",
 });
 
-export const metadata: Metadata = {
+export const revalidate = 60;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const siteConfig = await getSiteSettings();
+  return {
   title: {
     default: `${siteConfig.name} | ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
@@ -57,7 +61,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: siteConfig.name,
   },
-};
+  };
+}
 
 export default function RootLayout({
   children,

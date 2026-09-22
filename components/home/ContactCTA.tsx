@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
 import { FadeIn } from "@/components/common/FadeIn";
-import { siteConfig } from "@/data/site";
+import { getSiteSettings } from "@/lib/content";
 
 /* Delicate botanical line-art used as a corner ornament (mirrored on the right) */
 function LeafOrnament({ className }: { className?: string }) {
@@ -34,7 +34,8 @@ function LeafOrnament({ className }: { className?: string }) {
   );
 }
 
-export function ContactCTA() {
+export async function ContactCTA() {
+  const siteConfig = await getSiteSettings();
   return (
     <section className="relative py-28 sm:py-36 bg-ivory overflow-hidden text-center border-t border-linen">
       {/* Corner ornaments */}

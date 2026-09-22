@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
 
-export function HomeAboutSection() {
+export function HomeAboutSection({ images = [] }: { images?: string[] }) {
+  const [primary = "/images/portfolio/lake-como-wedding.jpg", secondary = "/images/portfolio/amalfi-wedding.jpg"] = images;
   return (
     <section className="py-[100px] bg-ivory border-y border-linen relative overflow-hidden">
       {/* Subtle purple background lighting */}
@@ -50,7 +51,7 @@ export function HomeAboutSection() {
               className="relative aspect-[16/10] w-full overflow-hidden shadow-xl border-l-4 border-purple"
             >
               <Image
-                src="/images/portfolio/lake-como-wedding.jpg"
+                src={primary}
                 alt="Lake Como Grandeur"
                 fill
                 sizes="(max-width: 1024px) 100vw, 60vw"
@@ -67,7 +68,7 @@ export function HomeAboutSection() {
               className="hidden sm:block absolute -bottom-10 -right-6 w-1/2 aspect-[4/5] border-4 border-ivory shadow-2xl overflow-hidden"
             >
               <Image
-                src="/images/portfolio/amalfi-wedding.jpg"
+                src={secondary}
                 alt="Amalfi Detail"
                 fill
                 sizes="30vw"
@@ -85,7 +86,7 @@ export function HomeAboutSection() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="text-base sm:text-lg text-neutral-700 font-light leading-relaxed"
             >
-              Founded on the belief that unforgettable milestones are masterworks of art, Eterna curates immersive experiences tailored to the world's most breathtaking settings.
+              Founded on the belief that unforgettable milestones are masterworks of art, Eterna curates immersive experiences tailored to the world&apos;s most breathtaking settings.
             </motion.p>
 
             <motion.p

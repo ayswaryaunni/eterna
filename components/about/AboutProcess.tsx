@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, type MotionValue } from "framer-motion";
 import { Container } from "@/components/common/Container";
 
 export function AboutProcess() {
@@ -52,18 +52,18 @@ export function AboutProcess() {
 
   return (
     // Sticky Scroll Container (Pinned height 250vh so user stays in timeline while scrolling)
-    <section ref={targetRef} className="relative h-[250vh] bg-ivory border-t border-linen">
+    <section ref={targetRef} className="relative h-[250vh] bg-purple-dark border-t border-purple-light/30">
       {/* Sticky Content Viewport */}
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
         <Container size="wide">
           <div className="text-center max-w-xl mx-auto mb-16 sm:mb-20">
-            <span className="text-xs uppercase tracking-[0.4em] text-mauve font-medium block mb-3">
+            <span className="text-xs uppercase tracking-[0.4em] text-mauve-light font-medium block mb-3">
               The Timeline
             </span>
-            <h2 className="font-serif text-4xl sm:text-5xl font-light text-ink">
+            <h2 className="font-serif text-4xl sm:text-5xl font-light text-white">
               Bespoke Creation Process
             </h2>
-            <p className="text-xs text-neutral-400 font-light mt-2 tracking-wider">
+            <p className="text-xs text-white/50 font-light mt-2 tracking-wider">
               (Scroll down to experience the journey step-by-step)
             </p>
           </div>
@@ -71,12 +71,12 @@ export function AboutProcess() {
           {/* Interactive Scroll-Driven Timeline */}
           <div className="relative px-4 sm:px-8">
             {/* Base Line (Full Width across all nodes) */}
-            <div className="hidden lg:block absolute top-[28px] left-0 right-0 h-[2px] bg-linen z-0" />
+            <div className="hidden lg:block absolute top-[28px] left-0 right-0 h-[2px] bg-white/15 z-0" />
 
             {/* Scroll Progress Active Gold Line (Full 100% width grow) */}
             <motion.div
               style={{ scaleX, transformOrigin: "left" }}
-              className="hidden lg:block absolute top-[28px] left-0 right-0 h-[2px] bg-mauve z-0"
+              className="hidden lg:block absolute top-[28px] left-0 right-0 h-[2px] bg-mauve-light z-0"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
@@ -97,7 +97,7 @@ function StepCard({
   progress,
 }: {
   item: { step: string; title: string; text: string; threshold: number };
-  progress: any;
+  progress: MotionValue<number>;
 }) {
   const [isActive, setIsActive] = React.useState(false);
 
@@ -118,8 +118,8 @@ function StepCard({
         <div
           className={`w-14 h-14 rounded-full flex items-center justify-center font-serif text-lg transition-all duration-500 shadow-md relative z-10 ${
             isActive
-              ? "bg-mauve text-white border-2 border-mauve scale-110 shadow-mauve/30"
-              : "bg-white text-neutral-400 border border-linen"
+              ? "bg-mauve-light text-purple-dark border-2 border-mauve-light scale-110 shadow-mauve-light/30"
+              : "bg-purple-dark text-white/50 border border-white/25"
           }`}
         >
           {item.step}
@@ -133,12 +133,12 @@ function StepCard({
       >
         <h3
           className={`font-serif text-2xl transition-colors duration-500 ${
-            isActive ? "text-ink" : "text-neutral-400"
+            isActive ? "text-white" : "text-white/40"
           }`}
         >
           {item.title}
         </h3>
-        <p className="text-xs text-neutral-600 font-light leading-relaxed">
+        <p className="text-xs text-white/65 font-light leading-relaxed">
           {item.text}
         </p>
       </div>
