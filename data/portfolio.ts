@@ -10,6 +10,14 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "A cliffside celebration perched above the Mediterranean, featuring cascading white florals, classical strings, and an intimate candlelit cliff terrace banquet.",
     coverImage: "/images/portfolio/amalfi-wedding.jpg",
+    images: [
+      "/images/portfolio/amalfi-wedding.jpg",
+      "/images/hero/68f7a9ec2594c90df320fd2e_moment_01.avif",
+      "/images/hero/6a6305bf5040b777232a1817_post-one-multy-image-one.avif",
+      "/images/hero/68f7a9ec00af763bac20fb90_moment_02.avif",
+      "/images/hero/6a6305bf5040b777232a1832_post-one-multy-image-two.avif",
+      "/images/hero/6a6305bf5040b777232a15c2_Gallery-image.avif",
+    ],
     featured: true,
   },
   {
@@ -21,6 +29,14 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "An opulent 18th-century French chateau wedding with gilded accents, crystal chandeliers, a bespoke champagne tower, and a midnight fireworks display.",
     coverImage: "/images/portfolio/chateau-wedding.jpg",
+    images: [
+      "/images/portfolio/chateau-wedding.jpg",
+      "/images/hero/68f4fee8bf77d1636d385647_Service_02.avif",
+      "/images/hero/6a6305bf5040b777232a15ee_Vision-home-two-image.avif",
+      "/images/hero/6a6305bf5040b777232a182d_post-two-multy-image-one.avif",
+      "/images/hero/6a6305bf5040b777232a183c_post-two-venue-details-image-three.avif",
+      "/images/hero/68f7a9ec75ddeef8288c6569_moment_03.avif",
+    ],
     featured: true,
   },
   {
@@ -32,6 +48,14 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "An organic, meadow-inspired garden marquee wedding celebrating British countryside charm with wild English roses and bespoke artisan dining.",
     coverImage: "/images/portfolio/cotswolds-wedding.jpg",
+    images: [
+      "/images/portfolio/cotswolds-wedding.jpg",
+      "/images/hero/6a6305bf5040b777232a1833_post-one-multy-image-three.avif",
+      "/images/hero/6a6305bf5040b777232a183b_post-one-multy-image-four.avif",
+      "/images/hero/68f7a9ec0ff41c408c8ccca4_moment_06.avif",
+      "/images/hero/6a6305bf5040b777232a15f1_Vision-home-two-image.avif",
+      "/images/hero/6a6305bf5040b777232a1846_post-four-multy-image-one.avif",
+    ],
     featured: true,
   },
   {
@@ -43,6 +67,14 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "Arrival by vintage wooden speedboats, velvet lounges on manicured lawns, and an ethereal glasshouse dinner beneath cascading wisteria.",
     coverImage: "/images/portfolio/lake-como-wedding.jpg",
+    images: [
+      "/images/portfolio/lake-como-wedding.jpg",
+      "/images/hero/6a6305bf5040b777232a15c2_Gallery-image.avif",
+      "/images/hero-couple.jpg",
+      "/images/hero/68f7a9ec00af763bac20fb90_moment_02.avif",
+      "/images/hero/6a6305bf5040b777232a1817_post-one-multy-image-one.avif",
+      "/images/hero/6a6305bf5040b777232a183c_post-two-venue-details-image-three.avif",
+    ],
     featured: true,
   },
   {
@@ -54,6 +86,14 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "A harmonious blend of Japanese architectural serenity and contemporary elegance, framed by autumn maple foliage and minimalist floral sculptures.",
     coverImage: "/images/portfolio/kyoto-wedding.jpg",
+    images: [
+      "/images/portfolio/kyoto-wedding.jpg",
+      "/images/hero/68f7a9ec2594c90df320fd2e_moment_01.avif",
+      "/images/about-hero.jpg",
+      "/images/hero/6a6305bf5040b777232a1832_post-one-multy-image-two.avif",
+      "/images/hero/6a6305bf5040b777232a15ee_Vision-home-two-image.avif",
+      "/images/hero/68f7a9ec75ddeef8288c6569_moment_03.avif",
+    ],
     featured: false,
   },
   {
@@ -65,6 +105,14 @@ export const portfolioItems: PortfolioItem[] = [
     description:
       "A sleek, black-tie milestone gala overlooking the glittering New York skyline with dramatic monochromatic styling and bespoke jazz performances.",
     coverImage: "/images/portfolio/manhattan-gala.jpg",
+    images: [
+      "/images/portfolio/manhattan-gala.jpg",
+      "/images/hero/68f4fee8bf77d1636d385647_Service_02.avif",
+      "/images/hero/6a6305bf5040b777232a1846_post-four-multy-image-one.avif",
+      "/images/hero/68f7a9ec0ff41c408c8ccca4_moment_06.avif",
+      "/images/hero/6a6305bf5040b777232a182d_post-two-multy-image-one.avif",
+      "/images/hero/6a6305bf5040b777232a183b_post-one-multy-image-four.avif",
+    ],
     featured: false,
   },
 ];

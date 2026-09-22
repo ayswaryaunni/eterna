@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { AboutPreview } from "@/components/home/AboutPreview";
-import { AboutPhilosophy } from "@/components/about/AboutPhilosophy";
+// import { AboutPhilosophy } from "@/components/about/AboutPhilosophy";
 import { AboutProcess } from "@/components/about/AboutProcess";
 import { AboutTeam } from "@/components/about/AboutTeam";
 import { InfiniteMarquee } from "@/components/common/InfiniteMarquee";
@@ -38,16 +38,16 @@ export default function AboutPage() {
 
         <Container size="default" className="relative z-10 space-y-6 max-w-3xl">
           <div className="inline-flex items-center gap-3">
-            <span className="w-8 h-px bg-champagne" />
-            <span className="text-[11px] uppercase tracking-[0.35em] text-champagne font-semibold drop-shadow">
+            <span className="w-8 h-px bg-mauve" />
+            <span className="text-[11px] uppercase tracking-[0.35em] text-mauve font-semibold drop-shadow">
               Our Story & Vision
             </span>
-            <span className="w-8 h-px bg-champagne" />
+            <span className="w-8 h-px bg-mauve" />
           </div>
 
           <h1 className="font-serif text-4xl sm:text-6xl font-light text-white leading-[1.15] tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
             The Art of Timeless<br />
-            <span className="italic font-light text-gold">Celebration & Grandeur</span>
+            <span className="italic font-light text-mauve-light">Celebration & Grandeur</span>
           </h1>
 
           <p className="text-sm sm:text-base text-white/90 font-light max-w-xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
@@ -63,7 +63,7 @@ export default function AboutPage() {
       <InfiniteMarquee />
 
       {/* 3. Guiding Philosophy (Offset Dark Floating Cards) */}
-      <AboutPhilosophy />
+      {/* <AboutPhilosophy /> */}
 
       {/* 4. Bespoke Process (Connecting Horizontal Timeline) */}
       <AboutProcess />

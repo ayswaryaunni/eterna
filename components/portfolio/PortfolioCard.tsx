@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { PortfolioItem } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -14,9 +13,11 @@ interface PortfolioCardProps {
 
 export function PortfolioCard({ item, className }: PortfolioCardProps) {
   return (
-    <article
+    <Link
+      href={`/portfolio/${item.id}`}
+      aria-label={`View ${item.title} gallery`}
       className={cn(
-        "group relative bg-charcoal overflow-hidden border border-linen aspect-[4/5] cursor-pointer",
+        "group relative block bg-charcoal overflow-hidden border border-linen aspect-[4/5] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-purple",
         className
       )}
     >
@@ -33,7 +34,7 @@ export function PortfolioCard({ item, className }: PortfolioCardProps) {
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10 transition-opacity duration-500 group-hover:from-black/90 group-hover:via-black/50" />
 
       {/* Always Visible Category & Location Badge at Top */}
-      <div className="absolute top-6 left-6 right-6 flex items-center justify-between text-[10px] tracking-[0.25em] uppercase text-champagne font-light z-10">
+      <div className="absolute top-6 left-6 right-6 flex items-center justify-between text-[10px] tracking-[0.25em] uppercase text-mauve font-light z-10">
         <span className="bg-black/40 backdrop-blur-md px-3 py-1 border border-white/10">
           {item.category}
         </span>
@@ -59,17 +60,14 @@ export function PortfolioCard({ item, className }: PortfolioCardProps) {
             </p>
 
             <div className="pt-2 border-t border-white/20">
-              <Link
-                href="/portfolio"
-                className="inline-flex text-[11px] tracking-[0.22em] uppercase text-champagne font-medium hover:text-white transition-colors items-center gap-2"
-              >
+              <span className="inline-flex text-[11px] tracking-[0.22em] uppercase text-mauve font-medium group-hover:text-white transition-colors items-center gap-2">
                 <span>View Full Gallery</span>
                 <span className="text-xs transition-transform duration-300 group-hover:translate-x-1">→</span>
-              </Link>
+              </span>
             </div>
           </div>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }

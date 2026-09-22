@@ -14,7 +14,7 @@ export function Footer() {
       <div 
         className="absolute inset-0 opacity-[0.05] pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(to right, var(--color-champagne) 1px, transparent 1px), linear-gradient(to bottom, var(--color-champagne) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(to right, var(--color-mauve) 1px, transparent 1px), linear-gradient(to bottom, var(--color-mauve) 1px, transparent 1px)`,
           backgroundSize: `60px 60px`
         }}
       />
@@ -27,7 +27,7 @@ export function Footer() {
               <span className="font-serif text-3xl tracking-[0.2em] text-white block">
                 ETERNA
               </span>
-              <span className="text-[10px] tracking-[0.35em] uppercase text-champagne font-light">
+              <span className="text-[10px] tracking-[0.35em] uppercase text-mauve font-light">
                 Luxury Weddings & Events
               </span>
             </div>
@@ -42,7 +42,7 @@ export function Footer() {
 
           {/* Navigation Links */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-champagne font-medium">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-mauve font-medium">
               Explore
             </h4>
             <ul className="space-y-3">
@@ -61,7 +61,7 @@ export function Footer() {
 
           {/* Services Links */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-champagne font-medium">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-mauve font-medium">
               Services
             </h4>
             <ul className="space-y-3">
@@ -80,7 +80,7 @@ export function Footer() {
 
           {/* Direct Concierge Contact */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-champagne font-medium">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-mauve font-medium">
               Concierge
             </h4>
             <div className="space-y-2 text-sm text-neutral-400">

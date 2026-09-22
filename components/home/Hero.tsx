@@ -59,8 +59,8 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-3"
           >
-            <span className="w-8 h-px bg-champagne" />
-            <span className="text-[11px] uppercase tracking-[0.35em] text-champagne font-light">
+            <span className="w-8 h-px bg-mauve" />
+            <span className="text-[11px] uppercase tracking-[0.35em] text-mauve font-light">
               Eterna Atelier
             </span>
           </motion.div>
@@ -73,7 +73,7 @@ export function Hero() {
             style={{ fontSize: "clamp(2.8rem, 5.8vw, 5.5rem)" }}
           >
             Where forever<br />
-            begins <span className="italic font-light text-champagne">beautifully</span><br />
+            begins <span className="italic font-light text-mauve">beautifully</span><br />
             together
           </motion.h1>
 
@@ -94,7 +94,7 @@ export function Hero() {
           >
             <Link
               href="/contact"
-              className="inline-flex items-center px-8 py-3.5 bg-white text-charcoal text-xs uppercase tracking-[0.2em] font-medium rounded-full hover:bg-champagne hover:text-white transition-all duration-300 shadow-lg"
+              className="inline-flex items-center px-8 py-3.5 bg-white text-charcoal text-xs uppercase tracking-[0.2em] font-medium rounded-full hover:bg-mauve hover:text-white transition-all duration-300 shadow-lg"
             >
               Start Planning
             </Link>

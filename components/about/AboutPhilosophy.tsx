@@ -34,7 +34,7 @@ export function AboutPhilosophy() {
       <Container size="wide">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 mb-16">
           <div>
-            <span className="text-xs uppercase tracking-[0.4em] text-champagne font-light block mb-3">
+            <span className="text-xs uppercase tracking-[0.4em] text-mauve font-light block mb-3">
               Guiding Philosophy
             </span>
             <h2 className="font-serif text-4xl sm:text-6xl font-light text-white tracking-tight">
@@ -56,20 +56,20 @@ export function AboutPhilosophy() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
               whileHover={{ y: -8 }}
-              className={`p-8 lg:p-10 bg-neutral-900/60 border border-neutral-800 backdrop-blur-md relative flex flex-col justify-between group transition-colors duration-500 hover:border-champagne/60 ${
+              className={`p-8 lg:p-10 bg-neutral-900/60 border border-neutral-800 backdrop-blur-md relative flex flex-col justify-between group transition-colors duration-500 hover:border-mauve/60 ${
                 idx === 1 ? "md:translate-y-8" : ""
               }`}
             >
               <div className="space-y-6">
                 <div className="flex items-center justify-between border-b border-neutral-800 pb-4">
-                  <span className="font-serif text-5xl text-champagne/80 group-hover:text-champagne transition-colors font-light">
+                  <span className="font-serif text-5xl text-mauve/80 group-hover:text-mauve transition-colors font-light">
                     {item.num}
                   </span>
                   <span className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 group-hover:text-neutral-300 transition-colors">
                     {item.tag}
                   </span>
                 </div>
-                <h3 className="font-serif text-2xl text-white group-hover:text-champagne transition-colors">
+                <h3 className="font-serif text-2xl text-white group-hover:text-mauve transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-neutral-400 font-light leading-relaxed">
@@ -78,7 +78,7 @@ export function AboutPhilosophy() {
               </div>
 
               <div className="pt-8">
-                <div className="w-8 h-px bg-neutral-800 group-hover:w-full group-hover:bg-champagne transition-all duration-500" />
+                <div className="w-8 h-px bg-neutral-800 group-hover:w-full group-hover:bg-mauve transition-all duration-500" />
               </div>
             </motion.div>
           ))}

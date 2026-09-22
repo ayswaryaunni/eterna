@@ -36,7 +36,7 @@ export function SectionHeading({
         <span
           className={cn(
             "text-xs tracking-[0.25em] uppercase font-medium mb-3",
-            isLight ? "text-amber-200/90" : "text-champagne-dark"
+            isLight ? "text-amber-200/90" : "text-mauve-dark"
           )}
         >
           {tag}

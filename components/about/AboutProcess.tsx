@@ -57,7 +57,7 @@ export function AboutProcess() {
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
         <Container size="wide">
           <div className="text-center max-w-xl mx-auto mb-16 sm:mb-20">
-            <span className="text-xs uppercase tracking-[0.4em] text-champagne font-medium block mb-3">
+            <span className="text-xs uppercase tracking-[0.4em] text-mauve font-medium block mb-3">
               The Timeline
             </span>
             <h2 className="font-serif text-4xl sm:text-5xl font-light text-ink">
@@ -76,7 +76,7 @@ export function AboutProcess() {
             {/* Scroll Progress Active Gold Line (Full 100% width grow) */}
             <motion.div
               style={{ scaleX, transformOrigin: "left" }}
-              className="hidden lg:block absolute top-[28px] left-0 right-0 h-[2px] bg-champagne z-0"
+              className="hidden lg:block absolute top-[28px] left-0 right-0 h-[2px] bg-mauve z-0"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
@@ -118,7 +118,7 @@ function StepCard({
         <div
           className={`w-14 h-14 rounded-full flex items-center justify-center font-serif text-lg transition-all duration-500 shadow-md relative z-10 ${
             isActive
-              ? "bg-champagne text-white border-2 border-champagne scale-110 shadow-champagne/30"
+              ? "bg-mauve text-white border-2 border-mauve scale-110 shadow-mauve/30"
               : "bg-white text-neutral-400 border border-linen"
           }`}
         >

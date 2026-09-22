@@ -3,7 +3,7 @@
 /* ──────────────────────────────────────────────────────────────────────────
    Eterna Design Tokens
    Single source of truth for brand colours & typography. Use the generated
-   utilities (bg-purple, text-champagne, border-linen …) instead of hex codes.
+   utilities (bg-purple, text-mauve, border-linen …) instead of hex codes.
    ────────────────────────────────────────────────────────────────────────── */
 @theme {
   /* Typography */
@@ -12,26 +12,30 @@
   --font-opensans: var(--font-opensans), "Open Sans", sans-serif;
   --font-sans: var(--font-sans), "Jost", -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Brand purple — replaces Tailwind's default purple scale */
+  /* Brand plum — sampled from client reference (buttons #5A2548, deep block #42082F).
+     Replaces Tailwind's default purple scale. */
   --color-purple-*: initial;
-  --color-purple: #4D004D;
-  --color-purple-light: #660066;
-  --color-purple-dark: #370037;
-  --color-purple-deep: #2A002A;
+  --color-purple: #5A2548;
+  --color-purple-light: #7A4468;
+  --color-purple-dark: #42082F;
+  --color-purple-deep: #2F0B23;
 
-  /* Metallic accents */
-  --color-champagne: #C5A880;
-  --color-champagne-dark: #B8976C;
-  --color-gold: #D4AF37;
+  /* Accent — plum-tinted mauve. The reference is a two-colour system (plum + off-white),
+     so eyebrow labels, rules and icons use this instead of gold. */
+  --color-mauve: #A67B98;
+  --color-mauve-dark: #7A4468;
+  --color-mauve-light: #D9B8CD;
 
-  /* Surfaces */
-  --color-ivory: #FAF8F5;
-  --color-linen: #EAE5DE;
+  /* Surfaces — warm, rose-tinted off-whites from the reference */
+  --color-ivory: #F5F1F0;
+  --color-ivory-light: #F9F5F3;
+  --color-ivory-dark: #F1EDEB;
+  --color-linen: #E5E1E0;
 
-  /* Darks */
-  --color-ink: #1A1A1A;
-  --color-charcoal: #141414;
-  --color-onyx: #0A0A0A;
+  /* Darks — warm plum-black rather than neutral black */
+  --color-ink: #1C1518;
+  --color-charcoal: #1F1419;
+  --color-onyx: #170D13;
 }
 
 :root {

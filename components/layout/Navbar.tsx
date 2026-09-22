@@ -50,7 +50,7 @@ export function Navbar() {
           >
             <span className={cn(
               "font-serif text-2xl sm:text-3xl tracking-[0.2em] font-normal transition-colors duration-500",
-              isTransparent ? "text-white hover:text-champagne" : "text-purple hover:text-purple-dark"
+              isTransparent ? "text-white hover:text-mauve" : "text-purple hover:text-purple-dark"
             )}>
               ETERNA
             </span>
@@ -81,7 +81,7 @@ export function Navbar() {
                   {isActive && (
                     <span className={cn(
                       "absolute bottom-0 left-0 right-0 h-[1.5px] transition-colors duration-300",
-                      isTransparent ? "bg-champagne" : "bg-champagne-dark"
+                      isTransparent ? "bg-mauve" : "bg-mauve-dark"
                     )} />
                   )}
                 </Link>
@@ -97,7 +97,7 @@ export function Navbar() {
               variant="primary"
               className={cn(
                 isTransparent
-                  ? "bg-purple text-white hover:bg-champagne hover:text-ink"
+                  ? "bg-purple text-white hover:bg-mauve hover:text-ink"
                   : "bg-purple text-white hover:bg-purple-dark"
               )}
             >
@@ -134,7 +134,7 @@ export function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
                     "text-sm tracking-[0.2em] uppercase font-medium py-2 border-b border-neutral-200/50",
-                    isActive ? "text-champagne-dark" : "text-ink"
+                    isActive ? "text-mauve-dark" : "text-ink"
                   )}
                 >
                   {item.label}

@@ -25,8 +25,8 @@ export function InfiniteMarquee() {
       >
         {words.concat(words).map((item, index) => (
           <React.Fragment key={index}>
-            <span className="hover:text-champagne transition-colors">{item}</span>
-            <span className="text-champagne font-serif text-lg">✦</span>
+            <span className="hover:text-mauve transition-colors">{item}</span>
+            <span className="text-mauve font-serif text-lg">✦</span>
           </React.Fragment>
         ))}
       </motion.div>

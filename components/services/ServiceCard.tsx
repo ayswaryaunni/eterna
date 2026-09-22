@@ -18,7 +18,7 @@ export function ServiceCard({ service, index, className }: ServiceCardProps) {
     <article
       id={service.id}
       className={cn(
-        "group bg-ivory border border-linen overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-champagne/60",
+        "group bg-ivory border border-linen overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-mauve/60",
         className
       )}
     >
@@ -40,11 +40,11 @@ export function ServiceCard({ service, index, className }: ServiceCardProps) {
       <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
         <div className="space-y-3">
           {service.subtitle && (
-            <span className="text-xs uppercase tracking-widest text-champagne-dark font-medium block">
+            <span className="text-xs uppercase tracking-widest text-mauve-dark font-medium block">
               {service.subtitle}
             </span>
           )}
-          <h3 className="font-serif text-2xl text-ink group-hover:text-champagne-dark transition-colors">{service.title}</h3>
+          <h3 className="font-serif text-2xl text-ink group-hover:text-mauve-dark transition-colors">{service.title}</h3>
           <p className="text-sm text-neutral-600 leading-relaxed font-light">
             {service.description}
           </p>
@@ -53,7 +53,7 @@ export function ServiceCard({ service, index, className }: ServiceCardProps) {
             <ul className="pt-4 space-y-2 border-t border-linen">
               {service.features.map((feat, i) => (
                 <li key={i} className="flex items-start gap-2 text-xs text-neutral-700">
-                  <Check size={14} className="text-champagne-dark shrink-0 mt-0.5" />
+                  <Check size={14} className="text-mauve-dark shrink-0 mt-0.5" />
                   <span>{feat}</span>
                 </li>
               ))}

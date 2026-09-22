@@ -15,7 +15,7 @@ interface WordProps {
 function Word({ children, range, progress }: WordProps) {
   const opacity = useTransform(progress, range, [0.2, 1]);
   // Literal hex required: Framer Motion cannot interpolate CSS custom properties (neutral-400 → ink token)
-  const color = useTransform(progress, range, ["#9E9E9E", "#1A1A1A"]);
+  const color = useTransform(progress, range, ["#9E9E9E", "#1C1518"]);
   return (
     <motion.span style={{ opacity, color }} className="inline-block mr-[0.25em] transition-colors">
       {children}
