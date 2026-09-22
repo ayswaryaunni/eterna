@@ -1,6 +1,7 @@
 "use server";
 
 import { supabaseAdmin } from "@/lib/supabase/server";
+import { confirmToClient, notifyConcierge } from "@/lib/email/enquiry";
 import type { ContactFormData } from "@/types";
 import type { EnquiryInsert } from "@/lib/supabase/types";
 
@@ -42,6 +43,14 @@ export async function submitEnquiry(form: ContactFormData): Promise<EnquiryResul
       console.error("[enquiry] insert failed:", error.message);
       return { ok: false, error: "We couldn't send your inquiry just now. Please try again or email us directly." };
     }
+
+    // Email is best-effort: the enquiry is already safely stored, so a mail
+    // failure is logged but never surfaced to the visitor.
+    const results = await Promise.allSettled([notifyConcierge(row), confirmToClient(row)]);
+    results.forEach((r, i) => {
+      if (r.status === "rejected") console.error(`[enquiry] ${i === 0 ? "concierge alert" : "client confirmation"} email failed:`, r.reason);
+    });
+
     return { ok: true };
   } catch (e) {
     console.error("[enquiry] unexpected:", e);
