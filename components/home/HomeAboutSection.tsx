@@ -108,16 +108,16 @@ export function HomeAboutSection({ images = [] }: { images?: string[] }) {
               className="grid grid-cols-3 gap-4 pt-6 border-t border-purple/20"
             >
               <div>
-                <span className="font-serif text-3xl sm:text-4xl text-purple block font-light">10+</span>
-                <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-light">Years</span>
+                <span className="font-serif text-5xl sm:text-6xl lg:text-7xl text-purple block font-light leading-none">10+</span>
+                <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 font-light mt-2 block">Years</span>
               </div>
               <div>
-                <span className="font-serif text-3xl sm:text-4xl text-purple block font-light">150+</span>
-                <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-light">Events</span>
+                <span className="font-serif text-5xl sm:text-6xl lg:text-7xl text-purple block font-light leading-none">150+</span>
+                <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 font-light mt-2 block">Events</span>
               </div>
               <div>
-                <span className="font-serif text-3xl sm:text-4xl text-purple block font-light">18+</span>
-                <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-light">Havens</span>
+                <span className="font-serif text-5xl sm:text-6xl lg:text-7xl text-purple block font-light leading-none">18+</span>
+                <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 font-light mt-2 block">Havens</span>
               </div>
             </motion.div>
 
