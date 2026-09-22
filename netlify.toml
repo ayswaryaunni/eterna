@@ -1,5 +1,4 @@
-# Netlify build config — Next.js is handled by Netlify's Next Runtime plugin,
-# which Netlify installs automatically for Next.js sites.
+# Netlify build config — Next.js is handled by Netlify's Next Runtime plugin.
 [build]
   command = "npm run build"
   publish = ".next"
@@ -7,6 +6,16 @@
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--no-audit --no-fund"
+
+  # Secrets scanning.
+  # NEXT_PUBLIC_* values are, by definition, shipped to the browser — Supabase's
+  # URL and anon key are meant to be public and are protected by Row-Level
+  # Security, so the scanner's hits on them are false positives.
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY"
+  # Turbopack's build cache records env values for invalidation. It is never
+  # served to visitors, so exclude it from the scan (real secrets are verified
+  # absent from the served output).
+  SECRETS_SCAN_OMIT_PATHS = ".next/cache/**,.netlify/.next/cache/**,.next/dev/**"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
