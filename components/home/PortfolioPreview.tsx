@@ -10,7 +10,7 @@ export function PortfolioPreview() {
   const featuredProjects = portfolioItems.filter((item) => item.featured).slice(0, 3);
 
   return (
-    <section className="py-[60px] bg-white border-t border-[#EAE5DE]">
+    <section className="py-[60px] bg-white border-t border-linen">
       <Container size="wide">
 
         <FadeIn>

@@ -10,7 +10,7 @@ export function ServicesPreview() {
   const featuredServices = services.slice(0, 3);
 
   return (
-    <section className="py-[60px] bg-[#FAF8F5]">
+    <section className="py-[60px] bg-ivory">
       <Container size="wide">
 
         {/* ── Section Heading ─────────────────────────────────────────────── */}

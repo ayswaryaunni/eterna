@@ -47,16 +47,16 @@ export function HeroGalleryShowcase() {
   return (
     <section 
       ref={containerRef} 
-      className="py-24 bg-[#FAF8F5] text-[#1A1A1A] overflow-hidden relative border-y border-[#EAE5DE]"
+      className="py-24 bg-ivory text-ink overflow-hidden relative border-y border-linen"
     >
       {/* Subtle Soft Purple Ambient Lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#4D004D]/5 blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-purple/5 blur-[160px] rounded-full pointer-events-none" />
 
       <Container size="wide" className="mb-14 text-center relative z-10">
-        <span className="text-[11px] uppercase tracking-[0.35em] text-[#C5A880] font-light block mb-3">
+        <span className="text-[11px] uppercase tracking-[0.35em] text-champagne font-light block mb-3">
           Curated Gallery
         </span>
-        <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#1A1A1A] tracking-tight">
+        <h2 className="font-serif text-3xl sm:text-5xl font-light text-ink tracking-tight">
           Captured Moments of Grandeur
         </h2>
         <p className="text-xs sm:text-sm text-neutral-600 font-light max-w-lg mx-auto mt-3 leading-relaxed">
@@ -72,7 +72,7 @@ export function HeroGalleryShowcase() {
           {row1.concat(row1).map((src, i) => (
             <div
               key={`row1-${i}`}
-              className="relative w-64 sm:w-80 h-44 sm:h-56 rounded-xl overflow-hidden shadow-lg flex-shrink-0 group border border-[#EAE5DE] hover:border-[#C5A880] transition-all duration-500 bg-neutral-100"
+              className="relative w-64 sm:w-80 h-44 sm:h-56 rounded-xl overflow-hidden shadow-lg flex-shrink-0 group border border-linen hover:border-champagne transition-all duration-500 bg-neutral-100"
             >
               <Image
                 src={src}
@@ -90,7 +90,7 @@ export function HeroGalleryShowcase() {
           {row2.concat(row2).map((src, i) => (
             <div
               key={`row2-${i}`}
-              className="relative w-64 sm:w-80 h-44 sm:h-56 rounded-xl overflow-hidden shadow-lg flex-shrink-0 group border border-[#EAE5DE] hover:border-[#C5A880] transition-all duration-500 bg-neutral-100"
+              className="relative w-64 sm:w-80 h-44 sm:h-56 rounded-xl overflow-hidden shadow-lg flex-shrink-0 group border border-linen hover:border-champagne transition-all duration-500 bg-neutral-100"
             >
               <Image
                 src={src}
@@ -108,7 +108,7 @@ export function HeroGalleryShowcase() {
           {row3.concat(row3).map((src, i) => (
             <div
               key={`row3-${i}`}
-              className="relative w-64 sm:w-80 h-44 sm:h-56 rounded-xl overflow-hidden shadow-lg flex-shrink-0 group border border-[#EAE5DE] hover:border-[#C5A880] transition-all duration-500 bg-neutral-100"
+              className="relative w-64 sm:w-80 h-44 sm:h-56 rounded-xl overflow-hidden shadow-lg flex-shrink-0 group border border-linen hover:border-champagne transition-all duration-500 bg-neutral-100"
             >
               <Image
                 src={src}

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <main className="pt-28 pb-12">
-      <div className="py-16 bg-[#FAF8F5] border-b border-[#EAE5DE]">
+      <div className="py-16 bg-ivory border-b border-linen">
         <Container size="default" className="text-center">
           <SectionHeading
             tag="Curated Offerings"

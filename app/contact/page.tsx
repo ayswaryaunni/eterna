@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="pt-28 pb-20 bg-[#FAF8F5]">
+    <main className="pt-28 pb-20 bg-ivory">
       <Container size="default">
         <SectionHeading
           tag="Initiate Planning"
@@ -28,30 +28,30 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Details */}
-          <div className="lg:col-span-5 space-y-8 bg-white p-8 sm:p-10 border border-[#EAE5DE]">
+          <div className="lg:col-span-5 space-y-8 bg-white p-8 sm:p-10 border border-linen">
             <div>
-              <span className="text-xs uppercase tracking-widest text-[#B8976C] font-medium block">
+              <span className="text-xs uppercase tracking-widest text-champagne-dark font-medium block">
                 Atelier Concierge
               </span>
-              <h3 className="font-serif text-2xl text-[#1A1A1A] mt-1">Direct Inquiries</h3>
+              <h3 className="font-serif text-2xl text-ink mt-1">Direct Inquiries</h3>
             </div>
 
             <div className="space-y-4 text-sm text-neutral-600 font-light">
               <div>
-                <span className="font-medium text-[#1A1A1A] block">Email</span>
+                <span className="font-medium text-ink block">Email</span>
                 <p>{siteConfig.email}</p>
               </div>
               <div>
-                <span className="font-medium text-[#1A1A1A] block">Telephone</span>
+                <span className="font-medium text-ink block">Telephone</span>
                 <p>{siteConfig.phone}</p>
               </div>
               <div>
-                <span className="font-medium text-[#1A1A1A] block">Offices</span>
+                <span className="font-medium text-ink block">Offices</span>
                 <p className="leading-relaxed">{siteConfig.address}</p>
               </div>
             </div>
 
-            <div className="pt-4 border-t border-[#EAE5DE]">
+            <div className="pt-4 border-t border-linen">
               <span className="text-xs uppercase tracking-widest text-neutral-500 font-medium block mb-2">
                 Consultation Hours
               </span>

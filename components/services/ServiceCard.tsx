@@ -18,7 +18,7 @@ export function ServiceCard({ service, index, className }: ServiceCardProps) {
     <article
       id={service.id}
       className={cn(
-        "group bg-[#FAF8F5] border border-[#EAE5DE] overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-[#C5A880]/60",
+        "group bg-ivory border border-linen overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-champagne/60",
         className
       )}
     >
@@ -31,7 +31,7 @@ export function ServiceCard({ service, index, className }: ServiceCardProps) {
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         {indexFormatted && (
-          <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-xs font-serif px-3 py-1 text-[#1A1A1A] tracking-widest border border-neutral-200">
+          <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-xs font-serif px-3 py-1 text-ink tracking-widest border border-neutral-200">
             {indexFormatted}
           </span>
         )}
@@ -40,20 +40,20 @@ export function ServiceCard({ service, index, className }: ServiceCardProps) {
       <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
         <div className="space-y-3">
           {service.subtitle && (
-            <span className="text-xs uppercase tracking-widest text-[#B8976C] font-medium block">
+            <span className="text-xs uppercase tracking-widest text-champagne-dark font-medium block">
               {service.subtitle}
             </span>
           )}
-          <h3 className="font-serif text-2xl text-[#1A1A1A] group-hover:text-[#B8976C] transition-colors">{service.title}</h3>
+          <h3 className="font-serif text-2xl text-ink group-hover:text-champagne-dark transition-colors">{service.title}</h3>
           <p className="text-sm text-neutral-600 leading-relaxed font-light">
             {service.description}
           </p>
 
           {service.features && service.features.length > 0 && (
-            <ul className="pt-4 space-y-2 border-t border-[#EAE5DE]">
+            <ul className="pt-4 space-y-2 border-t border-linen">
               {service.features.map((feat, i) => (
                 <li key={i} className="flex items-start gap-2 text-xs text-neutral-700">
-                  <Check size={14} className="text-[#B8976C] shrink-0 mt-0.5" />
+                  <Check size={14} className="text-champagne-dark shrink-0 mt-0.5" />
                   <span>{feat}</span>
                 </li>
               ))}
@@ -61,10 +61,10 @@ export function ServiceCard({ service, index, className }: ServiceCardProps) {
           )}
         </div>
 
-        <div className="pt-4 border-t border-[#EAE5DE]">
+        <div className="pt-4 border-t border-linen">
           <Link
             href="/contact"
-            className="text-xs uppercase tracking-[0.18em] font-medium text-[#4D004D] hover:text-[#370037] transition-colors inline-flex items-center gap-1"
+            className="text-xs uppercase tracking-[0.18em] font-medium text-purple hover:text-purple-dark transition-colors inline-flex items-center gap-1"
           >
             Request Consultation →
           </Link>

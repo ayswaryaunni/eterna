@@ -28,14 +28,14 @@ export function AboutTeam() {
   ];
 
   return (
-    <section className="py-[100px] bg-white border-t border-[#EAE5DE] overflow-hidden">
+    <section className="py-[100px] bg-white border-t border-linen overflow-hidden">
       <Container size="wide">
         <div className="flex flex-col lg:flex-row items-end justify-between gap-8 mb-16">
           <div>
-            <span className="text-xs uppercase tracking-[0.4em] text-[#C5A880] font-light block mb-3">
+            <span className="text-xs uppercase tracking-[0.4em] text-champagne font-light block mb-3">
               The Visionaries
             </span>
-            <h2 className="font-serif text-4xl sm:text-5xl font-light text-[#1A1A1A]">
+            <h2 className="font-serif text-4xl sm:text-5xl font-light text-ink">
               Leadership Atelier
             </h2>
           </div>
@@ -53,7 +53,7 @@ export function AboutTeam() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border border-[#EAE5DE] p-6 lg:p-8 bg-[#FAF8F5] ${
+              className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border border-linen p-6 lg:p-8 bg-ivory ${
                 idx % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
             >
@@ -70,10 +70,10 @@ export function AboutTeam() {
 
               {/* Bio side */}
               <div className={`lg:col-span-7 space-y-4 ${idx % 2 === 1 ? "lg:order-1 lg:pr-8" : "lg:pl-8"}`}>
-                <span className="text-[11px] uppercase tracking-[0.3em] text-[#C5A880] font-medium block">
+                <span className="text-[11px] uppercase tracking-[0.3em] text-champagne font-medium block">
                   {member.role}
                 </span>
-                <h3 className="font-serif text-3xl lg:text-4xl text-[#1A1A1A]">
+                <h3 className="font-serif text-3xl lg:text-4xl text-ink">
                   {member.name}
                 </h3>
                 <p className="text-sm text-neutral-600 font-light leading-relaxed max-w-xl">

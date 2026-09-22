@@ -31,7 +31,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[92vh] lg:min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-[#121212]">
+    <section className="relative min-h-[92vh] lg:min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-charcoal">
       {/* ── Main Romantic Couple Background ──────────────────────────────── */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -44,8 +44,8 @@ export function Hero() {
         />
         {/* Soft Vignette Overlay: Darker on left for text readability, subtle purple tint on bottom */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-black/40" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[#4D004D]/30 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-purple/30 via-transparent to-transparent" />
       </div>
 
       {/* ── Content Container ──────────────────────────────────────────────── */}
@@ -59,8 +59,8 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-3"
           >
-            <span className="w-8 h-px bg-[#C5A880]" />
-            <span className="text-[11px] uppercase tracking-[0.35em] text-[#C5A880] font-light">
+            <span className="w-8 h-px bg-champagne" />
+            <span className="text-[11px] uppercase tracking-[0.35em] text-champagne font-light">
               Eterna Atelier
             </span>
           </motion.div>
@@ -73,7 +73,7 @@ export function Hero() {
             style={{ fontSize: "clamp(2.8rem, 5.8vw, 5.5rem)" }}
           >
             Where forever<br />
-            begins <span className="italic font-light text-[#C5A880]">beautifully</span><br />
+            begins <span className="italic font-light text-champagne">beautifully</span><br />
             together
           </motion.h1>
 
@@ -94,7 +94,7 @@ export function Hero() {
           >
             <Link
               href="/contact"
-              className="inline-flex items-center px-8 py-3.5 bg-white text-[#141414] text-xs uppercase tracking-[0.2em] font-medium rounded-full hover:bg-[#C5A880] hover:text-white transition-all duration-300 shadow-lg"
+              className="inline-flex items-center px-8 py-3.5 bg-white text-charcoal text-xs uppercase tracking-[0.2em] font-medium rounded-full hover:bg-champagne hover:text-white transition-all duration-300 shadow-lg"
             >
               Start Planning
             </Link>

@@ -37,7 +37,7 @@ export function Navbar() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isTransparent
           ? "bg-transparent py-6"
-          : "bg-[#FAF8F5]/95 backdrop-blur-md shadow-sm py-3 border-b border-[#EBE6DF]"
+          : "bg-ivory/95 backdrop-blur-md shadow-sm py-3 border-b border-linen"
       )}
     >
       <Container size="wide">
@@ -50,7 +50,7 @@ export function Navbar() {
           >
             <span className={cn(
               "font-serif text-2xl sm:text-3xl tracking-[0.2em] font-normal transition-colors duration-500",
-              isTransparent ? "text-white hover:text-[#C5A880]" : "text-[#4D004D] hover:text-[#370037]"
+              isTransparent ? "text-white hover:text-champagne" : "text-purple hover:text-purple-dark"
             )}>
               ETERNA
             </span>
@@ -74,14 +74,14 @@ export function Navbar() {
                     "text-xs tracking-[0.18em] uppercase transition-colors duration-300 relative py-1 font-medium",
                     isTransparent
                       ? isActive ? "text-white" : "text-white/60 hover:text-white"
-                      : isActive ? "text-[#1A1A1A]" : "text-neutral-500 hover:text-[#1A1A1A]"
+                      : isActive ? "text-ink" : "text-neutral-500 hover:text-ink"
                   )}
                 >
                   {item.label}
                   {isActive && (
                     <span className={cn(
                       "absolute bottom-0 left-0 right-0 h-[1.5px] transition-colors duration-300",
-                      isTransparent ? "bg-[#C5A880]" : "bg-[#B8976C]"
+                      isTransparent ? "bg-champagne" : "bg-champagne-dark"
                     )} />
                   )}
                 </Link>
@@ -97,8 +97,8 @@ export function Navbar() {
               variant="primary"
               className={cn(
                 isTransparent
-                  ? "bg-[#4D004D] text-white hover:bg-[#C5A880] hover:text-[#1A1A1A]"
-                  : "bg-[#4D004D] text-white hover:bg-[#370037]"
+                  ? "bg-purple text-white hover:bg-champagne hover:text-ink"
+                  : "bg-purple text-white hover:bg-purple-dark"
               )}
             >
               Inquire
@@ -111,7 +111,7 @@ export function Navbar() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={cn(
               "md:hidden p-2 focus:outline-none transition-colors duration-300",
-              isTransparent ? "text-white" : "text-[#1A1A1A]"
+              isTransparent ? "text-white" : "text-ink"
             )}
             aria-expanded={mobileMenuOpen}
             aria-label="Toggle navigation menu"
@@ -123,7 +123,7 @@ export function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[73px] bg-[#FAF8F5] border-b border-[#EBE6DF] px-6 py-8 shadow-xl transition-all">
+        <div className="md:hidden fixed inset-x-0 top-[73px] bg-ivory border-b border-linen px-6 py-8 shadow-xl transition-all">
           <div className="flex flex-col gap-6">
             {navigationItems.map((item) => {
               const isActive = pathname === item.href;
@@ -134,7 +134,7 @@ export function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
                     "text-sm tracking-[0.2em] uppercase font-medium py-2 border-b border-neutral-200/50",
-                    isActive ? "text-[#B8976C]" : "text-[#1A1A1A]"
+                    isActive ? "text-champagne-dark" : "text-ink"
                   )}
                 >
                   {item.label}

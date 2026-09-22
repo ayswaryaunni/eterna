@@ -9,25 +9,25 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#2A002A] text-purple-100/90 pt-20 pb-12 border-t border-[#4D004D] overflow-hidden">
+    <footer className="relative bg-purple-deep text-ivory/80 pt-20 pb-12 border-t border-purple overflow-hidden">
       {/* Subtle Luxury Grid Lines Pattern */}
       <div 
         className="absolute inset-0 opacity-[0.05] pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(to right, #C5A880 1px, transparent 1px), linear-gradient(to bottom, #C5A880 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(to right, var(--color-champagne) 1px, transparent 1px), linear-gradient(to bottom, var(--color-champagne) 1px, transparent 1px)`,
           backgroundSize: `60px 60px`
         }}
       />
 
       <Container size="wide" className="relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-16 border-b border-[#4D004D]/60">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-16 border-b border-purple/60">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-6">
             <div>
               <span className="font-serif text-3xl tracking-[0.2em] text-white block">
                 ETERNA
               </span>
-              <span className="text-[10px] tracking-[0.35em] uppercase text-[#C5A880] font-light">
+              <span className="text-[10px] tracking-[0.35em] uppercase text-champagne font-light">
                 Luxury Weddings & Events
               </span>
             </div>
@@ -42,7 +42,7 @@ export function Footer() {
 
           {/* Navigation Links */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-[#C5A880] font-medium">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-champagne font-medium">
               Explore
             </h4>
             <ul className="space-y-3">
@@ -61,7 +61,7 @@ export function Footer() {
 
           {/* Services Links */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-[#C5A880] font-medium">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-champagne font-medium">
               Services
             </h4>
             <ul className="space-y-3">
@@ -80,7 +80,7 @@ export function Footer() {
 
           {/* Direct Concierge Contact */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-[#C5A880] font-medium">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-champagne font-medium">
               Concierge
             </h4>
             <div className="space-y-2 text-sm text-neutral-400">

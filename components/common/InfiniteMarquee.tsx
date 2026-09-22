@@ -17,7 +17,7 @@ export function InfiniteMarquee() {
   ];
 
   return (
-    <div className="py-8 bg-[#141414] text-white border-y border-neutral-800 overflow-hidden flex whitespace-nowrap select-none">
+    <div className="py-8 bg-charcoal text-white border-y border-neutral-800 overflow-hidden flex whitespace-nowrap select-none">
       <motion.div
         animate={{ x: ["0%", "-50%"] }}
         transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
@@ -25,8 +25,8 @@ export function InfiniteMarquee() {
       >
         {words.concat(words).map((item, index) => (
           <React.Fragment key={index}>
-            <span className="hover:text-[#C5A880] transition-colors">{item}</span>
-            <span className="text-[#C5A880] font-serif text-lg">✦</span>
+            <span className="hover:text-champagne transition-colors">{item}</span>
+            <span className="text-champagne font-serif text-lg">✦</span>
           </React.Fragment>
         ))}
       </motion.div>

@@ -64,12 +64,12 @@ export function InteractiveServiceShowcase() {
   const activeService = services[activeIndex] || services[0];
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-[#FAF8F5] text-[#1A1A1A] border-y border-[#EAE5DE]">
+    <section ref={targetRef} className="relative h-[300vh] bg-ivory text-ink border-y border-linen">
       {/* Sticky Viewport Container */}
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         
         {/* Subtle Background Glow */}
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#4D004D]/5 blur-[160px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-purple/5 blur-[160px] rounded-full pointer-events-none" />
 
         <Container size="wide" className="w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -83,7 +83,7 @@ export function InteractiveServiceShowcase() {
                 transition={{ duration: 0.4 }}
                 className="inline-flex items-center gap-3"
               >
-                <span className="text-[11px] uppercase tracking-[0.35em] text-white bg-[#4D004D] px-3.5 py-1 font-medium rounded-full shadow-sm">
+                <span className="text-[11px] uppercase tracking-[0.35em] text-white bg-purple px-3.5 py-1 font-medium rounded-full shadow-sm">
                   0{activeIndex + 1} · {(activeService.subtitle || "Luxury Experience").slice(0, 26)}
                 </span>
               </motion.div>
@@ -93,7 +93,7 @@ export function InteractiveServiceShowcase() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="font-serif text-3xl sm:text-5xl font-light text-[#1A1A1A] leading-[1.15] tracking-tight min-h-[100px]"
+                className="font-serif text-3xl sm:text-5xl font-light text-ink leading-[1.15] tracking-tight min-h-[100px]"
               >
                 {activeService.title}
               </motion.h2>
@@ -117,7 +117,7 @@ export function InteractiveServiceShowcase() {
               >
                 {activeService.features?.map((feat, idx) => (
                   <li key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-neutral-700 font-light">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#4D004D] shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-purple shrink-0" />
                     <span>{feat}</span>
                   </li>
                 ))}

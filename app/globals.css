@@ -1,32 +1,46 @@
 @import "tailwindcss";
 
-:root {
-  --background: #FAF8F5;
-  --foreground: #1A1A1A;
-  --ivory: #FAF8F5;
-  --charcoal: #141414;
-  --champagne: #C5A880;
-  --purple: #4D004D;
-  --purple-dark: #370037;
-  --purple-light: #660066;
-  --border-muted: #EAE5DE;
-}
-
+/* ──────────────────────────────────────────────────────────────────────────
+   Eterna Design Tokens
+   Single source of truth for brand colours & typography. Use the generated
+   utilities (bg-purple, text-champagne, border-linen …) instead of hex codes.
+   ────────────────────────────────────────────────────────────────────────── */
 @theme {
+  /* Typography */
   --font-serif: var(--font-serif), "Cormorant Garamond", Georgia, serif;
   --font-display: var(--font-display), "Playfair Display", Georgia, serif;
   --font-opensans: var(--font-opensans), "Open Sans", sans-serif;
   --font-sans: var(--font-sans), "Jost", -apple-system, BlinkMacSystemFont, sans-serif;
-  --color-ivory: #FAF8F5;
-  --color-charcoal: #141414;
-  --color-champagne: #C5A880;
+
+  /* Brand purple — replaces Tailwind's default purple scale */
+  --color-purple-*: initial;
   --color-purple: #4D004D;
-  --color-purple-dark: #370037;
   --color-purple-light: #660066;
+  --color-purple-dark: #370037;
+  --color-purple-deep: #2A002A;
+
+  /* Metallic accents */
+  --color-champagne: #C5A880;
+  --color-champagne-dark: #B8976C;
+  --color-gold: #D4AF37;
+
+  /* Surfaces */
+  --color-ivory: #FAF8F5;
+  --color-linen: #EAE5DE;
+
+  /* Darks */
+  --color-ink: #1A1A1A;
+  --color-charcoal: #141414;
+  --color-onyx: #0A0A0A;
+}
+
+:root {
+  --background: var(--color-ivory);
+  --foreground: var(--color-ink);
 }
 
 body {
-  background-color: #FAF8F5;
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
 }

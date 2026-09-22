@@ -8,9 +8,9 @@ import { Button } from "@/components/common/Button";
 
 export function HomeAboutSection() {
   return (
-    <section className="py-[100px] bg-[#FAF8F5] border-y border-[#EAE5DE] relative overflow-hidden">
+    <section className="py-[100px] bg-ivory border-y border-linen relative overflow-hidden">
       {/* Subtle purple background lighting */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#4D004D]/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-purple/5 blur-[120px] rounded-full pointer-events-none" />
 
       <Container size="wide" className="relative z-10">
         {/* Top Header Badge & Large Typography */}
@@ -20,7 +20,7 @@ export function HomeAboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-block text-[11px] uppercase tracking-[0.35em] text-white bg-[#4D004D] px-3.5 py-1 font-medium rounded-full"
+            className="inline-block text-[11px] uppercase tracking-[0.35em] text-white bg-purple px-3.5 py-1 font-medium rounded-full"
           >
             The Atelier
           </motion.span>
@@ -29,10 +29,10 @@ export function HomeAboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-[#1A1A1A] leading-[1.1] tracking-tight"
+            className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-ink leading-[1.1] tracking-tight"
           >
             Where Architectural Precision<br className="hidden sm:block" />
-            Meets <span className="italic font-serif text-[#4D004D]">Poetic Romance</span>
+            Meets <span className="italic font-serif text-purple">Poetic Romance</span>
           </motion.h2>
         </div>
 
@@ -47,7 +47,7 @@ export function HomeAboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative aspect-[16/10] w-full overflow-hidden shadow-xl border-l-4 border-[#4D004D]"
+              className="relative aspect-[16/10] w-full overflow-hidden shadow-xl border-l-4 border-purple"
             >
               <Image
                 src="/images/portfolio/lake-como-wedding.jpg"
@@ -64,7 +64,7 @@ export function HomeAboutSection() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="hidden sm:block absolute -bottom-10 -right-6 w-1/2 aspect-[4/5] border-4 border-[#FAF8F5] shadow-2xl overflow-hidden"
+              className="hidden sm:block absolute -bottom-10 -right-6 w-1/2 aspect-[4/5] border-4 border-ivory shadow-2xl overflow-hidden"
             >
               <Image
                 src="/images/portfolio/amalfi-wedding.jpg"
@@ -104,18 +104,18 @@ export function HomeAboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="grid grid-cols-3 gap-4 pt-6 border-t border-[#4D004D]/20"
+              className="grid grid-cols-3 gap-4 pt-6 border-t border-purple/20"
             >
               <div>
-                <span className="font-serif text-3xl sm:text-4xl text-[#4D004D] block font-light">10+</span>
+                <span className="font-serif text-3xl sm:text-4xl text-purple block font-light">10+</span>
                 <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-light">Years</span>
               </div>
               <div>
-                <span className="font-serif text-3xl sm:text-4xl text-[#4D004D] block font-light">150+</span>
+                <span className="font-serif text-3xl sm:text-4xl text-purple block font-light">150+</span>
                 <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-light">Events</span>
               </div>
               <div>
-                <span className="font-serif text-3xl sm:text-4xl text-[#4D004D] block font-light">18+</span>
+                <span className="font-serif text-3xl sm:text-4xl text-purple block font-light">18+</span>
                 <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-light">Havens</span>
               </div>
             </motion.div>
@@ -127,7 +127,7 @@ export function HomeAboutSection() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="pt-2"
             >
-              <Button href="/about" variant="outline" size="default" className="border-[#4D004D] text-[#4D004D] hover:bg-[#4D004D] hover:text-white">
+              <Button href="/about" variant="outline" size="default" className="border-purple text-purple hover:bg-purple hover:text-white">
                 Discover Our Story
               </Button>
             </motion.div>

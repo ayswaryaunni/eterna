@@ -66,7 +66,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${serifFont.variable} ${displayFont.variable} ${openSans.variable} ${sansFont.variable} scroll-smooth`}>
-      <body className="font-sans antialiased bg-[#FAF8F5] text-[#1A1A1A] selection:bg-[#C5A880]/30 selection:text-[#1A1A1A]">
+      <body className="font-sans antialiased bg-ivory text-ink selection:bg-champagne/30 selection:text-ink">
         <Navbar />
         {children}
         <Footer />

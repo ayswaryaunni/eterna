@@ -14,6 +14,7 @@ interface WordProps {
 
 function Word({ children, range, progress }: WordProps) {
   const opacity = useTransform(progress, range, [0.2, 1]);
+  // Literal hex required: Framer Motion cannot interpolate CSS custom properties (neutral-400 → ink token)
   const color = useTransform(progress, range, ["#9E9E9E", "#1A1A1A"]);
   return (
     <motion.span style={{ opacity, color }} className="inline-block mr-[0.25em] transition-colors">
@@ -33,7 +34,7 @@ export function AboutPreview() {
   const words = statementText.split(" ");
 
   return (
-    <section className="py-20 lg:py-28 bg-[#FAF8F5] border-y border-[#EAE5DE] relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-ivory border-y border-linen relative overflow-hidden">
       <Container size="wide" className="relative z-10 space-y-12 lg:space-y-16">
         
         {/* Top Header Large Statement Typography (Word-by-word scroll lighting/brightening) */}
@@ -80,7 +81,7 @@ export function AboutPreview() {
             className="md:col-span-4 space-y-8 lg:px-2"
           >
             <div className="space-y-2.5">
-              <h3 className="font-serif text-2xl sm:text-3xl text-[#1A1A1A] font-normal">
+              <h3 className="font-serif text-2xl sm:text-3xl text-ink font-normal">
                 Personalized Planning
               </h3>
               <p className="text-sm text-neutral-600 font-light leading-relaxed">
@@ -89,7 +90,7 @@ export function AboutPreview() {
             </div>
 
             <div className="space-y-2.5">
-              <h3 className="font-serif text-2xl sm:text-3xl text-[#1A1A1A] font-normal">
+              <h3 className="font-serif text-2xl sm:text-3xl text-ink font-normal">
                 Trusted Expertise
               </h3>
               <p className="text-sm text-neutral-600 font-light leading-relaxed">
@@ -98,7 +99,7 @@ export function AboutPreview() {
             </div>
 
             <div className="pt-2">
-              <Button href="/about" variant="outline" size="default" className="border-[#4D004D] text-[#4D004D] hover:bg-[#4D004D] hover:text-white rounded-full">
+              <Button href="/about" variant="outline" size="default" className="border-purple text-purple hover:bg-purple hover:text-white rounded-full">
                 Discover Our Story
               </Button>
             </div>

@@ -52,15 +52,15 @@ export function AboutProcess() {
 
   return (
     // Sticky Scroll Container (Pinned height 250vh so user stays in timeline while scrolling)
-    <section ref={targetRef} className="relative h-[250vh] bg-[#FAF8F5] border-t border-[#EAE5DE]">
+    <section ref={targetRef} className="relative h-[250vh] bg-ivory border-t border-linen">
       {/* Sticky Content Viewport */}
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
         <Container size="wide">
           <div className="text-center max-w-xl mx-auto mb-16 sm:mb-20">
-            <span className="text-xs uppercase tracking-[0.4em] text-[#C5A880] font-medium block mb-3">
+            <span className="text-xs uppercase tracking-[0.4em] text-champagne font-medium block mb-3">
               The Timeline
             </span>
-            <h2 className="font-serif text-4xl sm:text-5xl font-light text-[#1A1A1A]">
+            <h2 className="font-serif text-4xl sm:text-5xl font-light text-ink">
               Bespoke Creation Process
             </h2>
             <p className="text-xs text-neutral-400 font-light mt-2 tracking-wider">
@@ -71,12 +71,12 @@ export function AboutProcess() {
           {/* Interactive Scroll-Driven Timeline */}
           <div className="relative px-4 sm:px-8">
             {/* Base Line (Full Width across all nodes) */}
-            <div className="hidden lg:block absolute top-[28px] left-0 right-0 h-[2px] bg-[#EAE5DE] z-0" />
+            <div className="hidden lg:block absolute top-[28px] left-0 right-0 h-[2px] bg-linen z-0" />
 
             {/* Scroll Progress Active Gold Line (Full 100% width grow) */}
             <motion.div
               style={{ scaleX, transformOrigin: "left" }}
-              className="hidden lg:block absolute top-[28px] left-0 right-0 h-[2px] bg-[#C5A880] z-0"
+              className="hidden lg:block absolute top-[28px] left-0 right-0 h-[2px] bg-champagne z-0"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
@@ -118,8 +118,8 @@ function StepCard({
         <div
           className={`w-14 h-14 rounded-full flex items-center justify-center font-serif text-lg transition-all duration-500 shadow-md relative z-10 ${
             isActive
-              ? "bg-[#C5A880] text-white border-2 border-[#C5A880] scale-110 shadow-[#C5A880]/30"
-              : "bg-white text-neutral-400 border border-[#EAE5DE]"
+              ? "bg-champagne text-white border-2 border-champagne scale-110 shadow-champagne/30"
+              : "bg-white text-neutral-400 border border-linen"
           }`}
         >
           {item.step}
@@ -133,7 +133,7 @@ function StepCard({
       >
         <h3
           className={`font-serif text-2xl transition-colors duration-500 ${
-            isActive ? "text-[#1A1A1A]" : "text-neutral-400"
+            isActive ? "text-ink" : "text-neutral-400"
           }`}
         >
           {item.title}

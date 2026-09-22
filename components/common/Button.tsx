@@ -23,17 +23,17 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium tracking-wide transition-all duration-300 rounded-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#4D004D]/50 disabled:opacity-50 disabled:pointer-events-none";
+    "inline-flex items-center justify-center font-medium tracking-wide transition-all duration-300 rounded-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-purple/50 disabled:opacity-50 disabled:pointer-events-none";
 
   const variants = {
     primary:
-      "bg-[#4D004D] text-white hover:bg-[#370037] hover:shadow-md shadow-sm",
+      "bg-purple text-white hover:bg-purple-dark hover:shadow-md shadow-sm",
     secondary:
-      "bg-[#FAF8F5] text-[#4D004D] border border-[#4D004D]/20 hover:bg-[#4D004D] hover:text-white",
+      "bg-ivory text-purple border border-purple/20 hover:bg-purple hover:text-white",
     outline:
-      "border border-[#4D004D] text-[#4D004D] hover:bg-[#4D004D] hover:text-white",
+      "border border-purple text-purple hover:bg-purple hover:text-white",
     ghost:
-      "text-[#4D004D] hover:text-[#C5A880] hover:bg-transparent underline-offset-4 hover:underline",
+      "text-purple hover:text-champagne hover:bg-transparent underline-offset-4 hover:underline",
   };
 
   const sizes = {

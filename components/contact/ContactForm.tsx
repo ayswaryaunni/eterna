@@ -33,11 +33,11 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="p-8 sm:p-12 bg-white border border-[#EAE5DE] text-center space-y-4">
-        <span className="text-xs uppercase tracking-[0.25em] text-[#B8976C] font-medium">
+      <div className="p-8 sm:p-12 bg-white border border-linen text-center space-y-4">
+        <span className="text-xs uppercase tracking-[0.25em] text-champagne-dark font-medium">
           Thank You
         </span>
-        <h3 className="font-serif text-3xl text-[#1A1A1A]">
+        <h3 className="font-serif text-3xl text-ink">
           Your Inquiry Has Been Received
         </h3>
         <p className="text-sm text-neutral-600 font-light max-w-md mx-auto leading-relaxed">
@@ -60,7 +60,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-8 sm:p-10 bg-white border border-[#EAE5DE] shadow-sm space-y-6"
+      className="p-8 sm:p-10 bg-white border border-linen shadow-sm space-y-6"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {/* Name */}
@@ -76,7 +76,7 @@ export function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             placeholder="Lady Genevieve & Lord Sterling"
-            className="w-full px-4 py-3 text-sm bg-[#FAF8F5] border border-[#E5E0D8] focus:border-[#C5A880] focus:outline-none transition-colors"
+            className="w-full px-4 py-3 text-sm bg-ivory border border-linen focus:border-champagne focus:outline-none transition-colors"
           />
         </div>
 
@@ -93,7 +93,7 @@ export function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             placeholder="genevieve@example.com"
-            className="w-full px-4 py-3 text-sm bg-[#FAF8F5] border border-[#E5E0D8] focus:border-[#C5A880] focus:outline-none transition-colors"
+            className="w-full px-4 py-3 text-sm bg-ivory border border-linen focus:border-champagne focus:outline-none transition-colors"
           />
         </div>
 
@@ -110,7 +110,7 @@ export function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             placeholder="+1 (555) 000-0000"
-            className="w-full px-4 py-3 text-sm bg-[#FAF8F5] border border-[#E5E0D8] focus:border-[#C5A880] focus:outline-none transition-colors"
+            className="w-full px-4 py-3 text-sm bg-ivory border border-linen focus:border-champagne focus:outline-none transition-colors"
           />
         </div>
 
@@ -124,7 +124,7 @@ export function ContactForm() {
             name="eventType"
             value={formData.eventType}
             onChange={handleChange}
-            className="w-full px-4 py-3 text-sm bg-[#FAF8F5] border border-[#E5E0D8] focus:border-[#C5A880] focus:outline-none transition-colors"
+            className="w-full px-4 py-3 text-sm bg-ivory border border-linen focus:border-champagne focus:outline-none transition-colors"
           >
             <option value="Wedding Planning">Full-Service Wedding Planning</option>
             <option value="Destination Wedding">Destination Wedding</option>
@@ -145,7 +145,7 @@ export function ContactForm() {
             value={formData.eventDate}
             onChange={handleChange}
             placeholder="e.g. Summer 2026 / Oct 24, 2026"
-            className="w-full px-4 py-3 text-sm bg-[#FAF8F5] border border-[#E5E0D8] focus:border-[#C5A880] focus:outline-none transition-colors"
+            className="w-full px-4 py-3 text-sm bg-ivory border border-linen focus:border-champagne focus:outline-none transition-colors"
           />
         </div>
 
@@ -161,7 +161,7 @@ export function ContactForm() {
             value={formData.location}
             onChange={handleChange}
             placeholder="e.g. Lake Como, Italy or New York"
-            className="w-full px-4 py-3 text-sm bg-[#FAF8F5] border border-[#E5E0D8] focus:border-[#C5A880] focus:outline-none transition-colors"
+            className="w-full px-4 py-3 text-sm bg-ivory border border-linen focus:border-champagne focus:outline-none transition-colors"
           />
         </div>
       </div>
@@ -179,7 +179,7 @@ export function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           placeholder="Tell us about the atmosphere, aesthetic aspirations, and guest expectations for your celebration..."
-          className="w-full px-4 py-3 text-sm bg-[#FAF8F5] border border-[#E5E0D8] focus:border-[#C5A880] focus:outline-none transition-colors resize-none"
+          className="w-full px-4 py-3 text-sm bg-ivory border border-linen focus:border-champagne focus:outline-none transition-colors resize-none"
         />
       </div>
 
