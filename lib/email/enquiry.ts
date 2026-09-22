@@ -6,10 +6,10 @@ import type { EnquiryInsert } from "@/lib/supabase/types";
  * Enquiry emails via Resend. Configured with:
  *   RESEND_API_KEY      — from resend.com → API Keys
  *   ENQUIRY_NOTIFY_TO   — concierge inbox that receives new-enquiry alerts
- *   ENQUIRY_FROM        — sender, e.g. "Eterna <concierge@eternaevents.com>"
- *                         (domain must be verified in Resend; until then use
- *                         "Eterna <onboarding@resend.dev>", which can only
- *                         deliver to the Resend account owner's address)
+ *   ENQUIRY_FROM        — sender address; set in the environment only. Its
+ *                         domain must be verified in Resend. Resend’s shared
+ *                         testing sender delivers only to the account owner’s
+ *                         own address.
  * If RESEND_API_KEY is missing the functions are a no-op, so the site keeps
  * working without email.
  */
@@ -21,11 +21,13 @@ const esc = (s: string) =>
 
 function config() {
   const key = process.env.RESEND_API_KEY;
-  if (!key) return null;
+  const from = process.env.ENQUIRY_FROM;
+  // Missing key or sender → email is skipped entirely.
+  if (!key || !from) return null;
   return {
     resend: new Resend(key),
     to: process.env.ENQUIRY_NOTIFY_TO ?? "",
-    from: process.env.ENQUIRY_FROM ?? "Eterna <onboarding@resend.dev>",
+    from,
   };
 }
 
