@@ -1,0 +1,12 @@
+# Netlify build config — Next.js is handled by Netlify's Next Runtime plugin,
+# which Netlify installs automatically for Next.js sites.
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--no-audit --no-fund"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
