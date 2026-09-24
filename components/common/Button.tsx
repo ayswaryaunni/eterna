@@ -33,7 +33,7 @@ export function Button({
     outline:
       "border border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white",
     ghost:
-      "text-[#1A1A1A] hover:text-[#C5A880] hover:bg-transparent underline-offset-4 hover:underline",
+      "text-[#1A1A1A] hover:text-[#C5A8 80] hover:bg-transparent underline-offset-4 hover:underline",
   };
 
   const sizes = {
