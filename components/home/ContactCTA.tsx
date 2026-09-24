@@ -73,7 +73,7 @@ export async function ContactCTA() {
           </div>
 
           {/* Direct concierge lines */}
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8 text-xs tracking-[0.15em] uppercase text-neutral-500 font-light">
+          {/* <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8 text-xs tracking-[0.15em] uppercase text-neutral-500 font-light">
             <a
               href={`mailto:${siteConfig.email}`}
               className="hover:text-purple transition-colors border-b border-transparent hover:border-purple/40 pb-0.5"
@@ -87,7 +87,7 @@ export async function ContactCTA() {
             >
               {siteConfig.phone}
             </a>
-          </div>
+          </div> */}
         </FadeIn>
       </Container>
     </section>

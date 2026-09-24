@@ -73,7 +73,7 @@ export default async function AboutPage() {
       <AboutProcess />
 
       {/* 5. Leadership Atelier (Alternating Split Cards) */}
-      <AboutTeam team={team} />
+      {/* <AboutTeam team={team} /> */}
 
       {/* 6. Contact Consultation CTA */}
       <ContactCTA />

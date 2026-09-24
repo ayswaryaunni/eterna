@@ -59,7 +59,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </Link>
           </FadeIn>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-end mt-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-end mt-10 bg-red-100">
             <div className="lg:col-span-8">
               <FadeIn delay={0.05}>
                 <span className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.35em] text-purple font-medium">

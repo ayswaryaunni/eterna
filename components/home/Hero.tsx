@@ -107,16 +107,16 @@ export function Hero({ imageUrl, videoUrl }: { imageUrl?: string; videoUrl?: str
         </div>
 
         {/* Right Side: Compact Floating Interactive Video Card */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, scale: 0.92, y: 40 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
           className="w-full lg:w-[280px] xl:w-[320px] bg-white rounded-2xl p-3.5 shadow-2xl relative self-center lg:self-end border border-white/20"
-        >
+        > */}
           {/* Card Media Preview Container */}
-          <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-neutral-900 group">
+          {/* <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-neutral-900 group"> */}
             {/* Embedded Ambient Video */}
-            <video
+            {/* <video
               ref={videoRef}
               autoPlay
               muted
@@ -124,26 +124,26 @@ export function Hero({ imageUrl, videoUrl }: { imageUrl?: string; videoUrl?: str
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-10"
               src={videoUrl ?? "/images/hero/6a6305bf5040b777232a1810_GG_mp4.mp4"}
-            />
+            /> */}
 
             {/* Play/Pause Overlay Button */}
-            <button
+            {/* <button
               type="button"
               onClick={togglePlay}
               aria-label={isPlaying ? "Pause video preview" : "Play video preview"}
               className="absolute bottom-2.5 left-2.5 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-black/80 transition-all cursor-pointer z-20"
             >
               {isPlaying ? <Pause size={14} /> : <Play size={14} className="ml-0.5" />}
-            </button>
-          </div>
+            </button> */}
+          {/* </div> */}
 
           {/* Card Details Text */}
-          <div className="pt-3 px-0.5 pb-0.5">
+          {/* <div className="pt-3 px-0.5 pb-0.5">
             <p className="text-[11px] sm:text-xs text-neutral-600 font-light leading-relaxed">
               A walkthrough of how we shape your vision and turn dreams into real.
             </p>
-          </div>
-        </motion.div>
+          </div> */}
+        {/* </motion.div> */}
 
       </div>
     </section>

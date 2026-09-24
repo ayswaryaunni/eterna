@@ -25,25 +25,31 @@ export default async function ContactPage() {
   const offices = siteConfig.address.split("•").map((s) => s.trim());
 
   return (
-    <main className="pb-12 bg-ivory">
+    <main className="">
       <ContactHero siteConfig={siteConfig} team={team} imageUrl={heroImage} />
 
       {/* ── Form + aside ─────────────────────────────────────────────────── */}
       <section id="inquiry" className="py-20 lg:py-24 scroll-mt-20">
         <Container size="wide">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+          {/* <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             <div className="lg:col-span-7 xl:col-span-8">
               <ContactForm />
             </div>
             <aside className="lg:col-span-5 xl:col-span-4">
               <ContactAside siteConfig={siteConfig} />
             </aside>
+          </div> */}
+          <div className="flex gap-8">
+            <ContactForm />
+            <div className="flex flex-col justify-between min-w-[400px]">
+              <ContactAside siteConfig={siteConfig} />
+            </div>
           </div>
         </Container>
       </section>
 
       {/* ── Offices ──────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white border-y border-linen">
+      {/* <section className="py-20 bg-white border-y border-linen">
         <Container size="wide">
           <FadeIn>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
@@ -83,7 +89,7 @@ export default async function ContactPage() {
             })}
           </div>
         </Container>
-      </section>
+      </section> */}
     </main>
   );
 }
