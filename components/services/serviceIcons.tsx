@@ -1,4 +1,4 @@
-import { Flower2, Plane, Sparkles, Wine, type LucideIcon, type LucideProps } from "lucide-react";
+import { Camera, Flower2, Gift, Mail, Plane, Sparkles, Wine, type LucideIcon, type LucideProps } from "lucide-react";
 
 /* Icon per service id — falls back to Sparkles for anything new added to data/services.ts */
 const icons: Record<string, LucideIcon> = {
@@ -6,6 +6,9 @@ const icons: Record<string, LucideIcon> = {
   "destination-weddings": Plane,
   "event-design": Flower2,
   "private-galas": Wine,
+  photoshoot: Camera,
+  invitations: Mail,
+  "gift-hampers": Gift,
 };
 
 interface ServiceIconProps extends LucideProps {

@@ -19,6 +19,9 @@ export const footerLinks = {
     { label: "Destination Weddings", href: "/services#destination-weddings" },
     { label: "Event Design & Styling", href: "/services#event-design" },
     { label: "Private Celebrations & Galas", href: "/services#private-galas" },
+    { label: "Photoshoots", href: "/services#photoshoot" },
+    { label: "Invitations & Cards", href: "/services#invitations" },
+    { label: "Gift Hampers", href: "/services#gift-hampers" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },

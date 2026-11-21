@@ -61,4 +61,49 @@ export const services: ServiceItem[] = [
     ],
     featured: true,
   },
+  {
+    id: "photoshoot",
+    title: "Photoshoots",
+    subtitle: "Newborn and model photoshoots, beautifully composed",
+    description:
+      "From the first precious days of a newborn to polished model portfolios, our photoshoots are styled, lit and directed with the same care we bring to every celebration.",
+    image: "/images/events/aksa-jinu/aja05178.jpg",
+    features: [
+      "Newborn photoshoots in a safe, gentle setting",
+      "Model & portfolio photoshoots",
+      "Themed sets, props & wardrobe styling",
+      "Professionally edited, high-resolution images",
+    ],
+    featured: true,
+  },
+  {
+    id: "invitations",
+    title: "Invitations & Cards",
+    subtitle: "Digital invitations and printed cards",
+    description:
+      "Set the tone before the first guest arrives. We design digital invitations and printed cards that carry your story, colours and theme into every inbox and envelope.",
+    image: "/images/events/ruba-manoop/dsc00222.jpg",
+    features: [
+      "Custom digital invitations & video e-invites",
+      "Printed invitation cards & stationery",
+      "Save-the-dates, RSVP & thank-you cards",
+      "Designs matched to your event theme",
+    ],
+    featured: true,
+  },
+  {
+    id: "gift-hampers",
+    title: "Gift Hampers",
+    subtitle: "Wedding, engagement and birthday hampers",
+    description:
+      "Thoughtfully curated hampers for the moments that matter — beautifully wrapped, personalised and delivered for weddings, engagements and birthdays.",
+    image: "/images/events/ashik-afna/12.jpg",
+    features: [
+      "Wedding hampers for guests & family",
+      "Engagement hampers & trousseau packing",
+      "Birthday hampers for every age",
+      "Personalised packaging, tags & delivery",
+    ],
+    featured: true,
+  },
 ];

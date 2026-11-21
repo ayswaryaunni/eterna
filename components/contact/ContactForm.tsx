@@ -21,6 +21,9 @@ const EVENT_TYPES = [
   { value: "Destination Wedding", label: "Destination Wedding" },
   { value: "Event Design", label: "Event Design & Floral Styling" },
   { value: "Private Gala", label: "Private Celebration or Gala" },
+  { value: "Photoshoot", label: "Newborn or Model Photoshoot" },
+  { value: "Invitations", label: "Digital Invitations & Cards" },
+  { value: "Gift Hampers", label: "Gift Hampers" },
 ];
 
 const EMPTY: ContactFormData = {

@@ -65,8 +65,8 @@ export function ServicesHero({ services, videoUrl, posterUrl }: { services: Serv
               transition={{ duration: 0.7, delay: 0.45, ease: EASE }}
               className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed max-w-md"
             >
-              From intimate destination ceremonies to grand multi-day estate weddings and private galas —
-              four signature services, one uncompromising standard.
+              From intimate destination ceremonies to grand estate weddings, photoshoots, invitations and gift
+              hampers — {services.length} signature services, one uncompromising standard.
             </motion.p>
 
             {/* Quick navigation to each service */}
@@ -139,7 +139,7 @@ export function ServicesHero({ services, videoUrl, posterUrl }: { services: Serv
               transition={{ staggerChildren: 0.1, delayChildren: 0.8 }}
               className="hidden sm:flex absolute top-6 right-6 z-10 flex-col items-end gap-2.5 text-[10px] uppercase tracking-[0.35em] text-white/85 drop-shadow"
             >
-              {["Weddings", "Destinations", "Design", "Galas"].map((w) => (
+              {["Weddings", "Destinations", "Design", "Galas", "Photoshoots", "Invitations", "Hampers"].map((w) => (
                 <motion.li key={w} variants={{ hidden: { opacity: 0, x: 12 }, show: { opacity: 1, x: 0 } }}>
                   {w}
                 </motion.li>
