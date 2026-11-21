@@ -7,7 +7,7 @@ import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
 
 export function HomeAboutSection({ images = [] }: { images?: string[] }) {
-  const [primary = "/images/portfolio/lake-como-wedding.jpg", secondary = "/images/portfolio/amalfi-wedding.jpg"] = images;
+  const [primary = "/images/site/home-atelier.jpg", secondary = "/images/events/aksa-jinu/aja05207.jpg"] = images;
   return (
     <section className="py-[100px] bg-ivory border-y border-linen relative overflow-hidden">
       {/* Subtle purple background lighting */}
@@ -65,7 +65,7 @@ export function HomeAboutSection({ images = [] }: { images?: string[] }) {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="hidden sm:block absolute -bottom-10 -right-6 w-1/2 aspect-[4/5] border-4 border-ivory shadow-2xl overflow-hidden"
+              className="hidden sm:block absolute -bottom-10 -right-6 w-[44%] aspect-[4/5] border-4 border-ivory shadow-2xl overflow-hidden"
             >
               <Image
                 src={secondary}

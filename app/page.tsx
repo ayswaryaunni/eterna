@@ -8,6 +8,7 @@ import { HeroGalleryShowcase } from "@/components/home/HeroGalleryShowcase";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { ContactCTA } from "@/components/home/ContactCTA";
 import { getProjects, getServices, getSiteSettings, getTestimonials } from "@/lib/content";
+import { galleryImages, pageMedia } from "@/lib/media";
 
 // Content is edited in Supabase; re-render at most once a minute.
 export const revalidate = 60;
@@ -20,17 +21,21 @@ export default async function HomePage() {
     getTestimonials(),
   ]);
 
-  const featured = projects.filter((p) => p.featured);
-  // Gallery strip: every project photo except the covers, de-duplicated
-  const covers = new Set(projects.map((p) => p.coverImage));
-  const gallery = [...new Set(projects.flatMap((p) => p.images ?? []))].filter((src) => !covers.has(src));
+  const media = pageMedia(site);
+  // Gallery strip: only photos not already shown elsewhere on the site
+  const gallery = galleryImages(projects, media, [
+    site.homeHeroImage,
+    site.aboutHeroImage,
+    site.contactHeroImage,
+    ...services.map((s) => s.image),
+  ]);
 
   return (
     <main>
       <Hero imageUrl={site.homeHeroImage} videoUrl={site.homeHeroVideo} />
-      <HomeAboutSection images={featured.slice(0, 2).map((p) => p.coverImage)} />
+      <HomeAboutSection images={media.homeAtelier} />
       <ServicesPreview services={services} />
-      <ShowcaseVideo videoUrl={site.showcaseVideo} posterUrl={featured[1]?.coverImage} />
+      <ShowcaseVideo videoUrl={site.showcaseVideo} posterUrl={media.showcasePoster} />
       <PortfolioPreview items={projects} />
       <HeroGalleryShowcase images={gallery} />
       <TestimonialsSection testimonials={testimonials} />

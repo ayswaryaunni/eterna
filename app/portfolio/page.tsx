@@ -2,9 +2,10 @@ import React from "react";
 import type { Metadata } from "next";
 import { Container } from "@/components/common/Container";
 import { PortfolioHero } from "@/components/portfolio/PortfolioHero";
+import { pageMedia } from "@/lib/media";
 import { PortfolioCard } from "@/components/portfolio/PortfolioCard";
 import { ContactCTA } from "@/components/home/ContactCTA";
-import { getProjects } from "@/lib/content";
+import { getProjects, getSiteSettings } from "@/lib/content";
 
 export const revalidate = 60;
 
@@ -15,10 +16,10 @@ export const metadata: Metadata = {
 };
 
 export default async function PortfolioPage() {
-  const portfolioItems = await getProjects();
+  const [portfolioItems, site] = await Promise.all([getProjects(), getSiteSettings()]);
   return (
     <main className="pb-12">
-      <PortfolioHero items={portfolioItems} />
+      <PortfolioHero items={portfolioItems} images={pageMedia(site).portfolioHero} />
 
       <section id="works" className="py-20 bg-white scroll-mt-24">
         <Container size="wide">

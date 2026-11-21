@@ -56,6 +56,14 @@ export interface SiteConfig {
   aboutHeroImage?: string;
   showcaseVideo?: string;
   contactHeroImage?: string;
+  /** Page images/videos from site_settings (0004_page_media); empty → lib/media.ts defaults */
+  homeAtelierImages?: string[];
+  aboutPreviewImages?: string[];
+  portfolioHeroImages?: string[];
+  contactOfficeImages?: string[];
+  showcasePoster?: string;
+  servicesVideo?: string;
+  servicesPoster?: string;
 }
 
 export interface TeamMember {

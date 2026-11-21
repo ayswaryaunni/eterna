@@ -8,7 +8,7 @@ export const testimonials: TestimonialItem[] = [
     role: "Villa d'Este Nuptials",
     location: "Lake Como, Italy",
     event: "Lake Como Nuptials",
-    image: "/images/portfolio/lake-como-wedding.jpg"
+    image: "/images/site/testimonial-church.jpg"
   },
   {
     id: "2",
@@ -17,7 +17,7 @@ export const testimonials: TestimonialItem[] = [
     role: "Château Private Soirée",
     location: "Provence, France",
     event: "Private Chateau Gala",
-    image: "/images/portfolio/chateau-wedding.jpg"
+    image: "/images/site/testimonial-roses.jpg"
   },
   {
     id: "3",
@@ -26,6 +26,6 @@ export const testimonials: TestimonialItem[] = [
     role: "Cliffside Estate Ceremony",
     location: "Amalfi Coast, Italy",
     event: "Amalfi Coast Wedding",
-    image: "/images/portfolio/amalfi-wedding.jpg"
+    image: "/images/site/testimonial-hands.jpg"
   }
 ];

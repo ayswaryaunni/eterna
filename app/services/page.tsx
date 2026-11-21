@@ -5,6 +5,7 @@ import { ServiceFeature } from "@/components/services/ServiceFeature";
 import { ServiceProcess } from "@/components/services/ServiceProcess";
 import { ContactCTA } from "@/components/home/ContactCTA";
 import { getServices, getSiteSettings } from "@/lib/content";
+import { pageMedia } from "@/lib/media";
 
 export const revalidate = 60;
 
@@ -16,9 +17,10 @@ export const metadata: Metadata = {
 
 export default async function ServicesPage() {
   const [services, site] = await Promise.all([getServices(), getSiteSettings()]);
+  const media = pageMedia(site);
   return (
     <main className="pb-12">
-      <ServicesHero services={services} videoUrl={site.showcaseVideo} posterUrl={services[2]?.image} />
+      <ServicesHero services={services} videoUrl={media.servicesVideo} posterUrl={media.servicesPoster} />
 
       {services.map((service, index) => (
         <ServiceFeature key={service.id} service={service} index={index} />

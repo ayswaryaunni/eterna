@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    // 90 is used for full-bleed hero photos; everything else uses the default 75
+    qualities: [75, 90],
     remotePatterns: [
       {
         protocol: "https",

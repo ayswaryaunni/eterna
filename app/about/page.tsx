@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { AboutPreview } from "@/components/home/AboutPreview";
+import { pageMedia } from "@/lib/media";
 // import { AboutPhilosophy } from "@/components/about/AboutPhilosophy";
 import { AboutProcess } from "@/components/about/AboutProcess";
 import { AboutTeam } from "@/components/about/AboutTeam";
@@ -28,11 +29,12 @@ export default async function AboutPage() {
         {/* Background Image - Bright Luxury View with Targeted Text-Area Contrast */}
         <div className="absolute inset-0 z-0">
           <Image
-            src={site.aboutHeroImage ?? "/images/about-hero.jpg"}
+            src={site.aboutHeroImage ?? "/images/site/about-hero.jpg"}
             alt="Eterna Atelier — The Art of Timeless Celebration"
             fill
             priority
-            className="object-cover object-center opacity-100"
+            quality={90}
+            className="object-cover object-center"
             sizes="100vw"
           />
           {/* Subtle Top Navbar Gradient & Soft Center Spotlight Vignette for 100% Text Readability */}
@@ -61,7 +63,7 @@ export default async function AboutPage() {
       </section>
 
       {/* 1. Main Atelier Story (Editorial Grid) */}
-      <AboutPreview />
+      <AboutPreview images={pageMedia(site).aboutPreview} />
 
       {/* 2. Infinite Ticker Tape Marquee */}
       <InfiniteMarquee />

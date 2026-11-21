@@ -6,7 +6,8 @@ import { FadeIn } from "@/components/common/FadeIn";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactAside } from "@/components/contact/ContactAside";
 import { ContactHero } from "@/components/contact/ContactHero";
-import { getProjects, getSiteSettings, getTeam } from "@/lib/content";
+import { getSiteSettings, getTeam } from "@/lib/content";
+import { pageMedia } from "@/lib/media";
 
 export const revalidate = 60;
 
@@ -17,11 +18,11 @@ export const metadata: Metadata = {
 };
 
 export default async function ContactPage() {
-  const [siteConfig, projects, team] = await Promise.all([getSiteSettings(), getProjects(), getTeam()]);
+  const [siteConfig, team] = await Promise.all([getSiteSettings(), getTeam()]);
   // Hero photo from site_settings, falling back to the first featured project cover
-  const heroImage = siteConfig.contactHeroImage ?? projects.find((p) => p.featured)?.coverImage ?? projects[0]?.coverImage ?? "";
-  // Office tiles borrow a cover photo from the archive
-  const officeImages = projects.map((p) => p.coverImage);
+  const heroImage = siteConfig.contactHeroImage ?? "/images/site/contact-hero.jpg";
+  // Office tiles use their own photos (see lib/media.ts) so nothing repeats
+  const officeImages = pageMedia(siteConfig).contactOffices;
   const offices = siteConfig.address.split("•").map((s) => s.trim());
 
   return (

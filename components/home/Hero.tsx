@@ -34,17 +34,20 @@ export function Hero({ imageUrl, videoUrl }: { imageUrl?: string; videoUrl?: str
     <section className="relative min-h-[92vh] lg:min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-purple">
       {/* ── Main Romantic Couple Background ──────────────────────────────── */}
       <div className="absolute inset-0 z-0">
+        {/* Portrait photo filling a wide hero: on desktop the visible band is set
+            to run from the couple's raised hands down past their faces. */}
         <Image
-          src={imageUrl ?? "/images/hero-couple.jpg"}
+          src={imageUrl ?? "/images/site/home-hero.jpg"}
           alt="Where forever begins beautifully together — Eterna"
           fill
           priority
-          className="object-cover object-[65%_center] sm:object-center opacity-85"
+          quality={90}
+          className="object-cover object-[52%_center] sm:object-[center_33%]"
           sizes="100vw"
         />
         {/* Neutral vignette: darker on the left for text readability, no colour tint on the photo */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/25" />
       </div>
 
       {/* ── Content Container ──────────────────────────────────────────────── */}

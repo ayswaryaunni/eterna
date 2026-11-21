@@ -16,6 +16,7 @@ import { services } from "./seed-data/services";
 import { portfolioItems } from "./seed-data/portfolio";
 import { testimonials } from "./seed-data/testimonials";
 import { siteConfig } from "./seed-data/site";
+import { syncPageMedia } from "./sync-page-media";
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -85,14 +86,17 @@ async function main() {
     const { error } = await db.from("site_settings").upsert({
       id: 1,
       ...siteConfig,
-      home_hero_image: await upload("/images/hero-couple.jpg"),
+      home_hero_image: await upload("/images/site/home-hero.jpg"),
       home_hero_video: await upload("/images/hero/6a6305bf5040b777232a1810_GG_mp4.mp4"),
-      about_hero_image: await upload("/images/about-hero.jpg"),
-      showcase_video: await upload("/videos/services-reel.mp4"),
-      contact_hero_image: await upload("/images/hero/6a6305bf5040b777232a1833_post-one-multy-image-three.avif"),
+      about_hero_image: await upload("/images/site/about-hero.jpg"),
+      showcase_video: await upload("/videos/showcase-highlights.mp4"),
+      contact_hero_image: await upload("/images/site/contact-hero.jpg"),
     });
     if (error) throw error;
   }
+
+  console.log("→ page media");
+  await syncPageMedia(db);
 
   console.log("→ services");
   for (const [i, s] of services.entries()) {
@@ -133,6 +137,18 @@ async function main() {
       { onConflict: "slug" }
     );
     if (error) throw error;
+  }
+
+  // Remove projects that are no longer in seed-data (e.g. the old placeholder stories)
+  {
+    const keep = portfolioItems.map((p) => p.id);
+    const { data: stale, error } = await db
+      .from("portfolio_projects")
+      .delete()
+      .not("slug", "in", `(${keep.map((s) => `"${s}"`).join(",")})`)
+      .select("slug");
+    if (error) throw error;
+    if (stale?.length) console.log(`  removed: ${stale.map((r) => r.slug).join(", ")}`);
   }
 
   console.log("→ testimonials");

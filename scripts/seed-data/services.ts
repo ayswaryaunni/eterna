@@ -7,7 +7,7 @@ export const services: ServiceItem[] = [
     subtitle: "Complete curation from concept to realization",
     description:
       "A seamless, end-to-end planning journey tailored to your unique love story. We orchestrate every detail, from vendor curation and timeline management to spatial production and day-of execution.",
-    image: "/images/portfolio/amalfi-wedding.jpg",
+    image: "/images/events/ruba-manoop/dsc00345.jpg",
     features: [
       "Bespoke concept design & mood boards",
       "Full vendor curation & contract negotiations",
@@ -22,7 +22,7 @@ export const services: ServiceItem[] = [
     subtitle: "Extraordinary celebrations in the world's most romantic havens",
     description:
       "From historic Italian villas on Lake Como to sun-drenched châteaux in Provence, we manage cross-border logistics, guest experiences, travel hospitality, and multi-day celebrations.",
-    image: "/images/portfolio/lake-como-wedding.jpg",
+    image: "/images/events/jincy-sinu/aja09973.jpg",
     features: [
       "Global venue scouting & international logistics",
       "Multi-day celebration planning (Welcome dinner, Recovery brunch)",
@@ -37,7 +37,7 @@ export const services: ServiceItem[] = [
     subtitle: "Transforming spaces into breathtaking visual narratives",
     description:
       "Our creative direction team designs sculptural floral installations, bespoke lighting architecture, custom table scapes, and tailored sensory atmospheres that leave indelible impressions.",
-    image: "/images/portfolio/chateau-wedding.jpg",
+    image: "/images/events/ruba-manoop/dsc00510.jpg",
     features: [
       "Spatial floor planning & 3D visualization",
       "Haute floral artistry & centerpiece styling",
@@ -52,7 +52,7 @@ export const services: ServiceItem[] = [
     subtitle: "Elevated milestones, anniversaries, and luxury gatherings",
     description:
       "We design exclusive private soirées, milestone anniversaries, and high-profile galas with discreet, flawless hospitality, world-class entertainment, and gastronomy.",
-    image: "/images/portfolio/manhattan-gala.jpg",
+    image: "/images/events/ruba-manoop/15.jpg",
     features: [
       "Exclusive private estate & venue sourcing",
       "Michelin-tier culinary & mixology coordination",

@@ -8,9 +8,12 @@ import { Container } from "@/components/common/Container";
 const FALLBACK: string[] = [];
 
 export function HeroGalleryShowcase({ images = FALLBACK }: { images?: string[] }) {
-  // Split into three rows; pad short lists by cycling so each row still scrolls
+  // Split into three rows of different photos. Rows only drift with scroll, so
+  // ~10 photos each is wide enough to fill the screen without repeating;
+  // only short lists are padded by cycling.
   const pool = images.length ? images : FALLBACK;
-  const rowOf = (n: number) => Array.from({ length: 5 }, (_, i) => pool[(n * 5 + i) % pool.length]).filter(Boolean);
+  const perRow = Math.max(5, Math.ceil(pool.length / 3));
+  const rowOf = (n: number) => Array.from({ length: perRow }, (_, i) => pool[(n * perRow + i) % pool.length]).filter(Boolean);
   const row1 = rowOf(0);
   const row2 = rowOf(1);
   const row3 = rowOf(2);
@@ -57,7 +60,7 @@ export function HeroGalleryShowcase({ images = FALLBACK }: { images?: string[] }
         
         {/* Row 1: Left to Right */}
         <motion.div style={{ x: xRow1 }} className="flex gap-4 sm:gap-6 w-[150vw] sm:w-[130vw] -ml-[15vw]">
-          {row1.concat(row1).map((src, i) => (
+          {row1.map((src, i) => (
             <div
               key={`row1-${i}`}
               className="relative w-64 sm:w-80 h-44 sm:h-56 rounded-xl overflow-hidden shadow-lg flex-shrink-0 group border border-linen hover:border-mauve transition-all duration-500 bg-neutral-100"
@@ -75,7 +78,7 @@ export function HeroGalleryShowcase({ images = FALLBACK }: { images?: string[] }
 
         {/* Row 2: Right to Left */}
         <motion.div style={{ x: xRow2 }} className="flex gap-4 sm:gap-6 w-[150vw] sm:w-[130vw] -ml-[15vw]">
-          {row2.concat(row2).map((src, i) => (
+          {row2.map((src, i) => (
             <div
               key={`row2-${i}`}
               className="relative w-64 sm:w-80 h-44 sm:h-56 rounded-xl overflow-hidden shadow-lg flex-shrink-0 group border border-linen hover:border-mauve transition-all duration-500 bg-neutral-100"
@@ -93,7 +96,7 @@ export function HeroGalleryShowcase({ images = FALLBACK }: { images?: string[] }
 
         {/* Row 3: Left to Right */}
         <motion.div style={{ x: xRow3 }} className="flex gap-4 sm:gap-6 w-[150vw] sm:w-[130vw] -ml-[15vw]">
-          {row3.concat(row3).map((src, i) => (
+          {row3.map((src, i) => (
             <div
               key={`row3-${i}`}
               className="relative w-64 sm:w-80 h-44 sm:h-56 rounded-xl overflow-hidden shadow-lg flex-shrink-0 group border border-linen hover:border-mauve transition-all duration-500 bg-neutral-100"

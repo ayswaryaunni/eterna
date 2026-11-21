@@ -23,7 +23,7 @@ function Word({ children, range, progress }: WordProps) {
   );
 }
 
-export function AboutPreview() {
+export function AboutPreview({ images }: { images: string[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -64,7 +64,7 @@ export function AboutPreview() {
             className="md:col-span-4 relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-md"
           >
             <Image
-              src="/images/portfolio/amalfi-wedding.jpg"
+              src={images[0]}
               alt="Beach Floral Arch Ceremony"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -114,7 +114,7 @@ export function AboutPreview() {
             className="md:col-span-4 relative aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-md"
           >
             <Image
-              src="/images/portfolio/chateau-wedding.jpg"
+              src={images[1]}
               alt="Outdoor Floral Archway"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"

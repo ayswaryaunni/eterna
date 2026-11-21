@@ -39,7 +39,8 @@ function Stat({ value, label, delay }: { value: string; label: string; delay: nu
   );
 }
 
-export function PortfolioHero({ items: portfolioItems }: { items: PortfolioItem[] }) {
+/** `images` overrides the collage photos (one per featured project) so they differ from the grid covers below. */
+export function PortfolioHero({ items: portfolioItems, images = [] }: { items: PortfolioItem[]; images?: string[] }) {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
 
@@ -138,7 +139,7 @@ export function PortfolioHero({ items: portfolioItems }: { items: PortfolioItem[
               transition={{ duration: 1, delay: 0.3, ease: EASE }}
               className="absolute left-0 top-10 w-[54%] aspect-[4/5] overflow-hidden shadow-2xl group"
             >
-              <Image src={featured[0].coverImage} alt={featured[0].title} fill priority sizes="(max-width: 1024px) 60vw, 30vw" className="object-cover transition-transform duration-[1500ms] group-hover:scale-105" />
+              <Image src={images[0] ?? featured[0].coverImage} alt={featured[0].title} fill priority sizes="(max-width: 1024px) 60vw, 30vw" className="object-cover transition-transform duration-[1500ms] group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-purple-dark/70 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
                 <span className="block text-[9px] uppercase tracking-[0.25em] text-white/70">{featured[0].category}</span>
@@ -154,7 +155,7 @@ export function PortfolioHero({ items: portfolioItems }: { items: PortfolioItem[
               transition={{ duration: 1, delay: 0.45, ease: EASE }}
               className="absolute right-0 top-0 w-[42%] aspect-[3/4] overflow-hidden shadow-xl group"
             >
-              <Image src={featured[1].coverImage} alt={featured[1].title} fill sizes="(max-width: 1024px) 45vw, 22vw" className="object-cover transition-transform duration-[1500ms] group-hover:scale-105" />
+              <Image src={images[1] ?? featured[1].coverImage} alt={featured[1].title} fill sizes="(max-width: 1024px) 45vw, 22vw" className="object-cover transition-transform duration-[1500ms] group-hover:scale-105" />
               <div className="absolute inset-0 bg-purple/15 mix-blend-multiply transition-opacity duration-700 group-hover:opacity-0" />
             </motion.div>
 
@@ -166,7 +167,7 @@ export function PortfolioHero({ items: portfolioItems }: { items: PortfolioItem[
               transition={{ duration: 1, delay: 0.6, ease: EASE }}
               className="absolute right-[6%] bottom-0 w-[46%] aspect-[4/3] overflow-hidden border-[6px] border-ivory shadow-2xl group"
             >
-              <Image src={featured[2].coverImage} alt={featured[2].title} fill sizes="(max-width: 1024px) 50vw, 24vw" className="object-cover transition-transform duration-[1500ms] group-hover:scale-105" />
+              <Image src={images[2] ?? featured[2].coverImage} alt={featured[2].title} fill sizes="(max-width: 1024px) 50vw, 24vw" className="object-cover transition-transform duration-[1500ms] group-hover:scale-105" />
             </motion.div>
 
             {/* Floating label chip */}

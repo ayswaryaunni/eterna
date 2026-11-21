@@ -64,6 +64,14 @@ export interface SiteSettingsRow {
   about_hero_image: string;
   showcase_video: string;
   contact_hero_image: string;
+  // 0004_page_media — absent until that migration has run
+  home_atelier_images?: string[];
+  about_preview_images?: string[];
+  portfolio_hero_images?: string[];
+  contact_office_images?: string[];
+  showcase_poster?: string;
+  services_video?: string;
+  services_poster?: string;
 }
 
 export interface EnquiryInsert {

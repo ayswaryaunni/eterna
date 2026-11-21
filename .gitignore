@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# original full-res photos (source for scripts/optimize_assets.py)
+/assets-src/

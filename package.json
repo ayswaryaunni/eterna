@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "seed": "tsx --env-file=.env.local scripts/seed.ts"
+    "seed": "tsx --env-file=.env.local scripts/seed.ts",
+    "media:sync": "tsx --env-file=.env.local scripts/sync-page-media.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.109.0",

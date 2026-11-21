@@ -120,5 +120,12 @@ export async function getSiteSettings(): Promise<SiteConfig> {
     aboutHeroImage: r.about_hero_image || undefined,
     showcaseVideo: r.showcase_video || undefined,
     contactHeroImage: r.contact_hero_image || undefined,
+    homeAtelierImages: r.home_atelier_images ?? [],
+    aboutPreviewImages: r.about_preview_images ?? [],
+    portfolioHeroImages: r.portfolio_hero_images ?? [],
+    contactOfficeImages: r.contact_office_images ?? [],
+    showcasePoster: r.showcase_poster || undefined,
+    servicesVideo: r.services_video || undefined,
+    servicesPoster: r.services_poster || undefined,
   };
 }
