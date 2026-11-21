@@ -76,7 +76,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
               className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-purple-dark/0 group-hover:bg-purple-dark/30 transition-colors duration-500" />
-            <span className="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-white/90 text-purple flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+            <span className="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-white/90 text-purple flex items-center justify-center lg:opacity-0 lg:translate-y-2 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 transition-all duration-500">
               <Maximize2 size={14} />
             </span>
             <span className="absolute top-4 left-4 font-serif text-sm text-white/0 group-hover:text-white/90 transition-colors duration-500">

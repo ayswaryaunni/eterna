@@ -72,7 +72,7 @@ export function ContactAside({ siteConfig }: { siteConfig: SiteConfig }) {
               </span>
             </li>
           </ul>
-          <div className="px-7 py-5 border-t border-linen flex items-center justify-between">
+          <div className="px-5 sm:px-7 py-5 border-t border-linen flex flex-wrap items-center justify-between gap-3">
             <span className="text-[10px] uppercase tracking-[0.25em] text-neutral-500">Follow the atelier</span>
             <SocialLinks />
           </div>

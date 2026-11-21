@@ -16,7 +16,8 @@ export function Navbar() {
 
   // Transparent hero-style navbar on pages with dark hero images (Home and About pages)
   const isHeroPage = pathname === "/" || pathname === "/about";
-  const isTransparent = isHeroPage && !isScrolled;
+  // Solid header while the mobile menu is open so the drawer reads as one panel
+  const isTransparent = isHeroPage && !isScrolled && !mobileMenuOpen;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -123,7 +124,7 @@ export function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[73px] bg-ivory border-b border-linen px-6 py-8 shadow-xl transition-all">
+        <div className="md:hidden absolute inset-x-0 top-full max-h-[calc(100dvh-4.5rem)] overflow-y-auto bg-ivory border-b border-linen px-6 py-8 shadow-xl transition-all">
           <div className="flex flex-col gap-6">
             {navigationItems.map((item) => {
               const isActive = pathname === item.href;

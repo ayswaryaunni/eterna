@@ -34,12 +34,12 @@ export function PortfolioCard({ item, className }: PortfolioCardProps) {
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10 transition-opacity duration-500 group-hover:from-black/90 group-hover:via-black/50" />
 
       {/* Always Visible Category & Location Badge at Top */}
-      <div className="absolute top-6 left-6 right-6 flex items-center justify-between text-[10px] tracking-[0.25em] uppercase text-mauve font-light z-10">
-        <span className="bg-black/40 backdrop-blur-md px-3 py-1 border border-white/10">
+      <div className="absolute top-4 left-4 right-4 sm:top-6 sm:left-6 sm:right-6 flex flex-wrap items-center justify-between gap-2 text-[10px] tracking-[0.2em] sm:tracking-[0.25em] uppercase text-mauve font-light z-10">
+        <span className="max-w-full truncate bg-black/40 backdrop-blur-md px-3 py-1 border border-white/10">
           {item.category}
         </span>
         {item.location && (
-          <span className="text-white/70 bg-black/40 backdrop-blur-md px-3 py-1 border border-white/10">
+          <span className="max-w-full truncate text-white/70 bg-black/40 backdrop-blur-md px-3 py-1 border border-white/10">
             {item.location}
           </span>
         )}

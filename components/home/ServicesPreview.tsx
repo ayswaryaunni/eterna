@@ -125,14 +125,14 @@ export function ServicesPreview({ services }: { services: ServiceItem[] }) {
                     {/* Title block */}
                     <div className="absolute inset-x-0 bottom-0 p-5 space-y-2">
                       {service.subtitle && (
-                        <span className="block text-[9px] uppercase tracking-[0.25em] text-white/70 line-clamp-1">
+                        <span className="block text-[10px] uppercase tracking-[0.25em] text-white/70 line-clamp-1">
                           {service.subtitle}
                         </span>
                       )}
                       <span className="block font-serif text-xl sm:text-2xl text-white leading-tight">
                         {service.title}
                       </span>
-                      <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/80 opacity-0 translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                      <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/80 lg:opacity-0 lg:translate-y-2 transition-all duration-500 lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
                         Explore service <ArrowRight size={12} />
                       </span>
                     </div>

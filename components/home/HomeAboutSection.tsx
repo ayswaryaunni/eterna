@@ -9,13 +9,13 @@ import { Button } from "@/components/common/Button";
 export function HomeAboutSection({ images = [] }: { images?: string[] }) {
   const [primary = "/images/site/home-atelier.jpg", secondary = "/images/events/aksa-jinu/aja05207.jpg"] = images;
   return (
-    <section className="py-[100px] bg-ivory border-y border-linen relative overflow-hidden">
+    <section className="py-20 lg:py-[100px] bg-ivory border-y border-linen relative overflow-hidden">
       {/* Subtle purple background lighting */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-purple/5 blur-[120px] rounded-full pointer-events-none" />
 
       <Container size="wide" className="relative z-10">
         {/* Top Header Badge & Large Typography */}
-        <div className="max-w-4xl mb-16 space-y-4">
+        <div className="max-w-4xl mb-12 lg:mb-16 space-y-4">
           <motion.span
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -108,15 +108,15 @@ export function HomeAboutSection({ images = [] }: { images?: string[] }) {
               className="grid grid-cols-3 gap-4 pt-6 border-t border-purple/20"
             >
               <div>
-                <span className="font-serif text-5xl sm:text-6xl lg:text-7xl text-purple block font-light leading-none">10+</span>
+                <span className="font-serif text-4xl sm:text-6xl lg:text-7xl text-purple block font-light leading-none">10+</span>
                 <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 font-light mt-2 block">Years</span>
               </div>
               <div>
-                <span className="font-serif text-5xl sm:text-6xl lg:text-7xl text-purple block font-light leading-none">150+</span>
+                <span className="font-serif text-4xl sm:text-6xl lg:text-7xl text-purple block font-light leading-none">150+</span>
                 <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 font-light mt-2 block">Events</span>
               </div>
               <div>
-                <span className="font-serif text-5xl sm:text-6xl lg:text-7xl text-purple block font-light leading-none">18+</span>
+                <span className="font-serif text-4xl sm:text-6xl lg:text-7xl text-purple block font-light leading-none">18+</span>
                 <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-500 font-light mt-2 block">Havens</span>
               </div>
             </motion.div>

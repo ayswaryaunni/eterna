@@ -44,9 +44,9 @@ export function AboutTeam({ team }: { team: TeamMember[] }) {
 
 
   return (
-    <section className="py-[100px] bg-white border-t border-linen overflow-hidden">
+    <section className="py-20 lg:py-[100px] bg-white border-t border-linen overflow-hidden">
       <Container size="wide">
-        <div className="flex flex-col lg:flex-row items-end justify-between gap-8 mb-16">
+        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-4 lg:gap-8 mb-12 lg:mb-16">
           <div>
             <motion.span
               initial={{ opacity: 0, x: -16 }}
@@ -99,7 +99,7 @@ export function AboutTeam({ team }: { team: TeamMember[] }) {
                 <span
                   aria-hidden
                   className={cn(
-                    "absolute -bottom-6 font-serif text-[9rem] leading-none text-purple/[0.04] select-none pointer-events-none transition-colors duration-500 group-hover:text-purple/[0.07]",
+                    "absolute -bottom-6 font-serif text-[6rem] lg:text-[9rem] leading-none text-purple/[0.04] select-none pointer-events-none transition-colors duration-500 group-hover:text-purple/[0.07]",
                     reversed ? "left-6" : "right-6"
                   )}
                 >

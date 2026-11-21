@@ -92,7 +92,7 @@ export function Hero({ imageUrl, videoUrl }: { imageUrl?: string; videoUrl?: str
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
-            className="pt-2 flex items-center gap-5"
+            className="pt-2 flex flex-wrap items-center gap-x-5 gap-y-4"
           >
             <Link
               href="/contact"
@@ -114,7 +114,7 @@ export function Hero({ imageUrl, videoUrl }: { imageUrl?: string; videoUrl?: str
           initial={{ opacity: 0, scale: 0.92, y: 40 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="w-full lg:w-[280px] xl:w-[320px] bg-white rounded-2xl p-3.5 shadow-2xl relative self-center lg:self-end border border-white/20"
+          className="w-full max-w-sm lg:max-w-none lg:w-[280px] xl:w-[320px] bg-white rounded-2xl p-3.5 shadow-2xl relative self-center lg:self-end border border-white/20"
         >
           {/* Card Media Preview Container */}
           <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-neutral-900 group">

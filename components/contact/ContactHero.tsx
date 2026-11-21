@@ -164,7 +164,7 @@ export function ContactHero({ siteConfig, team, imageUrl }: ContactHeroProps) {
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ type: "spring", stiffness: 220, damping: 22, delay: 1.05 }}
-              className="absolute -bottom-6 left-4 right-4 sm:left-6 sm:right-auto sm:w-[360px] bg-white/90 backdrop-blur-xl border border-white/60 shadow-[0_30px_80px_-30px_rgba(90,37,72,0.45)] p-5 sm:p-6"
+              className="relative -mt-12 mx-4 sm:mx-0 sm:mt-0 sm:absolute sm:-bottom-6 sm:left-6 sm:w-[360px] bg-white/90 backdrop-blur-xl border border-white/60 shadow-[0_30px_80px_-30px_rgba(90,37,72,0.45)] p-5 sm:p-6"
             >
               <div className="flex items-center justify-between gap-4">
                 <div className="flex -space-x-3">

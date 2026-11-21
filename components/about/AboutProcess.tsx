@@ -52,9 +52,11 @@ export function AboutProcess() {
 
   return (
     // Sticky Scroll Container (Pinned height 250vh so user stays in timeline while scrolling)
-    <section ref={targetRef} className="relative h-[250vh] bg-ivory border-t border-linen">
+    // Pinning only on lg+: below that the steps stack and won't fit in one screen,
+    // so the section flows normally and the steps still light up as it scrolls by.
+    <section ref={targetRef} className="relative lg:h-[250vh] bg-ivory border-t border-linen">
       {/* Sticky Content Viewport */}
-      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+      <div className="py-20 sm:py-24 lg:py-0 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-center lg:overflow-hidden">
         <Container size="wide">
           <div className="text-center max-w-xl mx-auto mb-16 sm:mb-20">
             <span className="text-xs uppercase tracking-[0.4em] text-purple font-medium block mb-3">
