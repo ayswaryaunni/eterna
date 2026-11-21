@@ -36,7 +36,8 @@ export interface ContactFormData {
   name: string;
   phone: string;
   email: string;
-  eventType: string;
+  /** One or more selected event types */
+  eventTypes: string[];
   eventDate: string;
   location: string;
   message: string;
@@ -49,6 +50,20 @@ export interface SiteConfig {
   email: string;
   phone: string;
   address: string;
+  /** Storage URLs managed in Supabase → site_settings */
+  homeHeroImage?: string;
+  homeHeroVideo?: string;
+  aboutHeroImage?: string;
+  showcaseVideo?: string;
+  contactHeroImage?: string;
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
 }
 
 export interface TestimonialItem {

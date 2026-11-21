@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
-:root {
-  --background: #FAF8F5;
-  --foreground: #1A1A1A;
-  --ivory: #FAF8F5;
-  --charcoal: #141414;
-  --champagne: #C5A880;
-  --border-muted: #EAE5DE;
+/* ──────────────────────────────────────────────────────────────────────────
+   Eterna Design Tokens
+   Single source of truth for brand colours & typography. Use the generated
+   utilities (bg-purple, text-mauve, border-linen …) instead of hex codes.
+   ────────────────────────────────────────────────────────────────────────── */
+@theme {
+  /* Typography */
+  --font-serif: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+  --font-display: var(--font-display), "Playfair Display", Georgia, serif;
+  --font-opensans: var(--font-opensans), "Open Sans", sans-serif;
+  --font-sans: var(--font-sans), "Jost", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Brand plum — sampled from client reference (buttons #5A2548, deep block #42082F).
+     Replaces Tailwind's default purple scale. */
+  --color-purple-*: initial;
+  --color-purple: #5A2548;
+  --color-purple-light: #7A4468;
+  --color-purple-dark: #42082F;
+  --color-purple-deep: #2F0B23;
+
+  /* Accent — plum-tinted mauve. The reference is a two-colour system (plum + off-white),
+     so eyebrow labels, rules and icons use this instead of gold. */
+  --color-mauve: #A67B98;
+  --color-mauve-dark: #7A4468;
+  --color-mauve-light: #D9B8CD;
+
+  /* Surfaces — warm, rose-tinted off-whites from the reference */
+  --color-ivory: #F5F1F0;
+  --color-ivory-light: #F9F5F3;
+  --color-ivory-dark: #F1EDEB;
+  --color-linen: #E5E1E0;
+
+  /* Darks — warm plum-black rather than neutral black */
+  --color-ink: #1C1518;
+  --color-charcoal: #1F1419;
+  --color-onyx: #170D13;
 }
 
-@theme {
-  --font-serif: var(--font-serif), "Cormorant Garamond", Georgia, serif;
-  --font-sans: var(--font-sans), "Jost", -apple-system, BlinkMacSystemFont, sans-serif;
-  --color-ivory: #FAF8F5;
-  --color-charcoal: #141414;
-  --color-champagne: #C5A880;
+:root {
+  --background: var(--color-ivory);
+  --foreground: var(--color-ink);
 }
 
 body {
-  background-color: #FAF8F5;
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-opensans {
+  font-family: var(--font-opensans);
 }
 
 h1, h2, h3, h4, .font-serif {

@@ -1,14 +1,30 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Jost } from "next/font/google";
+import { Cormorant_Garamond, Jost, Playfair_Display, Open_Sans } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { siteConfig } from "@/data/site";
+import { getSiteSettings } from "@/lib/content";
 import "./globals.css";
 
 const serifFont = Cormorant_Garamond({
   variable: "--font-serif",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const displayFont = Playfair_Display({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const openSans = Open_Sans({
+  variable: "--font-opensans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -20,7 +36,11 @@ const sansFont = Jost({
   display: "swap",
 });
 
-export const metadata: Metadata = {
+export const revalidate = 60;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const siteConfig = await getSiteSettings();
+  return {
   title: {
     default: `${siteConfig.name} | ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
@@ -41,7 +61,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: siteConfig.name,
   },
-};
+  };
+}
 
 export default function RootLayout({
   children,
@@ -49,8 +70,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${serifFont.variable} ${sansFont.variable} scroll-smooth`}>
-      <body className="font-sans antialiased bg-[#FAF8F5] text-[#1A1A1A] selection:bg-[#C5A880]/30 selection:text-[#1A1A1A]">
+    <html lang="en" className={`${serifFont.variable} ${displayFont.variable} ${openSans.variable} ${sansFont.variable} scroll-smooth`}>
+      <body className="font-sans antialiased bg-ivory text-ink selection:bg-mauve/30 selection:text-ink">
         <Navbar />
         {children}
         <Footer />

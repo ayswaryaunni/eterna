@@ -1,10 +1,12 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Container } from "@/components/common/Container";
-import { SectionHeading } from "@/components/common/SectionHeading";
-import { ServiceCard } from "@/components/services/ServiceCard";
+import { ServicesHero } from "@/components/services/ServicesHero";
+import { ServiceFeature } from "@/components/services/ServiceFeature";
+import { ServiceProcess } from "@/components/services/ServiceProcess";
 import { ContactCTA } from "@/components/home/ContactCTA";
-import { services } from "@/data/services";
+import { getServices, getSiteSettings } from "@/lib/content";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Services",
@@ -12,28 +14,17 @@ export const metadata: Metadata = {
     "Explore our full suite of bespoke services including full-service wedding planning, destination celebrations, event design, and private galas.",
 };
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const [services, site] = await Promise.all([getServices(), getSiteSettings()]);
   return (
-    <main className="pt-28 pb-12">
-      <div className="py-16 bg-[#FAF8F5] border-b border-[#EAE5DE]">
-        <Container size="default" className="text-center">
-          <SectionHeading
-            tag="Curated Offerings"
-            title="Our Bespoke Services"
-            description="From intimate destination celebrations to grand multi-day estate weddings, we craft unforgettable experiences."
-          />
-        </Container>
-      </div>
+    <main className="pb-12">
+      <ServicesHero services={services} videoUrl={site.showcaseVideo} posterUrl={services[2]?.image} />
 
-      <section className="py-20 bg-white">
-        <Container size="wide">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {services.map((service, index) => (
-              <ServiceCard key={service.id} service={service} index={index} />
-            ))}
-          </div>
-        </Container>
-      </section>
+      {services.map((service, index) => (
+        <ServiceFeature key={service.id} service={service} index={index} />
+      ))}
+
+      <ServiceProcess />
 
       <ContactCTA />
     </main>

@@ -4,13 +4,13 @@ import { SectionHeading } from "@/components/common/SectionHeading";
 import { PortfolioCard } from "@/components/portfolio/PortfolioCard";
 import { Button } from "@/components/common/Button";
 import { FadeIn } from "@/components/common/FadeIn";
-import { portfolioItems } from "@/data/portfolio";
+import type { PortfolioItem } from "@/types";
 
-export function PortfolioPreview() {
-  const featuredProjects = portfolioItems.filter((item) => item.featured).slice(0, 3);
+export function PortfolioPreview({ items }: { items: PortfolioItem[] }) {
+  const featuredProjects = items.filter((item) => item.featured).slice(0, 3);
 
   return (
-    <section className="py-[60px] bg-white border-t border-[#EAE5DE]">
+    <section className="py-[60px] bg-white border-t border-linen">
       <Container size="wide">
 
         <FadeIn>
